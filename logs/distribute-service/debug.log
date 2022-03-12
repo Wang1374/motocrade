@@ -1,0 +1,1127 @@
+2022-03-12 13:12:54,370 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:12:54,445 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:12:54,448 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,448 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,449 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,449 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:12:54,450 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,450 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,450 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:12:54,546 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$d7eaca7c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:12:54,565 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fe413554] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:12:54,633 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:12:54,635 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:12:57,414 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:17:22,841 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:17:22,899 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:17:22,902 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,902 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,902 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,903 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:17:22,903 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,903 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,903 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:17:22,989 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$dcea4f16] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:17:23,008 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$340b9ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:17:23,075 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:17:23,077 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:17:25,682 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:31:08,045 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:31:08,082 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:31:08,084 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,084 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,084 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,084 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:31:08,085 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,085 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,085 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:31:08,135 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$1c0ff83a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:31:08,143 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$42666312] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:31:08,182 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:31:08,184 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:31:09,526 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:41:57,209 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:41:57,244 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:41:57,246 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,246 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,246 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,246 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:41:57,247 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,247 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,247 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:41:57,296 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$488eade7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:41:57,304 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6ee518bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:41:57,339 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:41:57,340 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:41:58,773 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:51:37,941 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:51:37,980 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:51:37,981 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:37,981 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:37,982 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:37,982 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:51:37,982 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:37,982 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:37,983 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:38,036 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$47fb18da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:38,044 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6e5183b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:38,079 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:51:38,081 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:51:39,412 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:51:41,000 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesConfiguration] EnableEncryptablePropertiesConfiguration.java:70 - Bootstraping jasypt-string-boot auto configuration in context: distribute-service-1
+2022-03-12 13:51:41,001 [main] INFO  [c.l.distribute.DistributionServiceApplication] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+2022-03-12 13:51:42,072 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:51:42,284 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-12 13:51:42,286 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-03-12 13:51:42,307 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2022-03-12 13:51:42,387 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:51:42,470 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:51:42,746 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:295 - BeanFactory id=7081c93e-225d-3da7-815f-bcbfd653e25c
+2022-03-12 13:51:42,760 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:51:42,771 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrapProperties [org.springframework.core.env.CompositePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2022-03-12 13:51:42,771 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:51:42,771 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:51:42,771 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:51:42,772 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:42,772 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:42,772 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:51:42,772 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:42,772 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:51:42,777 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:188 - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-03-12 13:51:42,785 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:275 - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2022-03-12 13:51:42,794 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:426 - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-03-12 13:51:42,855 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$18a33ee3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:42,877 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$47fb18da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,066 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$523780b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,107 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$eae548ef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,114 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,119 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6e668322' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,120 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$fb9eba1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,130 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,205 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,238 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$bd293be4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,252 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$98bb4704] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,262 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$d1a2efd1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,269 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,314 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6e5183b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,320 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration$$EnhancerBySpringCGLIB$$97341314] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:51:43,840 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:90 - Tomcat initialized with port(s): 9011 (http)
+2022-03-12 13:51:43,853 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9011"]
+2022-03-12 13:51:43,860 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2022-03-12 13:51:43,860 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2022-03-12 13:51:43,865 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\itapp\nodejs\node_global;D:\itapp\redis\;D:\itapp\consul;D:\itapp\mysql\mysql-5.7.20-winx64\bin;C:\Program Files\Java\jdk1.8.0_211\bin;D:\itapp\git\Git\cmd;D:\itapp\erlang\erl-23.0\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\itapp\nodejs\;D:\spring\gradle\gradle-4.10.2\bin;D:\itapp\xshell\;D:\itapp\python3.9.6\Scripts\;D:\itapp\python3.9.6\;C:\Users\xinpi\AppData\Local\Microsoft\WindowsApps;;D:\itapp\vscode\Microsoft VS Code\bin;D:\itapp\idea\IntelliJ IDEA 2020.1.3\bin;;C:\Users\xinpi\AppData\Roaming\npm;D:\itapp\pycharm\PyCharm 2021.2\bin;;.]
+2022-03-12 13:51:44,000 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2022-03-12 13:51:44,000 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 2988 ms
+2022-03-12 13:51:44,194 [main] WARN  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:121 - No URLs will be polled as dynamic configuration sources.
+2022-03-12 13:51:44,194 [main] INFO  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-12 13:51:44,204 [main] INFO  [com.netflix.config.DynamicPropertyFactory] DynamicPropertyFactory.java:281 - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4cded2cd
+2022-03-12 13:51:44,329 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:51:44,330 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:51:46,293 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'taskScheduler'
+2022-03-12 13:51:47,002 [main] INFO  [o.s.b.a.endpoint.web.ServletEndpointRegistrar] ServletEndpointRegistrar.java:78 - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2022-03-12 13:51:47,002 [main] INFO  [o.s.b.a.endpoint.web.ServletEndpointRegistrar] ServletEndpointRegistrar.java:78 - Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2022-03-12 13:51:47,915 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.8.0
+2022-03-12 13:51:49,025 [redisson-netty-4-5] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:144 - 1 connections initialized for localhost/127.0.0.1:6379
+2022-03-12 13:51:49,025 [redisson-netty-4-10] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:144 - 10 connections initialized for localhost/127.0.0.1:6379
+2022-03-12 13:51:49,230 [main] DEBUG [c.l.c.f.s.CustomFeignHystrixConcurrencyStrategy] CustomFeignHystrixConcurrencyStrategy.java:67 - Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@3df7e309],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@55f4ec04],metricPublisher [io.micrometer.core.instrument.binder.hystrix.MicrometerMetricsPublisher@f3c27e9],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@1fd4850b],]
+2022-03-12 13:51:49,231 [main] DEBUG [c.l.c.f.s.CustomFeignHystrixConcurrencyStrategy] CustomFeignHystrixConcurrencyStrategy.java:70 - Registering Sleuth Hystrix Concurrency Strategy.
+2022-03-12 13:51:49,776 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:59 - Exposing 26 endpoint(s) beneath base path '/actuator'
+2022-03-12 13:51:50,111 [main] INFO  [s.d.s.w.PropertySourcedRequestMappingHandlerMapping] PropertySourcedRequestMappingHandlerMapping.java:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-03-12 13:51:50,550 [main] WARN  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:121 - No URLs will be polled as dynamic configuration sources.
+2022-03-12 13:51:50,550 [main] INFO  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-12 13:51:51,086 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService
+2022-03-12 13:51:51,414 [main] INFO  [o.s.b.a.s.s.UserDetailsServiceAutoConfiguration] UserDetailsServiceAutoConfiguration.java:86 - 
+
+Using generated security password: f572fffa-55c5-4aa3-aac5-183bbc40b92d
+
+2022-03-12 13:51:51,604 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b3db079, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b50e70a, org.springframework.security.web.header.HeaderWriterFilter@18f919ce, org.springframework.security.web.authentication.logout.LogoutFilter@22277482, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@70882cb7, com.laogeli.common.security.mobile.MobileAuthenticationFilter@6ef5e46a, com.laogeli.common.security.wx.WxAuthenticationFilter@5b7e2a88, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36996b37, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6bd2c51d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6984f7d1, org.springframework.security.web.session.SessionManagementFilter@3d306fd5, org.springframework.security.web.access.ExceptionTranslationFilter@1104cc93, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@dd5ea90]
+2022-03-12 13:51:51,819 [main] WARN  [com.zaxxer.hikari.HikariConfig] HikariConfig.java:973 - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2022-03-12 13:51:51,819 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2022-03-12 13:51:52,963 [main] ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:574 - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.jdbc.EmbeddedDatabaseConnection.isEmbedded(EmbeddedDatabaseConnection.java:123)
+	at org.springframework.boot.jdbc.AbstractDataSourceInitializer.isEnabled(AbstractDataSourceInitializer.java:74)
+	at org.springframework.boot.jdbc.AbstractDataSourceInitializer.initialize(AbstractDataSourceInitializer.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1754)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.laogeli.distribute.DistributionServiceApplication.main(DistributionServiceApplication.java:19)
+2022-03-12 13:51:53,009 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1208 - Using default implementation for ThreadExecutor
+2022-03-12 13:51:53,017 [main] INFO  [org.quartz.core.SchedulerSignalerImpl] SchedulerSignalerImpl.java:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2022-03-12 13:51:53,018 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:229 - Quartz Scheduler v.2.3.0 created.
+2022-03-12 13:51:53,018 [main] INFO  [org.quartz.simpl.RAMJobStore] RAMJobStore.java:155 - RAMJobStore initialized.
+2022-03-12 13:51:53,019 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2022-03-12 13:51:53,019 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2022-03-12 13:51:53,019 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1366 - Quartz scheduler version: 2.3.0
+2022-03-12 13:51:53,019 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4eaf08f4
+2022-03-12 13:51:53,125 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:51:54,606 [main] WARN  [o.s.cloud.netflix.core.CoreAutoConfiguration] CoreAutoConfiguration.java:37 - This module is deprecated. It will be removed in the next major release. Please use spring-cloud-netflix-hystrix instead.
+2022-03-12 13:51:54,962 [main] INFO  [o.s.c.stream.messaging.DirectWithAttributesChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBusInput' has 1 subscriber(s).
+2022-03-12 13:51:54,991 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBusInput
+2022-03-12 13:51:55,072 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel errorChannel
+2022-03-12 13:51:55,130 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel nullChannel
+2022-03-12 13:51:55,142 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBusOutput
+2022-03-12 13:51:55,158 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:785 - Registering MessageHandler errorLogger
+2022-03-12 13:51:55,176 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:785 - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@204d101
+2022-03-12 13:51:55,317 [main] INFO  [o.s.integration.endpoint.EventDrivenConsumer] EventDrivenConsumer.java:107 - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-03-12 13:51:55,317 [main] INFO  [o.s.integration.channel.PublishSubscribeChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.errorChannel' has 1 subscriber(s).
+2022-03-12 13:51:55,317 [main] INFO  [o.s.integration.endpoint.EventDrivenConsumer] AbstractEndpoint.java:159 - started _org.springframework.integration.errorLogger
+2022-03-12 13:51:55,966 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:51:56,668 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:51:56,668 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/distribute-service.yml'}]}
+2022-03-12 13:51:56,682 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesConfiguration] EnableEncryptablePropertiesConfiguration.java:70 - Bootstraping jasypt-string-boot auto configuration in context: distribute-service-1-1
+2022-03-12 13:51:56,822 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:468 - Attempting to connect to: localhost:5672
+2022-03-12 13:51:56,859 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:496 - Created new connection: connectionFactory#90394d:0/SimpleConnection@1a61721e [delegate=amqp://guest@127.0.0.1:5672/, localPort= 58588]
+2022-03-12 13:51:56,912 [main] INFO  [o.s.c.stream.messaging.DirectWithAttributesChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBusOutput' has 1 subscriber(s).
+2022-03-12 13:51:56,934 [main] INFO  [o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner] RabbitExchangeQueueProvisioner.java:159 - declaring queue for inbound: springCloudBus.anonymous.Jw8PqYwJQAijU9SuTW8bfg, bound to: springCloudBus
+2022-03-12 13:51:56,971 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBus.anonymous.Jw8PqYwJQAijU9SuTW8bfg.errors
+2022-03-12 13:51:57,071 [main] INFO  [o.s.cloud.stream.binder.BinderErrorChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBus.anonymous.Jw8PqYwJQAijU9SuTW8bfg.errors' has 1 subscriber(s).
+2022-03-12 13:51:57,072 [main] INFO  [o.s.cloud.stream.binder.BinderErrorChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBus.anonymous.Jw8PqYwJQAijU9SuTW8bfg.errors' has 2 subscriber(s).
+2022-03-12 13:51:57,119 [main] INFO  [o.s.i.amqp.inbound.AmqpInboundChannelAdapter] AbstractEndpoint.java:159 - started inbound.springCloudBus.anonymous.Jw8PqYwJQAijU9SuTW8bfg
+2022-03-12 13:51:57,121 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:160 - Context refreshed
+2022-03-12 13:51:57,143 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:163 - Found 1 custom documentation plugin(s)
+2022-03-12 13:51:57,190 [main] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2022-03-12 13:51:57,451 [main] INFO  [o.s.scheduling.quartz.SchedulerFactoryBean] SchedulerFactoryBean.java:726 - Starting Quartz Scheduler now
+2022-03-12 13:51:57,451 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2022-03-12 13:51:57,490 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9011"]
+2022-03-12 13:51:57,505 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 9011 (http) with context path ''
+2022-03-12 13:51:57,512 [main] INFO  [o.s.c.consul.serviceregistry.ConsulServiceRegistry] ConsulServiceRegistry.java:65 - Registering service with consul: NewService{id='distribute-service-9011', name='distribute-service', tags=[secure=false], address='192.168.72.1', meta=null, port=9011, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://192.168.72.1:9011/actuator/health', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-03-12 13:51:57,525 [main] INFO  [c.l.distribute.DistributionServiceApplication] StartupInfoLogger.java:59 - Started DistributionServiceApplication in 20.996 seconds (JVM running for 22.292)
+2022-03-12 13:51:57,531 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:26 - start command line...
+2022-03-12 13:51:57,531 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:27 - set system properties...
+2022-03-12 13:51:57,533 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:31 - end command line...
+2022-03-12 13:51:58,136 [RMI TCP Connection(11)-192.168.80.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 13:51:58,137 [RMI TCP Connection(11)-192.168.80.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+2022-03-12 13:51:58,158 [RMI TCP Connection(11)-192.168.80.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:546 - Completed initialization in 21 ms
+2022-03-12 13:51:58,872 [registrationTask1] WARN  [d.c.b.a.client.registration.ApplicationRegistrator] ApplicationRegistrator.java:115 - Failed to register application as Application(name=distribute-service, managementUrl=http://localhost:9011/actuator, healthUrl=http://localhost:9011/actuator/health, serviceUrl=http://localhost:9011/) at spring-boot-admin ([http://localhost:8085/admin/instances]): I/O error on POST request for "http://localhost:8085/admin/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+2022-03-12 13:51:58,944 [RMI TCP Connection(13)-192.168.80.1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2022-03-12 13:51:59,806 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@759f45f1}] INFO  [com.netflix.config.ChainedDynamicProperty] ChainedDynamicProperty.java:115 - Flipping property: localhost.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-03-12 13:51:59,846 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@759f45f1}] INFO  [com.netflix.util.concurrent.ShutdownEnabledTimer] ShutdownEnabledTimer.java:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-localhost
+2022-03-12 13:51:59,846 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@759f45f1}] INFO  [com.netflix.loadbalancer.BaseLoadBalancer] BaseLoadBalancer.java:197 - Client: localhost instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-03-12 13:51:59,852 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@759f45f1}] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:222 - Using serverListUpdater PollingServerListUpdater
+2022-03-12 13:51:59,859 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@759f45f1}] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:150 - DynamicServerListLoadBalancer for client localhost initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:ConsulServerList{serviceId='localhost', tag=null}
+2022-03-12 13:52:00,014 [RMI TCP Connection(13)-192.168.80.1] ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:574 - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:126)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:99)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.GeneratedMethodAccessor210.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:573)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:834)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:687)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-12 13:52:00,015 [RMI TCP Connection(13)-192.168.80.1] WARN  [o.s.boot.actuate.jdbc.DataSourceHealthIndicator] AbstractHealthIndicator.java:89 - DataSource health check failed
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:126)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:99)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.GeneratedMethodAccessor210.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:357)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:573)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:834)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:688)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:687)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	... 39 common frames omitted
+2022-03-12 13:52:00,028 [RMI TCP Connection(13)-192.168.80.1] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:52:00,701 [RMI TCP Connection(13)-192.168.80.1] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:52:00,770 [RMI TCP Connection(13)-192.168.80.1] INFO  [io.lettuce.core.EpollProvider] EpollProvider.java:68 - Starting without optional epoll library
+2022-03-12 13:52:00,772 [RMI TCP Connection(13)-192.168.80.1] INFO  [io.lettuce.core.KqueueProvider] KqueueProvider.java:70 - Starting without optional kqueue library
+2022-03-12 13:52:03,072 [http-nio-9011-exec-1] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2022-03-12 13:52:04,149 [http-nio-9011-exec-1] ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:574 - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:294)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:355)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-12 13:52:04,152 [http-nio-9011-exec-1] WARN  [o.s.boot.actuate.jdbc.DataSourceHealthIndicator] AbstractHealthIndicator.java:89 - DataSource health check failed
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:294)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:355)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	... 110 common frames omitted
+2022-03-12 13:52:14,181 [http-nio-9011-exec-2] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2022-03-12 13:52:15,258 [http-nio-9011-exec-2] ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool.java:574 - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:294)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:355)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2022-03-12 13:52:15,259 [http-nio-9011-exec-2] WARN  [o.s.boot.actuate.jdbc.DataSourceHealthIndicator] AbstractHealthIndicator.java:89 - DataSource health check failed
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:324)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:109)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:104)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:84)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:98)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:50)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:246)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:76)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:61)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:294)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:355)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:86)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'test-order'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:835)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:455)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:240)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:207)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at com.zaxxer.hikari.HikariDataSource$$FastClassBySpringCGLIB$$eeb1ae86.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:136)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.zaxxer.hikari.HikariDataSource$$EnhancerBySpringCGLIB$$f034070.getConnection(<generated>)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	... 110 common frames omitted
+2022-03-12 13:52:26,270 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:52:26,311 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:52:26,312 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrap [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,312 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,312 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,313 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:52:26,313 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,313 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource applicationConfig: [classpath:/bootstrap.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,313 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:26,375 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$528f36ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:26,383 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$78e5a1a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:26,420 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:52:26,421 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:52:27,895 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:52:29,517 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesConfiguration] EnableEncryptablePropertiesConfiguration.java:70 - Bootstraping jasypt-string-boot auto configuration in context: distribute-service-1
+2022-03-12 13:52:29,517 [main] INFO  [c.l.distribute.DistributionServiceApplication] SpringApplication.java:675 - No active profile set, falling back to default profiles: default
+2022-03-12 13:52:30,574 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:52:30,785 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-03-12 13:52:30,787 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2022-03-12 13:52:30,804 [main] INFO  [o.s.d.r.config.RepositoryConfigurationDelegate] RepositoryConfigurationDelegate.java:182 - Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2022-03-12 13:52:30,885 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:52:30,966 [main] WARN  [o.springframework.boot.actuate.endpoint.EndpointId] EndpointId.java:135 - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2022-03-12 13:52:31,243 [main] INFO  [o.springframework.cloud.context.scope.GenericScope] GenericScope.java:295 - BeanFactory id=7081c93e-225d-3da7-815f-bcbfd653e25c
+2022-03-12 13:52:31,257 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesBeanFactoryPostProcessor] EnableEncryptablePropertiesBeanFactoryPostProcessor.java:48 - Post-processing PropertySource instances
+2022-03-12 13:52:31,268 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource bootstrapProperties [org.springframework.core.env.CompositePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2022-03-12 13:52:31,268 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2022-03-12 13:52:31,268 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:52:31,268 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:52:31,268 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:31,269 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:31,269 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2022-03-12 13:52:31,269 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:31,269 [main] INFO  [c.u.j.EncryptablePropertySourceConverter] EncryptablePropertySourceConverter.java:38 - Converting PropertySource defaultProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2022-03-12 13:52:31,274 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:188 - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-03-12 13:52:31,282 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:275 - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2022-03-12 13:52:31,291 [main] INFO  [o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] DefaultConfiguringBeanFactoryPostProcessor.java:426 - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-03-12 13:52:31,351 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$23375cd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,372 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.retry.annotation.RetryConfiguration' of type [org.springframework.retry.annotation.RetryConfiguration$$EnhancerBySpringCGLIB$$528f36ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,569 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5ccb9ea9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,613 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$f57966e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,620 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,626 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@44485db' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,631 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$1a4e0995] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,640 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,719 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,752 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$c7bd59d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,766 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$a34f64f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,778 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$dc370dc5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,786 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,832 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$78e5a1a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:31,839 [main] INFO  [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] PostProcessorRegistrationDelegate.java:330 - Bean 'org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.TraceWebClientAutoConfiguration$TraceOAuthConfiguration$$EnhancerBySpringCGLIB$$a1c83108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-12 13:52:32,382 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:90 - Tomcat initialized with port(s): 9011 (http)
+2022-03-12 13:52:32,394 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-9011"]
+2022-03-12 13:52:32,401 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2022-03-12 13:52:32,401 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2022-03-12 13:52:32,406 [main] INFO  [org.apache.catalina.core.AprLifecycleListener] DirectJDKLog.java:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\itapp\nodejs\node_global;D:\itapp\redis\;D:\itapp\consul;D:\itapp\mysql\mysql-5.7.20-winx64\bin;C:\Program Files\Java\jdk1.8.0_211\bin;D:\itapp\git\Git\cmd;D:\itapp\erlang\erl-23.0\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\itapp\nodejs\;D:\spring\gradle\gradle-4.10.2\bin;D:\itapp\xshell\;D:\itapp\python3.9.6\Scripts\;D:\itapp\python3.9.6\;C:\Users\xinpi\AppData\Local\Microsoft\WindowsApps;;D:\itapp\vscode\Microsoft VS Code\bin;D:\itapp\idea\IntelliJ IDEA 2020.1.3\bin;;C:\Users\xinpi\AppData\Roaming\npm;D:\itapp\pycharm\PyCharm 2021.2\bin;;.]
+2022-03-12 13:52:32,538 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2022-03-12 13:52:32,538 [main] INFO  [org.springframework.web.context.ContextLoader] ServletWebServerApplicationContext.java:296 - Root WebApplicationContext: initialization completed in 3008 ms
+2022-03-12 13:52:32,722 [main] WARN  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:121 - No URLs will be polled as dynamic configuration sources.
+2022-03-12 13:52:32,722 [main] INFO  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-12 13:52:32,731 [main] INFO  [com.netflix.config.DynamicPropertyFactory] DynamicPropertyFactory.java:281 - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1de6dc80
+2022-03-12 13:52:32,847 [main] INFO  [c.u.j.resolver.DefaultLazyPropertyResolver] DefaultLazyPropertyResolver.java:34 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2022-03-12 13:52:32,848 [main] INFO  [c.u.j.detector.DefaultLazyPropertyDetector] DefaultLazyPropertyDetector.java:31 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2022-03-12 13:52:34,758 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'taskScheduler'
+2022-03-12 13:52:35,402 [main] INFO  [o.s.b.a.endpoint.web.ServletEndpointRegistrar] ServletEndpointRegistrar.java:78 - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2022-03-12 13:52:35,403 [main] INFO  [o.s.b.a.endpoint.web.ServletEndpointRegistrar] ServletEndpointRegistrar.java:78 - Registered '/actuator/hystrix.stream' to hystrix.stream-actuator-endpoint
+2022-03-12 13:52:36,263 [main] INFO  [org.redisson.Version] Version.java:41 - Redisson 3.8.0
+2022-03-12 13:52:37,288 [redisson-netty-4-4] INFO  [org.redisson.connection.pool.MasterConnectionPool] ConnectionPool.java:144 - 10 connections initialized for localhost/127.0.0.1:6379
+2022-03-12 13:52:37,288 [redisson-netty-4-24] INFO  [o.r.connection.pool.MasterPubSubConnectionPool] ConnectionPool.java:144 - 1 connections initialized for localhost/127.0.0.1:6379
+2022-03-12 13:52:37,490 [main] DEBUG [c.l.c.f.s.CustomFeignHystrixConcurrencyStrategy] CustomFeignHystrixConcurrencyStrategy.java:67 - Current Hystrix plugins configuration is [concurrencyStrategy [com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategyDefault@7894a250],eventNotifier [com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifierDefault@1bd53c5c],metricPublisher [io.micrometer.core.instrument.binder.hystrix.MicrometerMetricsPublisher@38affd02],propertiesStrategy [com.netflix.hystrix.strategy.properties.HystrixPropertiesStrategyDefault@72e9f0f7],]
+2022-03-12 13:52:37,490 [main] DEBUG [c.l.c.f.s.CustomFeignHystrixConcurrencyStrategy] CustomFeignHystrixConcurrencyStrategy.java:70 - Registering Sleuth Hystrix Concurrency Strategy.
+2022-03-12 13:52:37,950 [main] INFO  [o.s.b.actuate.endpoint.web.EndpointLinksResolver] EndpointLinksResolver.java:59 - Exposing 26 endpoint(s) beneath base path '/actuator'
+2022-03-12 13:52:38,216 [main] INFO  [s.d.s.w.PropertySourcedRequestMappingHandlerMapping] PropertySourcedRequestMappingHandlerMapping.java:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2022-03-12 13:52:38,603 [main] WARN  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:121 - No URLs will be polled as dynamic configuration sources.
+2022-03-12 13:52:38,605 [main] INFO  [com.netflix.config.sources.URLConfigurationSource] URLConfigurationSource.java:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-03-12 13:52:39,116 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService
+2022-03-12 13:52:39,418 [main] INFO  [o.s.b.a.s.s.UserDetailsServiceAutoConfiguration] UserDetailsServiceAutoConfiguration.java:86 - 
+
+Using generated security password: 76b1a498-da32-47f6-a3ee-e00e00fa7d4c
+
+2022-03-12 13:52:39,589 [main] INFO  [o.s.security.web.DefaultSecurityFilterChain] DefaultSecurityFilterChain.java:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2408ca4c, org.springframework.security.web.context.SecurityContextPersistenceFilter@17179a7e, org.springframework.security.web.header.HeaderWriterFilter@29509774, org.springframework.security.web.authentication.logout.LogoutFilter@15311af2, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@76a90ecb, com.laogeli.common.security.mobile.MobileAuthenticationFilter@2f7e2481, com.laogeli.common.security.wx.WxAuthenticationFilter@5f745970, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@367a245e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@210e971e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57cd77e1, org.springframework.security.web.session.SessionManagementFilter@23674e3d, org.springframework.security.web.access.ExceptionTranslationFilter@7f027735, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@14738629]
+2022-03-12 13:52:39,791 [main] WARN  [com.zaxxer.hikari.HikariConfig] HikariConfig.java:973 - HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2022-03-12 13:52:39,792 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:110 - HikariPool-1 - Starting...
+2022-03-12 13:52:40,161 [main] INFO  [com.zaxxer.hikari.HikariDataSource] HikariDataSource.java:123 - HikariPool-1 - Start completed.
+2022-03-12 13:52:40,208 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1208 - Using default implementation for ThreadExecutor
+2022-03-12 13:52:40,216 [main] INFO  [org.quartz.core.SchedulerSignalerImpl] SchedulerSignalerImpl.java:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2022-03-12 13:52:40,217 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:229 - Quartz Scheduler v.2.3.0 created.
+2022-03-12 13:52:40,217 [main] INFO  [org.quartz.simpl.RAMJobStore] RAMJobStore.java:155 - RAMJobStore initialized.
+2022-03-12 13:52:40,218 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2022-03-12 13:52:40,218 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2022-03-12 13:52:40,218 [main] INFO  [org.quartz.impl.StdSchedulerFactory] StdSchedulerFactory.java:1366 - Quartz scheduler version: 2.3.0
+2022-03-12 13:52:40,218 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2d487df4
+2022-03-12 13:52:40,322 [main] INFO  [o.s.scheduling.concurrent.ThreadPoolTaskScheduler] ExecutorConfigurationSupport.java:171 - Initializing ExecutorService 'catalogWatchTaskScheduler'
+2022-03-12 13:52:41,821 [main] WARN  [o.s.cloud.netflix.core.CoreAutoConfiguration] CoreAutoConfiguration.java:37 - This module is deprecated. It will be removed in the next major release. Please use spring-cloud-netflix-hystrix instead.
+2022-03-12 13:52:42,166 [main] INFO  [o.s.c.stream.messaging.DirectWithAttributesChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBusInput' has 1 subscriber(s).
+2022-03-12 13:52:42,192 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel nullChannel
+2022-03-12 13:52:42,206 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel errorChannel
+2022-03-12 13:52:42,293 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBusOutput
+2022-03-12 13:52:42,342 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBusInput
+2022-03-12 13:52:42,361 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:785 - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@3bca3dee
+2022-03-12 13:52:42,455 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:785 - Registering MessageHandler errorLogger
+2022-03-12 13:52:42,545 [main] INFO  [o.s.integration.endpoint.EventDrivenConsumer] EventDrivenConsumer.java:107 - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-03-12 13:52:42,545 [main] INFO  [o.s.integration.channel.PublishSubscribeChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.errorChannel' has 1 subscriber(s).
+2022-03-12 13:52:42,545 [main] INFO  [o.s.integration.endpoint.EventDrivenConsumer] AbstractEndpoint.java:159 - started _org.springframework.integration.errorLogger
+2022-03-12 13:52:43,201 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:52:43,856 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:52:43,856 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/distribute-service.yml'}]}
+2022-03-12 13:52:43,869 [main] INFO  [c.u.j.c.EnableEncryptablePropertiesConfiguration] EnableEncryptablePropertiesConfiguration.java:70 - Bootstraping jasypt-string-boot auto configuration in context: distribute-service-1-1
+2022-03-12 13:52:43,992 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:468 - Attempting to connect to: localhost:5672
+2022-03-12 13:52:44,029 [main] INFO  [o.s.a.rabbit.connection.CachingConnectionFactory] AbstractConnectionFactory.java:496 - Created new connection: connectionFactory#5b430541:0/SimpleConnection@78167 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 58976]
+2022-03-12 13:52:44,079 [main] INFO  [o.s.c.stream.messaging.DirectWithAttributesChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBusOutput' has 1 subscriber(s).
+2022-03-12 13:52:44,100 [main] INFO  [o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner] RabbitExchangeQueueProvisioner.java:159 - declaring queue for inbound: springCloudBus.anonymous.f7k58FBoTYmidWPgObZPSA, bound to: springCloudBus
+2022-03-12 13:52:44,136 [main] INFO  [o.s.integration.monitor.IntegrationMBeanExporter] IntegrationMBeanExporter.java:767 - Registering MessageChannel springCloudBus.anonymous.f7k58FBoTYmidWPgObZPSA.errors
+2022-03-12 13:52:44,237 [main] INFO  [o.s.cloud.stream.binder.BinderErrorChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBus.anonymous.f7k58FBoTYmidWPgObZPSA.errors' has 1 subscriber(s).
+2022-03-12 13:52:44,238 [main] INFO  [o.s.cloud.stream.binder.BinderErrorChannel] AbstractSubscribableChannel.java:64 - Channel 'distribute-service-1.springCloudBus.anonymous.f7k58FBoTYmidWPgObZPSA.errors' has 2 subscriber(s).
+2022-03-12 13:52:44,282 [main] INFO  [o.s.i.amqp.inbound.AmqpInboundChannelAdapter] AbstractEndpoint.java:159 - started inbound.springCloudBus.anonymous.f7k58FBoTYmidWPgObZPSA
+2022-03-12 13:52:44,284 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:160 - Context refreshed
+2022-03-12 13:52:44,305 [main] INFO  [s.d.s.web.plugins.DocumentationPluginsBootstrapper] DocumentationPluginsBootstrapper.java:163 - Found 1 custom documentation plugin(s)
+2022-03-12 13:52:44,357 [main] INFO  [s.d.spring.web.scanners.ApiListingReferenceScanner] ApiListingReferenceScanner.java:41 - Scanning for api listing references
+2022-03-12 13:52:44,601 [main] INFO  [o.s.scheduling.quartz.SchedulerFactoryBean] SchedulerFactoryBean.java:726 - Starting Quartz Scheduler now
+2022-03-12 13:52:44,601 [main] INFO  [org.quartz.core.QuartzScheduler] QuartzScheduler.java:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2022-03-12 13:52:44,648 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-9011"]
+2022-03-12 13:52:44,662 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:204 - Tomcat started on port(s): 9011 (http) with context path ''
+2022-03-12 13:52:44,672 [main] INFO  [o.s.c.consul.serviceregistry.ConsulServiceRegistry] ConsulServiceRegistry.java:65 - Registering service with consul: NewService{id='distribute-service-9011', name='distribute-service', tags=[secure=false], address='192.168.72.1', meta=null, port=9011, enableTagOverride=null, check=Check{script='null', interval='10s', ttl='null', http='http://192.168.72.1:9011/actuator/health', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null'}, checks=null}
+2022-03-12 13:52:44,685 [main] INFO  [c.l.distribute.DistributionServiceApplication] StartupInfoLogger.java:59 - Started DistributionServiceApplication in 19.927 seconds (JVM running for 21.315)
+2022-03-12 13:52:44,690 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:26 - start command line...
+2022-03-12 13:52:44,690 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:27 - set system properties...
+2022-03-12 13:52:44,691 [main] INFO  [com.laogeli.common.core.config.AppStartupRunner] AppStartupRunner.java:31 - end command line...
+2022-03-12 13:52:45,140 [RMI TCP Connection(5)-192.168.80.1] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:52:45,865 [RMI TCP Connection(5)-192.168.80.1] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:52:45,928 [RMI TCP Connection(7)-192.168.80.1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-12 13:52:45,928 [RMI TCP Connection(7)-192.168.80.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:524 - Initializing Servlet 'dispatcherServlet'
+2022-03-12 13:52:45,935 [RMI TCP Connection(5)-192.168.80.1] INFO  [io.lettuce.core.EpollProvider] EpollProvider.java:68 - Starting without optional epoll library
+2022-03-12 13:52:45,937 [RMI TCP Connection(5)-192.168.80.1] INFO  [io.lettuce.core.KqueueProvider] KqueueProvider.java:70 - Starting without optional kqueue library
+2022-03-12 13:52:45,952 [RMI TCP Connection(7)-192.168.80.1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:546 - Completed initialization in 24 ms
+2022-03-12 13:52:46,043 [registrationTask1] WARN  [d.c.b.a.client.registration.ApplicationRegistrator] ApplicationRegistrator.java:115 - Failed to register application as Application(name=distribute-service, managementUrl=http://localhost:9011/actuator, healthUrl=http://localhost:9011/actuator/health, serviceUrl=http://localhost:9011/) at spring-boot-admin ([http://localhost:8085/admin/instances]): I/O error on POST request for "http://localhost:8085/admin/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+2022-03-12 13:52:46,362 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@54d2f5d3}] INFO  [com.netflix.config.ChainedDynamicProperty] ChainedDynamicProperty.java:115 - Flipping property: localhost.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-03-12 13:52:46,405 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@54d2f5d3}] INFO  [com.netflix.util.concurrent.ShutdownEnabledTimer] ShutdownEnabledTimer.java:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-localhost
+2022-03-12 13:52:46,406 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@54d2f5d3}] INFO  [com.netflix.loadbalancer.BaseLoadBalancer] BaseLoadBalancer.java:197 - Client: localhost instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-03-12 13:52:46,411 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@54d2f5d3}] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:222 - Using serverListUpdater PollingServerListUpdater
+2022-03-12 13:52:46,415 [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@54d2f5d3}] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:150 - DynamicServerListLoadBalancer for client localhost initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=localhost,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:ConsulServerList{serviceId='localhost', tag=null}
+2022-03-12 13:54:14,471 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList_COUNT] BaseJdbcLogger.java:143 - ==>  Preparing: SELECT count(0) FROM order_business_center a WHERE 1 = 1 
+2022-03-12 13:54:14,487 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList_COUNT] BaseJdbcLogger.java:143 - ==> Parameters: 
+2022-03-12 13:54:14,515 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList_COUNT] BaseJdbcLogger.java:143 - <==      Total: 1
+2022-03-12 13:54:14,520 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList] BaseJdbcLogger.java:143 - ==>  Preparing: SELECT a.id, a.belong_companies_id, a.place_order_number, a.order_type, a.vessel_and_voyage, a.bl_nos, a.box_quantity, a.port_of_loading, a.port_of_discharge, a.place_of_delivery, a.dock, a.customer_num, a.appendix_name, a.appendix_url, a.order_status, a.single_user, a.single_phone, a.company_name, a.operator, a.reason, a.creator, a.create_date, a.modifier, a.modify_date, a.application_code FROM order_business_center a WHERE 1 = 1 order by create_date desc LIMIT ? 
+2022-03-12 13:54:14,521 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList] BaseJdbcLogger.java:143 - ==> Parameters: 10(Integer)
+2022-03-12 13:54:14,546 [http-nio-9011-exec-10] DEBUG [c.l.d.mapper.BusinessCenterMapper.findList] BaseJdbcLogger.java:143 - <==      Total: 10
+2022-03-12 13:54:17,455 [http-nio-9011-exec-2] INFO  [com.netflix.config.ChainedDynamicProperty] ChainedDynamicProperty.java:115 - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-03-12 13:54:17,457 [http-nio-9011-exec-2] INFO  [com.netflix.util.concurrent.ShutdownEnabledTimer] ShutdownEnabledTimer.java:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-user-service
+2022-03-12 13:54:17,457 [http-nio-9011-exec-2] INFO  [com.netflix.loadbalancer.BaseLoadBalancer] BaseLoadBalancer.java:197 - Client: user-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-03-12 13:54:17,459 [http-nio-9011-exec-2] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:222 - Using serverListUpdater PollingServerListUpdater
+2022-03-12 13:54:17,474 [http-nio-9011-exec-2] INFO  [com.netflix.config.ChainedDynamicProperty] ChainedDynamicProperty.java:115 - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-03-12 13:54:17,476 [http-nio-9011-exec-2] INFO  [c.n.loadbalancer.DynamicServerListLoadBalancer] DynamicServerListLoadBalancer.java:150 - DynamicServerListLoadBalancer for client user-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=user-service,current list of Servers=[192.168.72.1:8095],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.72.1:8095;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:ConsulServerList{serviceId='user-service', tag=null}
+2022-03-12 13:54:17,571 [http-nio-9011-exec-2] DEBUG [c.l.d.m.B.findDispatchList_COUNT] BaseJdbcLogger.java:143 - ==>  Preparing: SELECT count(0) FROM order_business_order a LEFT JOIN order_business_center b ON a.place_order_number = b.place_order_number WHERE a.place_order_number != '' AND a.dispatch_type = 1 AND b.order_status = ? AND a.order_type = ? 
+2022-03-12 13:54:17,572 [http-nio-9011-exec-2] DEBUG [c.l.d.m.B.findDispatchList_COUNT] BaseJdbcLogger.java:143 - ==> Parameters: 3(Integer), 1(Integer)
+2022-03-12 13:54:17,597 [http-nio-9011-exec-2] DEBUG [c.l.d.m.B.findDispatchList_COUNT] BaseJdbcLogger.java:143 - <==      Total: 1
+2022-03-12 13:54:17,599 [http-nio-9011-exec-2] DEBUG [c.l.d.mapper.BusinessCenterMapper.findDispatchList] BaseJdbcLogger.java:143 - ==>  Preparing: SELECT a.id, a.customer_num, a.company_name, a.single_user, a.single_phone, a.order_number, a.order_type, a.bl_nos, a.vessel_and_voyage, a.planned_docking, a.actual_berthing, a.shipping_day, a.shipping_company, a.opening_date, a.cut_off_date, a.due_date, a.dock, a.port_of_loading, a.port_of_discharge, a.place_of_delivery, a.put_the_box_company, a.put_the_box_time, a.box_quantity, a.exception_record, a.operator, a.salesman, a.order_time, a.business_state, a.place_order_number, a.creator, a.create_date, a.modifier, a.modify_date, b.id AS place_id, b.single_user AS single_name, b.appendix_name, b.appendix_url, b.order_status, b.remark, b.reason, b.create_date AS single_time FROM order_business_order a LEFT JOIN order_business_center b ON a.place_order_number = b.place_order_number WHERE a.place_order_number != '' AND a.dispatch_type = 1 AND b.order_status = ? AND a.order_type = ? order by create_date desc LIMIT ? 
+2022-03-12 13:54:17,600 [http-nio-9011-exec-2] DEBUG [c.l.d.mapper.BusinessCenterMapper.findDispatchList] BaseJdbcLogger.java:143 - ==> Parameters: 3(Integer), 1(Integer), 10(Integer)
+2022-03-12 13:54:17,642 [http-nio-9011-exec-2] DEBUG [c.l.d.mapper.BusinessCenterMapper.findDispatchList] BaseJdbcLogger.java:143 - <==      Total: 10
+2022-03-12 13:54:18,466 [PollingServerListUpdater-1] INFO  [com.netflix.config.ChainedDynamicProperty] ChainedDynamicProperty.java:115 - Flipping property: user-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647

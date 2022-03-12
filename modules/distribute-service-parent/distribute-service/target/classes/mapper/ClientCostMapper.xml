@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.distribute.mapper.ClientCostMapper">
+
+    <resultMap id="clientCostResultMap" type="com.laogeli.distribute.api.vo.ClientCostVo">
+        <id column="id" property="id"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="order_type" property="orderType"/>
+        <result column="cost_types" property="costTypes"/>
+        <result column="box_pile" property="boxPile"/>
+        <result column="packing_time" property="packingTime"/>
+        <result column="create_date" property="placeOrderTime"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="dock" property="dock"/>
+        <result column="suitcase_point" property="suitcasePoint"/>
+        <result column="return_point" property="returnPoint"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="ptys_state" property="ptysState"/>
+    </resultMap>
+
+    <!--    费用返回vo-->
+    <sql id="clientVoColumns">
+        e.id,
+        e.case_number,
+        e.bl_no_str,
+		e.box_pile,
+		e.mc_id,
+		e.place_order_number,
+		e.packing_time,
+		e.order_type,
+		e.order_time,
+		e.create_date,
+		e.single_user,
+		e.customer_num,
+		e.customer_name,
+		e.vessel_and_voyage,
+		e.dock,
+		e.suitcase_point,
+		e.return_point,
+		e.door,
+		e.address,
+		e.carrier_company,
+		e.gross_weight,
+		e.ptys_state
+    </sql>
+
+    <!-- 费用sql   -->
+    <sql id="clientVoTempsColumns">
+        d.id,
+		d.mc_id,
+		d.cost_types,
+		c.case_number,
+		c.bl_no_str,
+		c.packing_time,
+		c.box_pile,
+		c.return_point,
+		c.door,
+		c.address,
+		c.suitcase_point,
+		c.carrier_company,
+		c.gross_weight,
+        c.ptys_state,
+
+		b.customer_num,
+		b.customer_name,
+		b.order_number,
+		b.order_type,
+		b.order_time,
+		b.vessel_and_voyage,
+		b.dock,
+
+
+		a.place_order_number,
+		a.create_date,
+		a.single_user
+    </sql>
+
+    <sql id="whererClientTemp">
+        <if test="blNoStr !=null and blNoStr !=''">
+            AND e.bl_no_str = #{blNoStr}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND packing_time &gt;= #{beginTime} and packing_time &lt;= #{endTime}
+        </if>
+    </sql>
+
+    <!-- 查询费用-->
+    <select id="findList" resultMap="clientCostResultMap">
+        SELECT
+        <include refid="clientVoColumns"/>,
+        SUM(CASE cost_types WHEN '5' THEN searchPrice ELSE 0 END) AS pay
+        FROM
+        (
+        SELECT
+        <include refid="clientVoTempsColumns"/>,
+        SUM(total_price) AS searchPrice
+        FROM order_business_center a
+        RIGHT JOIN order_business_order b ON a.place_order_number = b.place_order_number
+        RIGHT JOIN order_making_chest c ON b.id = c.business_order_id
+        RIGHT JOIN order_cost d on c.id = d.mc_id
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        GROUP BY d.cost_types,d.mc_id
+        ) as e
+        where 1 = 1
+        <include refid="whererClientTemp"/>
+        GROUP BY e.mc_id
+        ORDER BY e.order_number DESC
+    </select>
+
+</mapper>

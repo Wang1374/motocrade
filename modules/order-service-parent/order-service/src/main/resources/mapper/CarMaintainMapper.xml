@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarMaintainMapper">
+    <resultMap id="carRepairResultMapper" type="com.laogeli.order.api.module.CarMaintain">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="main_date" property="mainDate"/>
+        <result column="kilometre" property="kilometre"/>
+        <result column="main_project" property="mainProject"/>
+        <result column="main_price" property="mainPrice"/>
+        <result column="invoice_num" property="invoiceNum"/>
+        <result column="remark" property="remark"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="pay_statement" property="payStatement"/>
+        <result column="ticket_url" property="ticketUrl"/>
+        <result column="ticket_name" property="ticketName"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!--Sql 语句-->
+    <sql id="carMaintainColumn">
+        c.id,
+        c.belong_companies_id,
+        c.vehicle,
+        c.main_date,
+        c.kilometre,
+        c.main_project,
+        c.main_price,
+        c.invoice_num,
+        c.remark,
+        c.pay_status,
+        c.pay_statement,
+        c.ticket_url,
+        c.ticket_name,
+        c.creator,
+        c.create_date,
+        c.modifier,
+        c.modify_date,
+        c.application_code
+    </sql>
+
+    <!-- where条件 -->
+    <sql id="whereColoumList">
+        <if test="searchParam !=null and searchParam !=''">
+            AND CONCAT(IFNULL(c.invoice_num, ''), IFNULL(c.main_project, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="vehicle !=null and vehicle!=''">
+            AND vehicle = #{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND main_date &gt;= #{beginTime} AND main_date &lt;= #{endTime}
+        </if>
+        <if test="mainProject !=null and mainProject!=''">
+            AND main_project LIKE  CONCAT('%',#{mainProject},'%')
+        </if>
+    </sql>
+
+    <!-- 分页查询维修保养记录 -->
+    <select id="findList" resultMap="carRepairResultMapper">
+        SELECT
+        <include refid="carMaintainColumn"/>
+        FROM order_car_maintain c
+        WHERE c.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY c.vehicle
+    </select>
+
+    <!-- 新增保险维修记录 -->
+    <insert id="addListObj" useGeneratedKeys="false">
+        INSERT INTO order_car_maintain(
+        id,
+        belong_companies_id,
+        vehicle,
+        main_date,
+        kilometre,
+        main_project,
+        main_price,
+        invoice_num,
+        remark,
+        pay_status,
+        pay_statement,
+        ticket_url,
+        ticket_name,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        )VALUES(
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{mainDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{kilometre},
+            #{mainProject},
+            #{mainPrice},
+            #{invoiceNum},
+            #{remark},
+            #{payStatus},
+            #{payStatement},
+            #{ticketUrl},
+            #{ticketName},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+            )
+    </insert>
+
+    <update id="update">
+        UPDATE
+        order_car_maintain
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        <if test="kilometre !=null">
+            kilometre = #{kilometre},
+        </if>
+        <if test="invoiceNum!=null">
+            invoice_num = #{invoiceNum},
+        </if>
+        <if test="mainProject !=null">
+            main_project = #{mainProject},
+        </if>
+        <if test="remark!=null ">
+            remark = #{remark},
+        </if>
+        <if test="mainPrice !=null">
+            main_price = #{mainPrice},
+        </if>
+        <if test="payStatus !=null">
+            pay_status = #{payStatus},
+        </if>
+        <if test="payStatement !=null">
+            pay_statement = #{payStatement},
+        </if>
+        <if test="ticketUrl!=null">
+            ticket_url = #{ticketUrl},
+        </if>
+        <if test="ticketName!=null" >
+            ticket_name = #{ticketName},
+        </if>
+        main_date = #{mainDate},
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM order_car_maintain
+        WHERE  id=#{id}
+    </delete>
+
+    <select id="findMaintainCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(c.main_price) AS totalPrice
+        FROM
+        order_car_maintain c
+        WHERE 1=1
+        AND c.belong_companies_id=#{belongCompaniesId}
+        AND c.main_date &gt;= #{beginTime} AND c.main_date &lt;= #{endTime}
+        AND c.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY c.vehicle
+    </select>
+
+
+    <!-- 查询每月车辆保养费用 -->
+    <select id="monthlyMaintainCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,
+        sum(CASE MONTH(main_date) WHEN '1' THEN main_price ELSE 0 END) AS Jan,
+        sum(CASE MONTH(main_date) WHEN '2' THEN main_price ELSE 0 END) AS Feb,
+        sum(CASE MONTH(main_date) WHEN '3' THEN main_price ELSE 0 END) AS Mar,
+        sum(CASE MONTH(main_date) WHEN '4' THEN main_price ELSE 0 END) AS Apr,
+        sum(CASE MONTH(main_date) WHEN '5' THEN main_price ELSE 0 END) AS May,
+        sum(CASE MONTH(main_date) WHEN '6' THEN main_price ELSE 0 END) AS June,
+        sum(CASE MONTH(main_date) WHEN '7' THEN main_price ELSE 0 END) AS July,
+        sum(CASE MONTH(main_date) WHEN '8' THEN main_price ELSE 0 END) AS Aug,
+        sum(CASE MONTH(main_date) WHEN '9' THEN main_price ELSE 0 END) AS Sept,
+        sum(CASE MONTH(main_date) WHEN '10' THEN main_price ELSE 0 END) AS Oct,
+        sum(CASE MONTH(main_date) WHEN '11' THEN main_price ELSE 0 END) AS Nov,
+        sum(CASE MONTH(main_date) WHEN '12' THEN main_price ELSE 0 END) AS Dece
+        FROM order_car_maintain
+        WHERE YEAR(main_date)=#{year}
+        AND belong_companies_id=#{belongCompaniesId}
+        AND vehicle IN
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY vehicle
+    </select>
+</mapper>

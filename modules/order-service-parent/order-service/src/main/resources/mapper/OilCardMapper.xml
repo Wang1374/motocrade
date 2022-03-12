@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.OilCardMapper">
+    <resultMap id="oilCardResultMap" type="com.laogeli.order.api.module.OilCard">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="driver_name" property="driverName"/>
+        <result column="driver_phone" property="driverPhone"/>
+        <result column="oil_address" property="oilAddress"/>
+        <result column="oil_type" property="oilType"/>
+        <result column="oil_capacity" property="oilCapacity"/>
+        <result column="oil_price" property="oilPrice"/>
+        <result column="oil_totalPrice" property="oilTotalPrice"/>
+        <result column="oil_date" property="oilDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="pay_statement" property="payStatement"/>
+        <result column="invoice_num" property="invoiceNum"/>
+        <result column="remark" property="remark"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="oilCardColoum">
+        v.id,
+        v.belong_companies_id,
+        v.vehicle,
+        v.driver_name,
+        v.driver_phone,
+        v.oil_address,
+        v.oil_type,
+        v.oil_capacity,
+        v.oil_price,
+        v.oil_totalPrice,
+        v.oil_date,
+        v.pay_status,
+        v.pay_statement,
+        v.invoice_num,
+        v.remark,
+        v.creator,
+        v.create_date,
+        v.modifier,
+        v.modify_date,
+        v.application_code
+    </sql>
+
+    <sql id="whereColoumList">
+        <if test="vehicle !=null and vehicle !=''">
+            AND vehicle = #{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND #{endTime} >= oil_date AND #{beginTime} &lt;= oil_date
+        </if>
+        <if test="invoiceNum !=null and invoiceNum!=''">
+            AND invoice_num  like CONCAT('%', #{invoiceNum},'%')
+        </if>
+    </sql>
+
+
+
+    <select id="findList" resultMap="oilCardResultMap">
+        SELECT
+        <include refid="oilCardColoum"/>
+        FROM order_oil_card v
+        WHERE v.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY v.oil_date DESC
+    </select>
+
+    <!--新增油卡记录-->
+    <insert id="insert" useGeneratedKeys="false">
+        INSERT INTO order_oil_card(
+            id,
+            belong_companies_id,
+            vehicle,
+            driver_name,
+            driver_phone,
+            oil_address,
+            oil_type,
+            oil_capacity,
+            oil_price,
+            oil_totalPrice,
+            oil_date,
+            pay_status,
+            pay_statement,
+            invoice_num,
+            remark,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES (
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{driverName},
+            #{driverPhone},
+            #{oilAddress},
+            #{oilType},
+            #{oilCapacity},
+            #{oilPrice},
+            #{oilTotalPrice},
+            #{oilDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{payStatus},
+            #{payStatement},
+            #{invoiceNum},
+            #{remark},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+            )
+    </insert>
+
+    <!--批量添加邮费记录-->
+    <insert id="addOil">
+        INSERT INTO order_oil_card(
+            id,
+            belong_companies_id,
+            vehicle,
+            oil_price,
+            oil_totalPrice,
+            invoice_num,
+            oil_date,
+            oil_capacity,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES
+            <foreach collection="list" item="item" index="index" separator=",">
+          (
+            #{item.id},
+            #{item.belongCompaniesId},
+            #{item.vehicle},
+            #{item.oilPrice},
+            #{item.oilTotalPrice},
+            #{item.invoiceNum},
+            #{item.oilDate},
+            #{item.oilCapacity},
+            #{item.creator},
+            #{item.createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.modifier},
+            #{item.modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.applicationCode}
+            )
+         </foreach>
+    </insert>
+
+    <!-- 根据id删除邮费记录 -->
+    <delete id="delete">
+        DELETE FROM order_oil_card
+        WHERE id = #{id}
+    </delete>
+
+    <!-- 根据id查询邮费记录是否存在 -->
+    <select id="get" resultMap="oilCardResultMap">
+        SELECT
+        <include refid="oilCardColoum"/>
+        FROM order_oil_card v
+        WHERE id =#{id}
+    </select>
+
+    <!-- 根据id更新邮费信息 -->
+    <update id="update">
+        UPDATE order_oil_card
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        <if test="driverName !=null">
+            driver_name = #{driverName},
+        </if>
+        <if test="driverPhone !=null">
+            driver_phone = #{driverPhone},
+        </if>
+        <if test="oilAddress !=null">
+            oil_address = #{oilAddress},
+        </if>
+        <if test="oilType !=null">
+            oil_type = #{oilType},
+        </if>
+        <if test="oilCapacity !=null">
+            oil_capacity = #{oilCapacity},
+        </if>
+        <if test="oilPrice !=null">
+            oil_price = #{oilPrice},
+        </if>
+        <if test="oilTotalPrice != null">
+            oil_totalPrice = #{oilTotalPrice},
+        </if>
+        oil_date = #{oilDate},
+        <if test="payStatus != null">
+            pay_status = #{payStatus},
+        </if>
+        <if test="payStatement != null">
+            pay_statement = #{payStatement},
+        </if>
+        <if test="invoiceNum != null">
+            invoice_num = #{invoiceNum},
+        </if>
+        <if test="remark != null">
+            remark = #{remark},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <!-- 查询车辆邮费记录 -->
+    <select id="findOilCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(v.oil_totalPrice) AS totalPrice
+        FROM
+        order_oil_card v
+        WHERE 1=1
+        AND v.belong_companies_id=#{belongCompaniesId}
+        AND v.oil_date &gt;= #{beginTime} AND v.oil_date &lt;= #{endTime}
+        AND v.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY v.vehicle
+    </select>
+
+    <!-- 查询每月车辆邮费记录 -->
+    <select id="monthlyOilCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,
+        sum(CASE MONTH(oil_date) WHEN '1' THEN oil_totalPrice ELSE 0 END) AS Jan,
+        sum(CASE MONTH(oil_date) WHEN '2' THEN oil_totalPrice ELSE 0 END) AS Feb,
+        sum(CASE MONTH(oil_date) WHEN '3' THEN oil_totalPrice ELSE 0 END) AS Mar,
+        sum(CASE MONTH(oil_date) WHEN '4' THEN oil_totalPrice ELSE 0 END) AS Apr,
+        sum(CASE MONTH(oil_date) WHEN '5' THEN oil_totalPrice ELSE 0 END) AS May,
+        sum(CASE MONTH(oil_date) WHEN '6' THEN oil_totalPrice ELSE 0 END) AS June,
+        sum(CASE MONTH(oil_date) WHEN '7' THEN oil_totalPrice ELSE 0 END) AS July,
+        sum(CASE MONTH(oil_date) WHEN '8' THEN oil_totalPrice ELSE 0 END) AS Aug,
+        sum(CASE MONTH(oil_date) WHEN '9' THEN oil_totalPrice ELSE 0 END) AS Sept,
+        sum(CASE MONTH(oil_date) WHEN '10' THEN oil_totalPrice ELSE 0 END) AS Oct,
+        sum(CASE MONTH(oil_date) WHEN '11' THEN oil_totalPrice ELSE 0 END) AS Nov,
+        sum(CASE MONTH(oil_date) WHEN '12' THEN oil_totalPrice ELSE 0 END) AS Dece
+        FROM order_oil_card
+        WHERE YEAR(oil_date)=#{year}
+        AND belong_companies_id=#{belongCompaniesId}
+        AND vehicle IN
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY vehicle
+    </select>
+</mapper>

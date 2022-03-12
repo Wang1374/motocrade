@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.distribute.mapper.MineOrderMapper">
+
+    <resultMap id="MineOrderMap" type="com.laogeli.distribute.api.vo.MineOrderVo">
+        <id column="id" property="id"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="create_date" property="placeOrderTime"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="order_type" property="orderType"/>
+        <result column="appendix_name" property="appendixName"/>
+        <result column="appendix_url" property="appendixUrl"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="company_name" property="companyName"/>
+        <result column="single_phone" property="singlePhone"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="box_quantity" property="boxQuantity"/>
+        <result column="reason" property="reason"/>
+        <result column="actual_berthing" property="actualBerthing"/>
+        <result column="planned_docking" property="plannedDocking"/>
+        <result column="opening_date" property="openingDate"/>
+        <result column="cut_off_date" property="cutOffDate"/>
+        <result column="shipping_day" property="shippingDay"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="shipping_company" property="shippingCompany"/>
+        <result column="put_the_box_time" property="putTheBoxTime"/>
+        <result column="put_the_box_company" property="putTheBoxCompany"/>
+        <result column="salesman" property="salesman"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="operator" property="operator"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <sql id="mineOrderColumns">
+     a.id,
+     a.place_order_number,
+     a.create_date,
+     a.order_status,
+     a.order_type,
+
+     a.appendix_name,
+     a.appendix_url,
+
+     a.reason,
+     a.remark,
+
+
+     b.single_user,
+     b.company_name,
+     b.single_phone,
+
+     a.bl_nos as blNos0,
+     b.bl_nos as blNos1,
+
+     a.customer_num,
+     b.customer_name,
+     a.vessel_and_voyage as vesselAndVoyage0,
+     b.vessel_and_voyage as vesselAndVoyage1,
+
+     a.box_quantity as boxQuantity0,
+     b.box_Quantity as boxQuantity1,
+
+
+     a.port_of_loading as portOfLoading0,
+     b.port_of_loading as portOfLoading1,
+
+     a.port_of_discharge as portOfDischarge0,
+     b.port_of_Discharge as portOfDischarge1,
+
+     a.place_of_delivery as placeOfDelivery0,
+     b.place_of_delivery as placeOfDelivery1,
+
+     a.dock as dock0,
+     b.dock as dock1,
+
+     b.actual_berthing,
+     b.planned_docking,
+     b.opening_date,
+     b.cut_off_date,
+     b.shipping_day,
+     b.due_date,
+     b.shipping_company,
+     b.put_the_box_time,
+     b.put_the_box_company,
+     b.salesman,
+     b.order_time,
+     b.operator,
+     b.contacts,
+     b.contact_number,
+     b.id as orderId
+    </sql>
+
+    <sql id="WhereColumns">
+        <if test="placeOrderNumber!=null and placeOrderNumber!=''">
+            AND a.place_order_number = #{placeOrderNumber}
+        </if>
+        <if test="orderType !=null and orderType !=0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="orderStatus !=null and orderStatus!=-1">
+            AND a.order_status = #{orderStatus}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND a.create_date &gt;= #{beginTime} and a.create_date &lt;= #{endTime}
+        </if>
+        <if test="blNos0!=null and blNos0!=''">
+            AND FIND_IN_SET(#{blNos0}, a.bl_nos) or FIND_IN_SET(#{blNos0}, b.bl_nos)
+        </if>
+
+        <if test="customerNum!=null and customerNum!=''">
+            AND FIND_IN_SET(#{customerNum}, a.customer_num) or FIND_IN_SET(#{customerNum}, b.customer_num)
+        </if>
+
+
+    </sql>
+
+    <!-- 分页查询订单数据   -->
+    <select id="findList" resultMap="MineOrderMap">
+        SELECT
+        <include refid="mineOrderColumns"/>
+        FROM order_business_center a
+        LEFT JOIN order_business_order b on a.place_order_number = b.place_order_number
+        WHERE a.belong_companies_id =#{belongCompaniesId}
+        <include refid="WhereColumns"/>
+        ${dataScope}
+    </select>
+
+
+</mapper>

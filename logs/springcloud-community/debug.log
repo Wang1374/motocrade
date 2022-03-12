@@ -1,0 +1,198 @@
+2022-03-12 13:12:52,611 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:12:54,043 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:12:54,043 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/user-service.yml'}]}
+2022-03-12 13:12:55,677 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:12:57,309 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=order-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:12:57,309 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/order-service.yml'}]}
+2022-03-12 13:12:59,245 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:01,757 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:02,506 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:03,956 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=gateway-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:13:03,956 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/gateway-service.yml'}]}
+2022-03-12 13:13:04,665 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:05,638 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:06,805 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:07,077 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=auth-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:13:07,078 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/auth-service.yml'}]}
+2022-03-12 13:13:09,236 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:13:10,225 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:858 - Application run failed
+java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing: {"timestamp":"2022-03-12T05:13:10.208+0000","status":500,"error":"Internal Server Error","message":"Failed to load property source from location 'classpath:/config/distribute-service.yml'","path":"/distribute-service/default"}
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:138)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$FastClassBySpringCGLIB$$fa44b2a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor$1.doWithRetry(RetryOperationsInterceptor.java:91)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:287)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:164)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor.invoke(RetryOperationsInterceptor.java:118)
+	at org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:153)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$EnhancerBySpringCGLIB$$814060e5.locate(<generated>)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.laogeli.distribute.DistributionServiceApplication.main(DistributionServiceApplication.java:19)
+Caused by: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:79)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:124)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:778)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:736)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:670)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:579)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.getRemoteEnvironment(ConfigServicePropertySourceLocator.java:221)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:98)
+	... 19 common frames omitted
+2022-03-12 13:17:21,361 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:22,691 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:17:22,692 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/user-service.yml'}]}
+2022-03-12 13:17:23,935 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:25,380 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=order-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:17:25,380 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/order-service.yml'}]}
+2022-03-12 13:17:27,542 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:29,998 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:30,816 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:31,816 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=gateway-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:17:31,816 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/gateway-service.yml'}]}
+2022-03-12 13:17:32,376 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:33,235 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:34,473 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:34,695 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=auth-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:17:34,695 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/auth-service.yml'}]}
+2022-03-12 13:17:36,946 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:17:37,916 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:858 - Application run failed
+java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing: {"timestamp":"2022-03-12T05:17:37.901+0000","status":500,"error":"Internal Server Error","message":"Failed to load property source from location 'classpath:/config/distribute-service.yml'","path":"/distribute-service/default"}
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:138)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$FastClassBySpringCGLIB$$fa44b2a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor$1.doWithRetry(RetryOperationsInterceptor.java:91)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:287)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:164)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor.invoke(RetryOperationsInterceptor.java:118)
+	at org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:153)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$EnhancerBySpringCGLIB$$c2d8851c.locate(<generated>)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.laogeli.distribute.DistributionServiceApplication.main(DistributionServiceApplication.java:19)
+Caused by: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:79)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:124)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:778)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:736)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:670)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:579)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.getRemoteEnvironment(ConfigServicePropertySourceLocator.java:221)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:98)
+	... 19 common frames omitted
+2022-03-12 13:31:10,331 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:31:12,061 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:31:13,859 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:31:16,708 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:31:18,669 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://192.168.72.1:8769/
+2022-03-12 13:31:19,316 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:858 - Application run failed
+java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing: {"timestamp":"2022-03-12T05:31:19.305+0000","status":500,"error":"Internal Server Error","message":"Failed to load property source from location 'classpath:/config/distribute-service.yml'","path":"/distribute-service/default"}
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:138)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$FastClassBySpringCGLIB$$fa44b2a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor$1.doWithRetry(RetryOperationsInterceptor.java:91)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:287)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:164)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor.invoke(RetryOperationsInterceptor.java:118)
+	at org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:153)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$EnhancerBySpringCGLIB$$befaea62.locate(<generated>)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.laogeli.distribute.DistributionServiceApplication.main(DistributionServiceApplication.java:19)
+Caused by: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:79)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:124)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:778)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:736)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:670)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:579)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.getRemoteEnvironment(ConfigServicePropertySourceLocator.java:221)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:98)
+	... 19 common frames omitted
+2022-03-12 13:41:59,592 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:42:01,356 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:42:03,128 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:42:05,016 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:42:07,005 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:42:07,647 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:858 - Application run failed
+java.lang.IllegalStateException: Could not locate PropertySource and the fail fast property is set, failing: {"timestamp":"2022-03-12T05:42:07.635+0000","status":500,"error":"Internal Server Error","message":"Failed to load property source from location 'classpath:/config/distribute-service.yml'","path":"/distribute-service/default"}
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:138)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$FastClassBySpringCGLIB$$fa44b2a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor$1.doWithRetry(RetryOperationsInterceptor.java:91)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:287)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:164)
+	at org.springframework.retry.interceptor.RetryOperationsInterceptor.invoke(RetryOperationsInterceptor.java:118)
+	at org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:153)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator$$EnhancerBySpringCGLIB$$da63315b.locate(<generated>)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:649)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.laogeli.distribute.DistributionServiceApplication.main(DistributionServiceApplication.java:19)
+Caused by: org.springframework.web.client.HttpServerErrorException$InternalServerError: 500 null
+	at org.springframework.web.client.HttpServerErrorException.create(HttpServerErrorException.java:79)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:124)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:102)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:778)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:736)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:670)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:579)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.getRemoteEnvironment(ConfigServicePropertySourceLocator.java:221)
+	at org.springframework.cloud.config.client.ConfigServicePropertySourceLocator.locate(ConfigServicePropertySourceLocator.java:98)
+	... 19 common frames omitted
+2022-03-12 13:47:59,899 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:48:00,709 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:48:00,709 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/user-service.yml'}]}
+2022-03-12 13:48:48,210 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:48:48,971 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=order-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:48:48,971 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/order-service.yml'}]}
+2022-03-12 13:50:30,026 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:50:30,757 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=gateway-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:50:30,758 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/gateway-service.yml'}]}
+2022-03-12 13:50:54,121 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:50:54,859 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=auth-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:50:54,859 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/auth-service.yml'}]}
+2022-03-12 13:51:40,205 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:51:40,965 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:51:40,965 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/distribute-service.yml'}]}
+2022-03-12 13:52:28,699 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:207 - Fetching config from server at : http://localhost:8769/
+2022-03-12 13:52:29,479 [main] INFO  [o.s.c.c.client.ConfigServicePropertySourceLocator] ConfigServicePropertySourceLocator.java:151 - Located environment: name=distribute-service, profiles=[default], label=null, version=null, state=null
+2022-03-12 13:52:29,479 [main] INFO  [o.s.c.b.c.PropertySourceBootstrapConfiguration] PropertySourceBootstrapConfiguration.java:101 - Located property source: CompositePropertySource {name='configService', propertySources=[MapPropertySource {name='classpath:/config/distribute-service.yml'}]}

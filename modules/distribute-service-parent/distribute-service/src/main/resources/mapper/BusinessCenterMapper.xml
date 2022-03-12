@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.distribute.mapper.BusinessCenterMapper">
+    <resultMap id="businessCenterResultMap" type="com.laogeli.distribute.api.module.BusinessCenter">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="order_type" property="orderType"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="bl_nos" property="blNos"/>
+        <result column="box_quantity" property="boxQuantity"/>
+        <result column="port_of_loading" property="portOfLoading"/>
+        <result column="port_of_discharge" property="portOfDischarge"/>
+        <result column="place_of_delivery" property="placeOfDelivery"/>
+        <result column="dock" property="dock"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="appendix_name" property="appendixName"/>
+        <result column="appendix_url" property="appendixUrl"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="single_phone" property="singlePhone"/>
+        <result column="company_name" property="companyName"/>
+        <result column="operator" property="operator"/>
+        <result column="reason" property="reason"/>
+        <result column="cancel_time" property="cancelTime"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="businessCenterColumns">
+      a.id,
+      a.belong_companies_id,
+      a.place_order_number,
+      a.order_type,
+      a.vessel_and_voyage,
+      a.bl_nos,
+      a.box_quantity,
+      a.port_of_loading,
+      a.port_of_discharge,
+      a.place_of_delivery,
+      a.dock,
+      a.customer_num,
+      a.appendix_name,
+      a.appendix_url,
+      a.order_status,
+      a.single_user,
+      a.single_phone,
+      a.company_name,
+      a.operator,
+      a.reason,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="belongCompaniesId != null and belongCompaniesId != ''">
+            AND a.belong_companies_id = #{belongCompaniesId}
+        </if>
+        <if test="orderStatus !=null and orderStatus!=-1">
+            AND a.order_status = #{orderStatus}
+        </if>
+        <if test="orderType != null and orderType != 0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="blNos !=null and blNos!=''">
+            AND a.bl_nos LIKE CONCAT('%',#{blNos},'%')
+        </if>
+    </sql>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="businessCenterResultMap">
+        SELECT
+        <include refid="businessCenterColumns"/>
+        FROM order_business_center a
+        WHERE 1=1
+        <include refid="whereColumnList"/>
+    </select>
+
+    <!-- 新增下单   -->
+    <insert id="insert">
+        INSERT INTO order_business_center(
+            id,
+            belong_companies_id,
+            place_order_number,
+            order_type,
+            vessel_and_voyage,
+            bl_nos,
+            box_quantity,
+            port_of_loading,
+            port_of_discharge,
+            place_of_delivery,
+            dock,
+            customer_num,
+            appendix_name,
+            appendix_url,
+            order_status,
+            single_user,
+            single_phone,
+            company_name,
+            remark,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES (
+            #{id},
+            #{belongCompaniesId},
+            #{placeOrderNumber},
+            #{orderType},
+            #{vesselAndVoyage},
+            #{blNos},
+            #{boxQuantity},
+            #{portOfLoading},
+            #{portOfDischarge},
+            #{placeOfDelivery},
+            #{dock},
+            #{customerNum},
+            #{appendixName},
+            #{appendixUrl},
+            #{orderStatus},
+            #{singleUser},
+            #{singlePhone},
+            #{companyName},
+            #{remark},
+            #{creator},
+            #{createDate},
+            #{modifier},
+            #{modifyDate},
+            #{applicationCode}
+        )
+    </insert>
+
+    <!-- 需要锁表 -->
+    <!--   查询最大那一条订单编号 -->
+    <select id="getMostBig" resultType="String">
+        SELECT
+            a.place_order_number
+        FROM
+            order_business_center a
+        ORDER BY
+            a.id DESC
+        LIMIT
+            0,1
+    </select>
+
+    <!-- 根据id查询结果   -->
+    <select id="getOrderStatus" resultType="java.lang.Integer">
+        SELECT
+          order_status
+        FROM
+          order_business_center
+        WHERE
+          id=#{id}
+    </select>
+
+    <!--根据下单id修改下单数据-->
+    <update id="editPlaceOrderById">
+        UPDATE order_business_center SET
+        <if test="vesselAndVoyage!=null">
+            vessel_and_voyage=#{vesselAndVoyage},
+        </if>
+        <if test="blNos!=null">
+            bl_nos =#{blNos},
+        </if>
+        <if test="boxQuantity!=null">
+            box_quantity=#{boxQuantity},
+        </if>
+        <if test="portOfLoading!=null">
+            port_of_loading =#{portOfLoading},
+        </if>
+        <if test="portOfDischarge!=null">
+            port_of_discharge=#{portOfDischarge},
+        </if>
+        <if test="placeOfDelivery!=null">
+            place_of_delivery =#{placeOfDelivery},
+        </if>
+        <if test="dock!=null ">
+            dock =#{dock},
+        </if>
+        <if test="customerNum!=null">
+            customer_num=#{customerNum},
+        </if>
+        <if test="appendixName!=null">
+            appendix_name=#{appendixName},
+        </if>
+        <if test="appendixUrl!=null">
+            appendix_url =#{appendixUrl},
+        </if>
+        <if test="remark!=null">
+            remark = #{remark},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!--  根据下单id 更改 下单表 状态  -->
+    <update id="updateById">
+        UPDATE
+          order_business_center
+        <trim prefix="set" suffixOverrides=",">
+            <if test="orderStatus != null">
+                order_status = #{orderStatus},
+            </if>
+            <if test="reason != null">
+                reason = #{reason},
+            </if>
+            <if test="cancelTime != null">
+                cancel_time = #{cancelTime},
+            </if>
+            <if test="operator != null">
+                operator = #{operator},
+            </if>
+            <if test="operatorTime != null">
+                operator_time = #{operatorTime},
+            </if>
+            <if test="modifier != null">
+                modifier = #{modifier},
+            </if>
+            <if test="modifyDate != null">
+                modify_date = #{modifyDate},
+            </if>
+        </trim>
+        WHERE
+          id=#{id}
+    </update>
+
+    <!--  根据订单id 更改 订单表 状态  -->
+    <update id="updateByOrderId">
+        UPDATE
+            order_business_order
+        SET
+            business_state = #{businessState}
+        WHERE
+        id=#{id}
+    </update>
+
+    <!--  根据下单编号 修改派单状态  -->
+    <update id="updateByNumber">
+        UPDATE
+        order_business_center
+        SET
+        order_status = #{orderStatus}
+        WHERE
+        place_order_number=#{placeOrderNumber}
+    </update>
+
+    <resultMap id="businessCenterVoResultMap" type="com.laogeli.distribute.api.vo.BusinessCenterVo">
+        <id column="id" property="id"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="company_name" property="companyName"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="single_phone" property="singlePhone"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="order_type" property="orderType"/>
+        <result column="bl_nos" property="blNos"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="planned_docking" property="plannedDocking"/>
+        <result column="actual_berthing" property="actualBerthing"/>
+        <result column="shipping_day" property="shippingDay"/>
+        <result column="shipping_company" property="shippingCompany"/>
+        <result column="opening_date" property="openingDate"/>
+        <result column="cut_off_date" property="cutOffDate"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="dock" property="dock"/>
+        <result column="port_of_loading" property="portOfLoading"/>
+        <result column="port_of_discharge" property="portOfDischarge"/>
+        <result column="place_of_delivery" property="placeOfDelivery"/>
+        <result column="put_the_box_company" property="putTheBoxCompany"/>
+        <result column="put_the_box_time" property="putTheBoxTime"/>
+        <result column="box_quantity" property="boxQuantity"/>
+        <result column="exception_record" property="exceptionRecord"/>
+        <result column="operator" property="operator"/>
+        <result column="salesman" property="salesman"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="business_state" property="businessState"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+
+        <result column="place_id" property="placeId"/>
+        <result column="single_name" property="singleName"/>
+        <result column="appendix_name" property="appendixName"/>
+        <result column="appendix_url" property="appendixUrl"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="remark" property="remark"/>
+        <result column="reason" property="reason"/>
+        <result column="single_time" property="singleTime"/>
+    </resultMap>
+
+    <sql id="businessCenterVoColumns">
+      a.id,
+      a.customer_num,
+      a.company_name,
+      a.single_user,
+      a.single_phone,
+      a.order_number,
+      a.order_type,
+      a.bl_nos,
+      a.vessel_and_voyage,
+      a.planned_docking,
+      a.actual_berthing,
+      a.shipping_day,
+      a.shipping_company,
+      a.opening_date,
+      a.cut_off_date,
+      a.due_date,
+      a.dock,
+      a.port_of_loading,
+      a.port_of_discharge,
+      a.place_of_delivery,
+      a.put_the_box_company,
+      a.put_the_box_time,
+      a.box_quantity,
+      a.exception_record,
+      a.operator,
+      a.salesman,
+      a.order_time,
+      a.business_state,
+      a.place_order_number,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+
+      b.id as place_id,
+      b.single_user as single_name,
+      b.appendix_name,
+      b.appendix_url,
+      b.order_status,
+      b.remark,
+      b.reason,
+      b.create_date as single_time
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereDispatchColumnList">
+        <if test="creator != null and creator != ''">
+            AND a.creator = #{creator}
+        </if>
+        <if test="orderStatus !=null and orderStatus!=-1">
+            AND b.order_status = #{orderStatus}
+        </if>
+        <if test="orderType !=null and orderType !=0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="orderNumber !=null and orderNumber !=''">
+            AND a.order_number = #{orderNumber}
+        </if>
+        <if test="blNos !=null and blNos !=''">
+            AND a.bl_nos LIKE CONCAT('%',#{blNos},'%')
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND a.due_date &gt;= #{beginTime} AND a.due_date &lt;= #{endTime}
+        </if>
+    </sql>
+
+    <!-- 派单列表分页查询 -->
+    <select id="findDispatchList" resultMap="businessCenterVoResultMap">
+        SELECT
+        <include refid="businessCenterVoColumns"/>
+        FROM order_business_order a
+        LEFT JOIN order_business_center b ON a.place_order_number = b.place_order_number
+        WHERE
+        a.place_order_number != '' AND a.dispatch_type = 1
+        <include refid="whereDispatchColumnList"/>
+        ${dataScope}
+    </select>
+
+    <!-- 根据下单id取消做箱   -->
+    <update id="cancelMaking">
+        UPDATE order_making_chest
+        SET  making_status = 0,making_reason='客服取消原因:取消做箱'
+        WHERE business_order_id = #{orderId}
+    </update>
+
+</mapper>

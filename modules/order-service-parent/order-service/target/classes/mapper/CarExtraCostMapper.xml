@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarExtraCostMapper">
+    <resultMap id="carExtraCostResultMapper" type="com.laogeli.order.api.module.ExtraCost">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="cost_date" property="costDate"/>
+        <result column="cost_project" property="costProject"/>
+        <result column="extra_cost" property="extraCost"/>
+        <result column="invoice_num" property="invoiceNum"/>
+        <result column="remark" property="remark"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="pay_statement" property="payStatement"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!--Sql 语句-->
+    <sql id="carExtraCostColumn">
+        c.id,
+        c.belong_companies_id,
+        c.vehicle,
+        c.cost_date,
+        c.cost_project,
+        c.extra_cost,
+        c.invoice_num,
+        c.remark,
+        c.pay_status,
+        c.pay_statement,
+        c.creator,
+        c.create_date,
+        c.modifier,
+        c.modify_date,
+        c.application_code
+    </sql>
+
+    <!-- where条件 -->
+    <sql id="whereColoumList">
+        <if test="vehicle !=null and vehicle !=''">
+            AND vehicle =#{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND #{endTime} >= cost_date AND #{beginTime} &lt;= cost_date
+        </if>
+        <if test="invoiceNum !=null and invoiceNum !=''">
+            AND invoice_num like CONCAT('%', #{invoiceNum},'%')
+        </if>
+    </sql>
+
+    <!-- 分页查询额外记录 -->
+    <select id="findList" resultMap="carExtraCostResultMapper">
+        SELECT
+        <include refid="carExtraCostColumn"/>
+        FROM order_car_extraCost c
+        WHERE c.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY c.id DESC
+    </select>
+
+    <!-- 新增保险维修记录 -->
+    <insert id="addListObj" useGeneratedKeys="false">
+        INSERT INTO order_car_extraCost(
+        id,
+        belong_companies_id,
+        vehicle,
+        cost_date,
+        cost_project,
+        extra_cost,
+        invoice_num,
+        remark,
+        pay_status,
+        pay_statement,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        )VALUES(
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{costDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{costProject},
+            #{extraCost},
+            #{invoiceNum},
+            #{remark},
+            #{payStatus},
+            #{payStatement},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+            )
+    </insert>
+
+    <!-- 更新数据 -->
+    <update id="update">
+        UPDATE
+        order_car_extraCost
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        cost_date = #{costDate},
+        <if test="costProject !=null">
+            cost_project = #{costProject},
+        </if>
+        <if test="extraCost != null">
+            extra_cost = #{extraCost},
+        </if>
+        <if test="invoiceNum!=null">
+            invoice_num = #{invoiceNum},
+        </if>
+        <if test="remark!=null ">
+            remark = #{remark},
+        </if>
+        <if test="payStatus !=null">
+            pay_status = #{payStatus},
+        </if>
+        <if test="payStatement !=null">
+            pay_statement = #{payStatement},
+        </if>
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <!--    根据id删除数据-->
+    <delete id="delete">
+        DELETE
+        FROM order_car_extraCost
+        WHERE  id=#{id}
+    </delete>
+
+    <select id="findCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(c.extra_cost) AS totalPrice
+        FROM
+        order_car_extraCost c
+        WHERE 1=1
+        AND c.belong_companies_id=#{belongCompaniesId}
+        AND c.cost_date &gt;= #{beginTime} AND c.cost_date &lt;= #{endTime}
+        AND c.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY c.vehicle
+    </select>
+
+    <!-- 查询每月车辆其它费用 -->
+    <select id="monthlyExtraCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,
+        sum(CASE MONTH(cost_date) WHEN '1' THEN extra_cost ELSE 0 END) AS Jan,
+        sum(CASE MONTH(cost_date) WHEN '2' THEN extra_cost ELSE 0 END) AS Feb,
+        sum(CASE MONTH(cost_date) WHEN '3' THEN extra_cost ELSE 0 END) AS Mar,
+        sum(CASE MONTH(cost_date) WHEN '4' THEN extra_cost ELSE 0 END) AS Apr,
+        sum(CASE MONTH(cost_date) WHEN '5' THEN extra_cost ELSE 0 END) AS May,
+        sum(CASE MONTH(cost_date) WHEN '6' THEN extra_cost ELSE 0 END) AS June,
+        sum(CASE MONTH(cost_date) WHEN '7' THEN extra_cost ELSE 0 END) AS July,
+        sum(CASE MONTH(cost_date) WHEN '8' THEN extra_cost ELSE 0 END) AS Aug,
+        sum(CASE MONTH(cost_date) WHEN '9' THEN extra_cost ELSE 0 END) AS Sept,
+        sum(CASE MONTH(cost_date) WHEN '10' THEN extra_cost ELSE 0 END) AS Oct,
+        sum(CASE MONTH(cost_date) WHEN '11' THEN extra_cost ELSE 0 END) AS Nov,
+        sum(CASE MONTH(cost_date) WHEN '12' THEN extra_cost ELSE 0 END) AS Dece
+        FROM order_car_extraCost
+        WHERE YEAR(cost_date)=#{year}
+        AND belong_companies_id=#{belongCompaniesId}
+        AND vehicle IN
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY vehicle
+    </select>
+
+</mapper>

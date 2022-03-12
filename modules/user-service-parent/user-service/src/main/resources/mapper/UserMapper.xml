@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.UserMapper">
+    <resultMap id="userResultMap" type="com.laogeli.user.api.module.User">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="sex" property="sex"/>
+        <result column="born" property="born" jdbcType="DATE" javaType="java.util.Date"/>
+        <result column="user_desc" property="userDesc"/>
+        <result column="status" property="status"/>
+        <result column="avatar_id" property="avatarId"/>
+        <result column="avatar_wx" property="avatarWx"/>
+        <result column="login_time" property="loginTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="corporate_identify" property="corporateIdentify"/>
+        <result column="employee_id" property="employeeId"/>
+        <result column="vehicles" property="vehicles"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="userDtoResultMap" type="com.laogeli.user.api.dto.UserDto">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <sql id="userColumns">
+    a.id,
+    a.name,
+    a.phone,
+    a.email,
+    a.sex,
+    a.born,
+    a.user_desc,
+    a.status,
+    a.avatar_id,
+    a.avatar_wx,
+    a.login_time,
+    a.corporate_identify,
+    a.employee_id,
+    a.vehicles,
+    a.creator,
+    a.create_date,
+    a.modifier,
+    a.modify_date,
+    a.del_flag,
+    a.application_code
+  </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="name != null and name != ''">
+            and a.name like CONCAT('%', #{name},'%')
+        </if>
+        <if test="phone != null and phone != ''">
+            and a.phone like #{phone}
+        </if>
+        <if test="status != null and status != ''">
+            and a.status = #{status}
+        </if>
+        <if test="beginTime != null and beginTime != ''">
+            and DATE_FORMAT(a.create_date, '%Y-%m-%d %h:%i') &gt;= #{beginTime}
+        </if>
+        <if test="endTime != null and endTime != ''">
+            and DATE_FORMAT(a.create_date, '%Y-%m-%d %h:%i') &lt;= #{endTime}
+        </if>
+        <if test="employeeId != null and employeeId != ''">
+            and a.employee_id = #{employeeId}
+        </if>
+    </sql>
+
+    <!-- 根据id获取用户信息 -->
+    <select id="get" resultMap="userResultMap">
+        SELECT
+        <include refid="userColumns"/>
+        FROM sys_user a
+        WHERE a.id = #{id}
+    </select>
+
+    <!-- 获取用户数 -->
+    <select id="userCount" resultType="Integer">
+        SELECT COUNT(1) FROM sys_user a
+        WHERE a.del_flag = 0
+    </select>
+
+    <!-- 获取用户列表 -->
+    <select id="findList" resultMap="userResultMap">
+        SELECT
+        <include refid="userColumns"/>
+        FROM sys_user a
+        WHERE a.del_flag = 0
+        <include refid="whereColumnList"/>
+        <!-- 数据范围过滤 -->
+        ${dataScope}
+    </select>
+
+    <!-- 通过id获取用户列表 -->
+    <select id="findListById" resultMap="userResultMap">
+        SELECT
+        <include refid="userColumns"/>
+        FROM sys_user a
+        WHERE a.id IN
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!-- 新增用户 -->
+    <insert id="insert">
+    insert into sys_user (
+    id,
+    name,
+    phone,
+    email,
+    sex,
+    born,
+    user_desc,
+    status,
+    avatar_id,
+    avatar_wx,
+    login_time,
+    corporate_identify,
+    employee_id,
+    vehicles,
+    creator,
+    create_date,
+    modifier,
+    modify_date,
+    del_flag,
+    application_code
+    ) values (
+    #{id},
+    #{name},
+    #{phone},
+    #{email},
+    #{sex},
+    #{born, jdbcType=DATE, javaType=java.util.Date},
+    #{userDesc},
+    #{status},
+    #{avatarId},
+    #{avatarWx},
+    #{loginTime, jdbcType=TIMESTAMP, javaType=java.util.Date},
+    #{corporateIdentify},
+    #{employeeId},
+    #{vehicles},
+    #{creator},
+    #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+    #{modifier},
+    #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+    #{delFlag},
+    #{applicationCode}
+    );
+  </insert>
+
+    <!--添加微信用户信息-->
+    <insert id="insertWechat">
+        insert into crcx_member_wechat(
+            id,
+            member_id,
+            app_id,
+            open_id,
+            union_id,
+            nick_name,
+            avatar_url,
+            gender,
+            country,
+            province,
+            city,
+            create_time,
+            update_time,
+            version,
+            is_delete
+        )values(
+            #{id},
+            #{memberId},
+            #{appId},
+            #{openId},
+            #{unionId},
+            #{nickName},
+            #{avatarUrl},
+            #{gender},
+            #{country},
+            #{province},
+            #{city},
+            #{createTime, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{updateTime, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{version},
+            #{isDelete}
+        )
+
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="update">
+        update sys_user set
+        <if test="name != null">
+            name = #{name} ,
+        </if>
+        <if test="phone != null">
+            phone = #{phone} ,
+        </if>
+        <if test="email != null">
+            email = #{email} ,
+        </if>
+        <if test="sex != null">
+            sex = #{sex} ,
+        </if>
+        <if test="born != null">
+            born = #{born} ,
+        </if>
+        <if test="userDesc != null">
+            user_desc = #{userDesc} ,
+        </if>
+        <if test="status != null">
+            status = #{status} ,
+        </if>
+        <if test="avatarId != null">
+            avatar_id = #{avatarId} ,
+        </if>
+        <if test="avatarWx !=null">
+            avatar_wx = #{avatarWx},
+        </if>
+        <if test="vehicles != null">
+            vehicles = #{vehicles} ,
+        </if>
+        <if test="loginTime != null">
+            login_time = #{loginTime, jdbcType=TIMESTAMP, javaType=java.util.Date} ,
+        </if>
+        <if test="creator != null">
+            creator = #{creator} ,
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate} ,
+        </if>
+        <if test="delFlag != null">
+            del_flag = #{delFlag} ,
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode} ,
+        </if>
+        modifier = #{modifier} ,
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM sys_user WHERE id = #{id}
+    </delete>
+
+    <!-- 批量删除 -->
+    <delete id="deleteAll">
+        DELETE FROM sys_user
+        WHERE id in
+        <foreach item="item" index="index" collection="array" open="("
+                 separator="," close=")">#{item}
+        </foreach>
+    </delete>
+
+    <!-- 获取企业所有账户 -->
+    <select id="getAllCorporateAccount" resultMap="userDtoResultMap">
+        SELECT
+        a.id,
+        a.name
+        FROM sys_user a
+        WHERE a.del_flag = 0
+        AND a.corporate_identify = #{employeeId} OR a.employee_id = #{employeeId}
+    </select>
+
+    <!--    获取受益人-->
+    <select id="findSyrInfo" resultType="String">
+        SELECT name
+        FROM sys_user
+        WHERE FIND_IN_SET(#{licensePlateNumber},vehicles)
+    </select>
+
+    <resultMap id="employeeVoMap" type="com.laogeli.user.api.vo.EmployeeVo">
+        <id column="id" property="id"/>
+        <result column="name" property="value"/>
+        <result column="name" property="label"/>
+    </resultMap>
+
+    <!--查询公司下所有员工-->
+    <select id="getEmployeeVo" resultMap="employeeVoMap">
+        SELECT
+            id,
+            name
+        FROM sys_user
+        WHERE employee_id = #{corporateIdentify}
+    </select>
+
+<!--    &lt;!&ndash;根据openId获取用户信息&ndash;&gt;-->
+<!--    <select id="findUserByOpenId" resultType="com.laogeli.common.core.vo.UserVo">-->
+<!--        SELECT-->
+<!--            open_id as openId-->
+<!--        FROM-->
+<!--            crcx_member_wechat a-->
+<!--        WHERE a.open_id = #{openId}-->
+<!--    </select>-->
+</mapper>

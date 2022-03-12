@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>distribute-service-parent</artifactId>
+        <groupId>com.laogeli</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>distribute-service</artifactId>
+    <name>${project.artifactId}</name>
+    <packaging>jar</packaging>
+    <description>接单下单服务</description>
+
+    <dependencies>
+        <!-- common-security -->
+        <dependency>
+            <groupId>com.laogeli</groupId>
+            <artifactId>common-security</artifactId>
+        </dependency>
+
+        <!-- common-log -->
+        <dependency>
+            <groupId>com.laogeli</groupId>
+            <artifactId>common-log</artifactId>
+        </dependency>
+
+        <!-- distribute-service-api -->
+        <dependency>
+            <groupId>com.laogeli</groupId>
+            <artifactId>distribute-service-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- web 服务 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.laogeli</groupId>
+            <artifactId>order-service-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- spring-test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <!-- 配置客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <!-- 管理中心插件 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+        </dependency>
+
+        <!--MySQL-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--fastDfs-->
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+        </dependency>
+
+        <!-- goEasy -->
+        <dependency>
+            <groupId>io.goeasy</groupId>
+            <artifactId>goeasy-sdk</artifactId>
+            <version>0.3.14</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jetbrains</groupId>-->
+<!--            <artifactId>annotations</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.name}</finalName>
+                </configuration>
+            </plugin>
+            <!-- 打包时跳过test插件，不运行test测试用例 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+
+            <!-- docker的maven插件 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${docker.maven.verion}</version>
+                <executions>
+                    <!--执行 mvn package 时 自动构建docker镜像并推送到仓库 -->
+                    <execution>
+                        <id>default</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>${docker.registry}/${docker.namespace}/${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+
+                    <!-- 构建参数，指定jar包名称 -->
+                    <buildArgs>
+                        <JAR_FILE>${project.name}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

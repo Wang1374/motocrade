@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.VehicleMapper">
+    <!-- 新增车辆 -->
+    <insert id="insert">
+        insert into order_vehicle(
+            id,
+            belong_companies_id,
+            license_plate_number,
+            listing_number,
+            vehicle_state,
+            profit_user_ids,
+            driving_license_date,
+            vehicle_belong_state,
+            frame_number,
+            engine_number,
+            operation_permit_url,
+            driving_license_url,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )values(
+            #{id},
+            #{belongCompaniesId},
+            #{licensePlateNumber},
+            #{listingNumber},
+            #{vehicleState},
+            #{profitUserIds},
+            #{drivingLicenseDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{vehicleBelongState},
+            #{frameNumber},
+            #{engineNumber},
+            #{operationPermitUrl},
+            #{drivingLicenseUrl},
+            #{creator},
+            #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+
+    </insert>
+
+    <resultMap id="carResultMap" type="com.laogeli.order.api.module.Vehicle">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="license_plate_number" property="licensePlateNumber"/>
+        <result column="listing_number" property="listingNumber"/>
+        <result column="vehicle_state" property="vehicleState"/>
+<!--        <result column="driver_name" property="driverName"/>-->
+<!--        <result column="driver_phone" property="driverPhone"/>-->
+        <result column="profit_user_ids" property="profitUserIds"/>
+        <result column="driving_license_date" property="drivingLicenseDate"/>
+        <result column="vehicle_belong_state" property="vehicleBelongState"/>
+        <result column="frame_number" property="frameNumber"/>
+        <result column="engine_number" property="engineNumber"/>
+        <result column="operation_permit_url" property="operationPermitUrl"/>
+        <result column="driving_license_url" property="drivingLicenseUrl"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="vehicleVoResultMap" type="com.laogeli.order.api.vo.VehicleVo">
+        <id column="id" property="id"/>
+        <result column="license_plate_number" property="value"/>
+        <result column="license_plate_number" property="label"/>
+        <result column="listing_number" property="listingNumber"/>
+        <result column="driver_name" property="driverName"/>
+        <result column="driver_phone" property="driverPhone"/>
+        <result column="vehicle_belong_state" property="vehicleBelongState"/>
+    </resultMap>
+
+    <sql id="carColumns">
+        v.id,
+        v.belong_companies_id,
+        v.license_plate_number,
+        v.listing_number,
+        v.vehicle_state,
+        v.profit_user_ids,
+        v.driving_license_date,
+        v.vehicle_belong_state,
+        v.frame_number,
+        v.engine_number,
+        v.operation_permit_url,
+        v.driving_license_url,
+        v.creator,
+        v.create_date,
+        v.modifier,
+        v.modify_date,
+        v.application_code
+    </sql>
+    <!--
+        v.driver_name,
+        v.driver_phone,
+     -->
+
+    <!-- where条件 -->
+    <sql id="whereColumnList">
+        <if test="licensePlateNumber !=null and licensePlateNumber !=''">
+            AND v.license_plate_number like CONCAT('%',#{licensePlateNumber},'%')
+        </if>
+<!--        <if test="driverName !=null and driverName !=''">-->
+<!--            AND v.driver_name = #{driverName}-->
+<!--        </if>-->
+<!--        <if test="driverPhone !=null and driverPhone !=''">-->
+<!--            AND v.driver_phone = #{driverPhone}-->
+<!--        </if>-->
+
+        <if test="drivingLicenseDate !=null">
+            AND date_format(v.driving_license_date, '%Y-%m-%d 00:00:00.0') = #{drivingLicenseDate}
+        </if>
+        <if test="engineNumber != null and engineNumber !=''">
+            AND v.engine_number = #{engineNumber}
+        </if>
+        <if test="frameNumber !=null and frameNumber !=''">
+            AND v.frame_number = #{frameNumber}
+        </if>
+        <if test="listingNumber !=null and listingNumber !=''">
+            AND v.listing_number = #{listingNumber}
+        </if>
+        <if test="vehicleBelongState !=null and vehicleBelongState !=0">
+            AND v.vehicle_belong_state = #{vehicleBelongState}
+        </if>
+        <if test="vehicleState !=null and vehicleState !=''">
+            AND v.vehicle_state = #{vehicleState}
+        </if>
+    </sql>
+
+    <select id="findList" resultMap="carResultMap">
+        select
+        b.driver_name,
+        b.driver_phone,
+        <include refid="carColumns"/>
+        from order_vehicle v
+        left join order_driver b
+        on v.license_plate_number = b.vehicles
+        where v.belong_companies_id = #{belongCompaniesId}
+        <include refid="whereColumnList"/>
+        ORDER BY v.id DESC
+    </select>
+
+    <!-- 根据车牌号查询车辆是否已经存在 -->
+    <select id="getByPlageNumber" resultMap="carResultMap">
+        select
+        <include refid="carColumns"/>
+        from order_vehicle v
+        where v.belong_companies_id = #{belongCompaniesId} and v.license_plate_number=#{licensePlateNumber}
+    </select>
+
+    <!-- 修改车辆信息 -->
+    <update id="update">
+        update order_vehicle set
+        <if test="belongCompaniesId !=null">
+            belong_companies_id=#{belongCompaniesId},
+        </if>
+        <if test="licensePlateNumber !=null">
+            license_plate_number = #{licensePlateNumber},
+        </if>
+        <if test="listingNumber != null">
+            listing_number = #{listingNumber},
+        </if>
+        <if test="vehicleState != null">
+            vehicle_state = #{vehicleState},
+        </if>
+        <if test="profitUserIds !=null">
+            profit_user_ids = #{profitUserIds},
+        </if>
+        driving_license_date = #{drivingLicenseDate},
+        <if test="vehicleBelongState != null">
+            vehicle_belong_state = #{vehicleBelongState},
+        </if>
+        <if test="frameNumber != null">
+            frame_number =#{frameNumber},
+        </if>
+        <if test="engineNumber != null">
+            engine_number = #{engineNumber},
+        </if>
+        <if test="operationPermitUrl != null">
+            operation_permit_url = #{operationPermitUrl},
+        </if>
+        <if test="drivingLicenseUrl != null">
+            driving_license_url = #{drivingLicenseUrl},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id=#{id}
+    </update>
+
+    <!-- 删除车辆信息 -->
+    <delete id="delete">
+        delete from order_vehicle
+        where id=#{id}
+    </delete>
+
+    <!-- 根据id批量删除车辆信息 -->
+    <delete id="deleteAll">
+        delete from order_vehicle
+        where id in
+        <foreach item="item" collection="array" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!-- 通过企业标识id 获取车辆与默认司机 -->
+    <select id="getListById" resultMap="vehicleVoResultMap">
+        SELECT
+        a.id,
+        a.license_plate_number,
+        a.listing_number,
+        a.driver_name,
+        a.driver_phone,
+        a.vehicle_belong_state
+        FROM order_vehicle a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+    </select>
+
+    <sql id="vehicleVoResultMaps">
+        <if test="vehicleBelongState !=null and vehicleBelongState!=''">
+            and vehicle_belong_state = #{vehicleBelongState}
+        </if>
+    </sql>
+
+    <!-- 通过企业标识id 获取车辆与默认司机 -->
+    <select id="getListByIds" resultMap="vehicleVoResultMap">
+        SELECT
+        a.id,
+        a.license_plate_number,
+        a.listing_number,
+        a.vehicle_belong_state
+        FROM order_vehicle a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        <include refid="vehicleVoResultMaps"/>
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

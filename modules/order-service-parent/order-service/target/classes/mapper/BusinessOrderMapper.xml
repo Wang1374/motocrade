@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.BusinessOrderMapper">
+    <resultMap id="businessOrderResultMap" type="com.laogeli.order.api.module.BusinessOrder">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="foreign_belong_companies_id" property="foreignBelongCompaniesId"/>
+        <result column="appendix_url" property="appendixUrl"/>
+        <result column="appendix_name" property="appendixName"/>
+        <result column="place_order_remark" property="placeOrderRemark"/>
+        <result column="company_ids" property="companyIds"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="partner" property="partner"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="order_type" property="orderType"/>
+        <result column="bl_nos" property="blNos"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="planned_docking" property="plannedDocking"/>
+        <result column="actual_berthing" property="actualBerthing"/>
+        <result column="shipping_day" property="shippingDay"/>
+        <result column="shipping_company" property="shippingCompany"/>
+        <result column="opening_date" property="openingDate"/>
+        <result column="cut_off_date" property="cutOffDate"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="dock" property="dock"/>
+        <result column="port_of_loading" property="portOfLoading"/>
+        <result column="port_of_discharge" property="portOfDischarge"/>
+        <result column="place_of_delivery" property="placeOfDelivery"/>
+        <result column="put_the_box_company" property="putTheBoxCompany"/>
+        <result column="put_the_box_time" property="putTheBoxTime"/>
+        <result column="box_quantity" property="boxQuantity"/>
+        <result column="exception_record" property="exceptionRecord"/>
+        <result column="exception_record_car" property="exceptionRecordCar"/>
+        <result column="operator" property="operator"/>
+        <result column="salesman" property="salesman"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="business_state" property="businessState"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="dispatch_type" property="dispatchType"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="businessOrderColumns">
+      a.id,
+      a.belong_companies_id,
+      a.foreign_belong_companies_id,
+      a.appendix_url,
+      a.appendix_name,
+      a.place_order_remark,
+      a.company_ids,
+      a.customer_name,
+      a.partner,
+      a.customer_num,
+      a.contacts,
+      a.contact_number,
+      a.order_number,
+      a.order_type,
+      a.bl_nos,
+      a.vessel_and_voyage,
+      a.planned_docking,
+      a.actual_berthing,
+      a.shipping_day,
+      a.shipping_company,
+      a.opening_date,
+      a.cut_off_date,
+      a.due_date,
+      a.dock,
+      a.port_of_loading,
+      a.port_of_discharge,
+      a.place_of_delivery,
+      a.put_the_box_company,
+      a.put_the_box_time,
+      a.box_quantity,
+      a.exception_record,
+      a.exception_record_car,
+      a.operator,
+      a.salesman,
+      a.order_time,
+      a.business_state,
+      a.place_order_number,
+      a.dispatch_type,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.del_flag,
+      a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="orderNumber != null and orderNumber != ''">
+            AND a.order_number = #{orderNumber}
+        </if>
+        <if test="orderType != null and orderType != 0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="customerId !=null and customerId !=''">
+            AND a.customer_id = #{customerId}
+        </if>
+        <if test="blNos != null and blNos != ''">
+            AND a.bl_nos LIKE CONCAT('%', #{blNos},'%')
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND order_time &gt;= #{beginTime} and order_time &lt;= #{endTime}
+        </if>
+
+        <if test="businessState !=null and businessState !=-1">
+            AND a.business_state = #{businessState}
+        </if>
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="numWhereColumnList">
+        <if test="orderType != null and orderType != 0">
+            AND a.order_type = #{orderType}
+        </if>
+    </sql>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="businessOrderResultMap">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        AND a.del_flag = 0
+        <include refid="whereColumnList"/>
+        ${dataScope}
+    </select>
+
+    <!-- 查询平台订单列表分页 -->
+<!--    <select id="findPlatformOrderList" resultMap="businessOrderResultMap">-->
+<!--        SELECT-->
+<!--        <include refid="businessOrderColumns"/>-->
+<!--        FROM order_business_order a-->
+<!--        LEFT JOIN order_making_chest b ON a.id = b.business_order_id-->
+<!--        WHERE b.company_id = #{belongCompaniesId}-->
+<!--        AND a.del_flag = 0-->
+<!--        AND a.dispatch_type = 1-->
+<!--        <include refid="whereColumnList"/>-->
+<!--        GROUP BY a.id-->
+<!--    </select>-->
+
+    <select id="findPlatformOrderList" resultMap="businessOrderResultMap">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        WHERE a.foreign_belong_companies_id = #{belongCompaniesId}
+        AND a.del_flag = 0
+        AND a.dispatch_type = 1
+        <include refid="whereColumnList"/>
+        GROUP BY a.id
+    </select>
+
+    <!--查询客户端订单列表分页-->
+    <select id="findPlatformClientList" resultMap="businessOrderResultMap">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        WHERE a.belong_companies_id = #{belongCompaniesId} or a.belong_companies_id = '792071937215041536'
+        AND a.del_flag = 0
+        AND a.dispatch_type = 1
+        GROUP BY a.id
+    </select>
+
+
+    <!-- 查询平台订单列表分页 -->
+    <select id="getDataByOrderNumber" resultMap="businessOrderResultMap">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        LEFT JOIN order_making_chest b ON a.id = b.business_order_id
+        WHERE a.order_number = #{orderNumber}
+        AND a.del_flag = 0
+        AND a.dispatch_type = 1
+        GROUP BY a.id
+    </select>
+
+
+    <!-- 查询 当天 最大一条订单编号 -->
+    <select id="getOrderNumberByTypeDay" resultType="String">
+        SELECT
+        a.order_number
+        FROM
+        order_business_order a
+        WHERE
+        a.belong_companies_id = #{belongCompaniesId}
+        AND TO_DAYS(a.create_date) = TO_DAYS(NOW())
+        <include refid="numWhereColumnList"/>
+        ORDER BY
+        a.id DESC
+        LIMIT 1;
+    </select>
+
+    <!-- 查询 当月 最大一条订单编号 -->
+    <select id="getOrderNumberByTypeMonth" resultType="String">
+        SELECT
+        a.order_number
+        FROM
+        order_business_order a
+        WHERE
+        a.belong_companies_id = #{belongCompaniesId}
+        AND DATE_FORMAT(a.create_date, '%Y%m') = DATE_FORMAT(CURDATE(), '%Y%m')
+        <include refid="numWhereColumnList"/>
+        ORDER BY
+        a.id DESC
+        LIMIT 1;
+    </select>
+
+    <!-- 新增订单 -->
+    <insert id="addBusinessOrder">
+        insert into order_business_order (
+        id,
+        belong_companies_id,
+        foreign_belong_companies_id,
+        appendix_url,
+        appendix_name,
+        place_order_remark,
+        customer_name,
+        partner,
+        customer_id,
+        customer_num,
+        contacts,
+        contact_number,
+        order_number,
+        order_type,
+        bl_nos,
+        vessel_and_voyage,
+        planned_docking,
+        actual_berthing,
+        shipping_day,
+        shipping_company,
+        opening_date,
+        cut_off_date,
+        due_date,
+        dock,
+        port_of_loading,
+        port_of_discharge,
+        place_of_delivery,
+        put_the_box_company,
+        put_the_box_time,
+        box_quantity,
+        exception_record,
+        operator,
+        salesman,
+        order_time,
+        business_state,
+        place_order_number,
+        dispatch_type,
+        company_name,
+        single_user,
+        single_phone,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        del_flag,
+        application_code
+        ) values (
+        #{id},
+        #{belongCompaniesId},
+        #{foreignBelongCompaniesId},
+        #{appendixUrl},
+        #{appendixName},
+        #{placeOrderRemark},
+        #{customerName},
+        #{partner},
+        #{customerId},
+        #{customerNum},
+        #{contacts},
+        #{contactNumber},
+        #{orderNumber},
+        #{orderType},
+        #{blNos},
+        #{vesselAndVoyage},
+        #{plannedDocking},
+        #{actualBerthing},
+        #{shippingDay},
+        #{shippingCompany},
+        #{openingDate},
+        #{cutOffDate},
+        #{dueDate},
+        #{dock},
+        #{portOfLoading},
+        #{portOfDischarge},
+        #{placeOfDelivery},
+        #{putTheBoxCompany},
+        #{putTheBoxTime},
+        #{boxQuantity},
+        #{exceptionRecord},
+        #{operator},
+        #{salesman},
+        #{orderTime},
+        #{businessState},
+        #{placeOrderNumber},
+        #{dispatchType},
+        #{companyName},
+        #{singleUser},
+        #{singlePhone},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{delFlag},
+        #{applicationCode}
+        );
+    </insert>
+
+    <!-- 更新订单 -->
+    <update id="update">
+        update order_business_order set
+        <if test="belongCompaniesId != null">
+            belong_companies_id = #{belongCompaniesId},
+        </if>
+        <if test="customerName != null">
+            customer_name = #{customerName},
+        </if>
+        <if test="partner !=null">
+            partner = #{partner},
+        </if>
+        <if test="customerId !=null">
+            customer_id = #{customerId},
+        </if>
+        <if test="customerNum != null">
+            customer_num = #{customerNum},
+        </if>
+        <if test="contacts != null">
+            contacts = #{contacts},
+        </if>
+        <if test="contactNumber != null">
+            contact_number = #{contactNumber},
+        </if>
+        <if test="orderNumber != null">
+            order_number = #{orderNumber},
+        </if>
+        <if test="orderType != null">
+            order_type = #{orderType},
+        </if>
+        <if test="blNos != null">
+            bl_nos = #{blNos},
+        </if>
+        <if test="vesselAndVoyage != null">
+            vessel_and_voyage = #{vesselAndVoyage},
+        </if>
+        planned_docking = #{plannedDocking},
+        actual_berthing = #{actualBerthing},
+        shipping_day = #{shippingDay},
+        <if test="shippingCompany != null">
+            shipping_company = #{shippingCompany},
+        </if>
+        opening_date = #{openingDate},
+        cut_off_date = #{cutOffDate},
+        due_date = #{dueDate},
+        <if test="dock != null">
+            dock = #{dock},
+        </if>
+        <if test="portOfLoading != null">
+            port_of_loading = #{portOfLoading},
+        </if>
+        <if test="portOfDischarge != null">
+            port_of_discharge = #{portOfDischarge},
+        </if>
+        <if test="placeOfDelivery != null">
+            place_of_delivery = #{placeOfDelivery},
+        </if>
+        <if test="putTheBoxCompany != null">
+            put_the_box_company = #{putTheBoxCompany},
+        </if>
+        put_the_box_time = #{putTheBoxTime},
+        <if test="boxQuantity != null">
+            box_quantity = #{boxQuantity},
+        </if>
+        <if test="exceptionRecord != null">
+            exception_record = #{exceptionRecord},
+        </if>
+        <if test="operator != null">
+            operator = #{operator},
+        </if>
+        <if test="salesman != null">
+            salesman = #{salesman},
+        </if>
+        <if test="orderTime != null">
+            order_time = #{orderTime},
+        </if>
+        <if test="businessState != null">
+            business_state = #{businessState},
+        </if>
+        <if test="singleUser != null">
+            single_user = #{singleUser},
+        </if>
+        <if test="singlePhone != null">
+            single_phone = #{singlePhone},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 删除订单 -->
+    <delete id="delete">
+        UPDATE order_business_order SET del_flag = 1 WHERE id = #{id}
+    </delete>
+
+    <!-- 根据做箱id修改做箱状态   -->
+    <update id="updateById">
+        UPDATE
+        order_business_order
+        SET
+        <if test="reason != null and reason !=  ''">
+            reason = #{reason},
+        </if>
+        business_state = #{businessState}
+        WHERE
+        id=#{id}
+    </update>
+
+    <!-- 通过下单编号 查询 订单信息 -->
+    <select id="get" resultMap="businessOrderResultMap">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        WHERE 1 = 1
+        <if test="placeOrderNumber != null and placeOrderNumber != ''">
+            AND a.place_order_number = #{placeOrderNumber}
+        </if>
+        <if test="id != null and id != ''">
+            AND a.id = #{id}
+        </if>
+    </select>
+
+    <!-- 根据id查询当前已读/未读状态   -->
+    <select id="getAlreadyOrder" resultType="com.laogeli.order.api.module.BusinessOrder">
+        SELECT
+        <include refid="businessOrderColumns"/>
+        FROM order_business_order a
+        WHERE id = #{id} and FIND_IN_SET(#{companyId}, a.company_ids)
+    </select>
+
+
+    <!-- 修改为已读   -->
+    <update id="updateCompanyIdsById">
+        UPDATE order_business_order
+        SET company_ids = CASE  WHEN company_ids is not null
+        THEN CONCAT(company_ids,#{companyId},',')
+        ELSE CONCAT(#{companyId},',') end
+        WHERE id=#{id}
+    </update>
+
+    <update id="updateExceptionById">
+        UPDATE order_business_order
+        SET
+        <if test="exceptionRecordCar!=null">
+            exception_record_car = #{exceptionRecordCar},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+
+    <!--修改订单状态-->
+    <update id="updateBusinessState">
+        update order_business_order
+        set
+        business_state = #{businessState}
+        where id = #{id}
+    </update>
+
+</mapper>

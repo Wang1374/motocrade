@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CostMapper">
+    <resultMap id="costResultMap" type="com.laogeli.order.api.module.Cost">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="vehicle_cost" property="vehicleCost"/>
+        <result column="btype_id" property="btypeId"/>
+        <result column="btype" property="btype"/>
+        <result column="partner" property="partner"/>
+        <result column="payer" property="payer"/>
+        <result column="pay_items" property="payItems"/>
+        <result column="unit_price" property="unitPrice"/>
+        <result column="amount" property="amount"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="affirm_state" property="affirmState"/>
+        <result column="invoice_state" property="invoiceState"/>
+        <result column="payment_received_state" property="paymentReceivedState"/>
+        <result column="expense_status" property="expenseStatus"/>
+        <result column="invoice_no" property="invoiceNo"/>
+        <result column="remark" property="remark"/>
+        <result column="cost_types" property="costTypes"/>
+        <result column="invoice_url" property="invoiceUrl"/>
+        <result column="fleet_id" property="fleetId"/>
+        <result column="fleet_name" property="fleetName"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="costVoResultMap" type="com.laogeli.order.api.vo.CostVo">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="vehicle_cost" property="vehicleCost"/>
+        <result column="btype_id" property="btypeId"/>
+        <result column="btype" property="btype"/>
+        <result column="partner" property="partner"/>
+        <result column="payer" property="payer"/>
+        <result column="pay_items" property="payItems"/>
+        <result column="unit_price" property="unitPrice"/>
+        <result column="amount" property="amount"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="expense_status" property="expenseStatus"/>
+        <result column="invoice_no" property="invoiceNo"/>
+        <result column="remark" property="remark"/>
+        <result column="cost_types" property="costTypes"/>
+        <result column="fleet_id" property="fleetId"/>
+        <result column="fleet_name" property="fleetName"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+
+        <result column="box_pile" property="boxPile"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="suitcase_point" property="prPoint"/>
+        <result column="return_point" property="prPoint"/>
+        <result column="address" property="address"/>
+        <result column="type_of_shipping" property="typeOfShipping"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="packing_time" property="packingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="door" property="door"/>
+        <result column="vehicle_ownership" property="vehicleOwnership"/>
+        <result column="ys_state" property="ysState"/>
+        <result column="yf_state" property="yfState"/>
+        <result column="ptys_state" property="ptysState"/>
+
+        <result column="bl_nos" property="blNos"/>
+        <result column="order_type" property="orderType"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="dock" property="dock"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="exception_record" property="exceptionRecord"/>
+        <result column="company_name" property="companyName"/>
+        <result column="contact_number" property="contactNumber"/>
+    </resultMap>
+
+    <sql id="costColumns">
+      a.id,
+      a.belong_companies_id,
+      a.mc_id,
+      a.vehicle_cost,
+      a.btype_id,
+      a.btype,
+      a.partner,
+      a.payer,
+      a.pay_items,
+      a.unit_price,
+      a.total_price,
+      a.amount,
+      a.affirm_state,
+      a.invoice_state,
+      a.payment_received_state,
+      a.expense_status,
+      a.invoice_no,
+      a.remark,
+      a.cost_types,
+      a.invoice_url,
+      a.fleet_id,
+      a.fleet_name,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.application_code
+    </sql>
+
+    <sql id="costVoColumns">
+      a.id,
+      a.belong_companies_id,
+      a.mc_id,
+      a.vehicle_cost,
+      a.btype_id,
+      a.btype,
+      a.partner,
+      a.payer,
+      a.pay_items,
+      a.unit_price,
+      a.total_price,
+      a.amount,
+      a.expense_status,
+      a.invoice_no,
+      a.remark,
+      a.cost_types,
+      a.fleet_id,
+      a.fleet_name,
+      a.create_date,
+      a.invoice_url,
+
+      b.box_pile,
+      b.case_number,
+      b.bl_no_str,
+      b.gross_weight,
+      b.suitcase_point,
+      b.return_point,
+      b.address,
+      b.type_of_shipping,
+      b.carrier_company,
+      b.packing_time,
+      b.door,
+      b.vehicle,
+      b.driver,
+      b.vehicle_ownership,
+      b.ys_state,
+      b.yf_state,
+      b.ptys_state,
+
+      c.bl_nos,
+      c.order_type,
+      c.order_number,
+      c.customer_name,
+      c.customer_id,
+      c.customer_num,
+      c.vessel_and_voyage,
+      c.dock,
+      c.order_time,
+      c.exception_record,
+      c.company_name,
+      c.contact_number
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="costTypes != null and costTypes != 0">
+            AND a.cost_types = #{costTypes}
+        </if>
+        <if test="expenseStatus != null and expenseStatus != -1">
+            AND a.expense_status = #{expenseStatus}
+        </if>
+        <if test="btypeId !=null and btypeId !=''">
+            AND a.btype_id = #{btypeId}
+        </if>
+        <if test="fleetId !=null and fleetId !=''">
+            AND a.fleet_id = #{fleetId}
+        </if>
+        <if test="partner != null and partner != -1">
+            AND a.partner = #{partner}
+        </if>
+        <if test="invoiceNo != null and invoiceNo != ''">
+            AND a.invoice_no LIKE CONCAT('%', #{invoiceNo},'%')
+
+        </if>
+
+        <if test="payItems !=null and payItems !=''">
+            AND a.pay_items LIKE CONCAT('%', #{payItems},'%')
+        </if>
+<!--        <if test="vehicleCost != null and vehicleCost != ''">-->
+<!--            AND a.vehicle_cost = #{vehicleCost}-->
+<!--        </if>-->
+        <if test="vehicle !=null and vehicle!=''">
+            AND LEFT (b.vehicle, 7) = #{vehicle}
+        </if>
+        <if test="caseNumber != null and caseNumber != ''">
+            AND b.case_number = #{caseNumber}
+        </if>
+        <if test="zxBeginTime != null and zxBeginTime != '' and zxEndTime != null and zxEndTime != ''">
+            AND b.packing_time &gt;= #{zxBeginTime} AND b.packing_time &lt;= #{zxEndTime}
+        </if>
+        <if test="blNos != null and blNos != ''">
+            AND FIND_IN_SET(#{blNos},c.bl_nos)
+        </if>
+        <if test="orderType != null and orderType != ''">
+            AND c.order_type = #{orderType}
+        </if>
+        <if test="orderNumber != null and orderNumber != ''">
+            AND c.order_number = #{orderNumber}
+        </if>
+<!--        <if test="customerName != null and customerName != ''">-->
+<!--            AND c.customer_name = #{customerName}-->
+<!--        </if>-->
+        <if test="customerId !=null and customerId !=''">
+            AND c.customer_id = #{customerId}
+        </if>
+        <if test="jdBeginTime != null and jdBeginTime != '' and jdEndTime != null and jdEndTime != ''">
+            AND c.order_time &gt;= #{jdBeginTime} AND c.order_time &lt;= #{jdEndTime}
+        </if>
+    </sql>
+
+    <!-- 通过做箱id与费用类型获取列表 -->
+    <select id="getList" resultMap="costResultMap">
+        SELECT
+        <include refid="costColumns"/>
+        FROM order_cost a
+        WHERE a.mc_id = #{mcId}
+        AND a.cost_types = #{costTypes}
+<!--        <if test="vehicleCost != null and vehicleCost != ''">-->
+<!--            AND a.vehicle_cost = #{vehicleCost}-->
+<!--        </if>-->
+        ORDER BY a.btype
+    </select>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="costVoResultMap">
+        SELECT
+        <include refid="costVoColumns"/>
+        FROM
+        order_cost a
+        LEFT JOIN order_making_chest b ON b.id = a.mc_id
+        LEFT JOIN order_business_order c ON c.id = b.business_order_id
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        <include refid="whereColumnList"/>
+        ORDER BY a.create_date DESC, c.bl_nos
+    </select>
+    <!--根据做箱时间排序    提单号，箱号-->
+
+    <!-- 批量添加费用信息 -->
+    <insert id="addCostList" useGeneratedKeys="false">
+        INSERT INTO order_cost (
+        id,
+        belong_companies_id,
+        mc_id,
+        vehicle_cost,
+        btype_id,
+        btype,
+        partner,
+        payer,
+        pay_items,
+        unit_price,
+        amount,
+        total_price,
+        affirm_state,
+        invoice_state,
+        payment_received_state,
+        expense_status,
+        invoice_no,
+        remark,
+        cost_types,
+        invoice_url,
+        fleet_id,
+        fleet_name,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        ) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.belongCompaniesId},
+            #{item.mcId},
+            #{item.vehicleCost},
+            #{item.btypeId},
+            #{item.btype},
+            #{item.partner},
+            #{item.payer},
+            #{item.payItems},
+            #{item.unitPrice},
+            #{item.amount},
+            #{item.totalPrice},
+            #{item.affirmState},
+            #{item.invoiceState},
+            #{item.paymentReceivedState},
+            #{item.expenseStatus},
+            #{item.invoiceNo},
+            #{item.remark},
+            #{item.costTypes},
+            #{item.invoiceUrl},
+            #{item.fleetId},
+            #{item.fleetName},
+            #{item.creator},
+            #{item.createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.modifier},
+            #{item.modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.applicationCode}
+            )
+        </foreach>
+    </insert>
+
+    <!-- 通过做箱id批量删除费用信息 -->
+    <delete id="delAllCost">
+        DELETE FROM order_cost
+        WHERE mc_id in
+        <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!-- 通过做箱id 与 费用类型 与 车牌号删除费用信息 -->
+    <delete id="deleteCost">
+        DELETE FROM order_cost
+        WHERE mc_id = #{mcId}
+        AND cost_types = #{costTypes}
+        <if test="vehicleCost != null and vehicleCost != ''">
+            AND vehicle_cost = #{vehicleCost}
+        </if>
+    </delete>
+
+    <!-- 批量修改 -->
+    <update id="batchUpdate" parameterType="java.util.List">
+        update order_cost
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="invoice_no = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.invoiceNo != null">
+                        when id = #{item.id} then #{item.invoiceNo}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="affirm_state = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.affirmState != null">
+                        when id = #{item.id} then #{item.affirmState}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="expense_status = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.expenseStatus != null">
+                        when id = #{item.id} then #{item.expenseStatus}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <!--  业务毛利搜索条件  -->
+    <sql id="whereVehicleOwnership">
+        <if test="orderType !=null and orderType !=0">
+            AND order_type = #{orderType}
+        </if>
+        <if test="blNoStr !=null and blNoStr !=''">
+            AND FIND_IN_SET(#{blNoStr},bl_no_str)
+        </if>
+        <if test="orderNumber !=null and orderNumber !=''">
+            AND order_number = #{orderNumber}
+        </if>
+        <if test="vehicles !=null and vehicles !=''">
+            <foreach collection="vehicleArray"  item="item" >
+                and   FIND_IN_SET(#{item},vehicle)
+            </foreach>
+        </if>
+        <if test="customerName !=null and customerName !=''">
+            AND customer_name =#{customerName}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND packing_time &gt;= #{beginTime} AND packing_time &lt;= #{endTime}
+        </if>
+        <if test="otBeginTime != null and otBeginTime != '' and otEndTime != null and otEndTime != ''">
+            AND order_time &gt;= #{otBeginTime} AND order_time &lt;= #{otEndTime}
+        </if>
+    </sql>
+
+    <!-- 利润resultMap   -->
+    <resultMap id="prifitVoResultMap" type="com.laogeli.order.api.vo.ProfitVo">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="driver" property="driver"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="btype_id" property="btypeId"/>
+        <result column="btype" property="btype"/>
+        <result column="vehicle_ownership" property="vehicleOwnership"/>
+        <result column="bl_nos" property="blNos"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="ys_state" property="ysState"/>
+        <result column="yf_state" property="yfState"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="packing_time" property="packingTime"/>
+        <result column="dock" property="dock"/>
+        <result column="suitcase_point" property="suitcasePoint"/>
+        <result column="return_point" property="returnPoint"/>
+        <result column="address" property="address"/>
+        <result column="type_of_shipping" property="typeOfShipping"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="exception_record" property="exceptionRecord"/>
+        <result column="jan" property="Jan"/>
+        <result column="feb" property="Feb"/>
+        <result column="mar" property="Mar"/>
+        <result column="apr" property="Apr"/>
+        <result column="may" property="May"/>
+        <result column="june" property="June"/>
+        <result column="july" property="July"/>
+        <result column="aug" property="Aug"/>
+        <result column="sept" property="Sept"/>
+        <result column="oct" property="Oct"/>
+        <result column="nov" property="Nov"/>
+        <result column="dece" property="Dece"/>
+    </resultMap>
+
+    <!-- 利润vo数据   -->
+    <sql id="profitVoColumns">
+      a.id,
+      a.belong_companies_id,
+      a.cost_types,
+      a.vehicle,
+      a.packing_time,
+      a.case_number,
+      a.making_status,
+      a.making_reason,
+      a.customer_name,
+      a.customer_num,
+      a.suitcase_point,
+      a.return_point,
+      a.vehicle_ownership,
+      a.bl_nos,
+      a.dock,
+      a.vessel_and_voyage,
+      a.order_type,
+      a.order_number,
+      a.order_time,
+      a.driver,
+      a.address,
+      a.type_of_shipping,
+      a.carrier_company,
+      a.gross_weight,
+      a.exception_record,
+      a.bl_no_str,
+      a.ys_state,
+      a.yf_state
+    </sql>
+
+    <!-- 业务毛利   -->
+    <sql id="profitVoTempColumns">
+      a.belong_companies_id,
+      a.cost_types,
+
+      b.id,
+      b.vehicle,
+      b.packing_time,
+      b.vehicle_ownership,
+      b.case_number,
+      b.making_status,
+      b.making_reason,
+      b.driver,
+      b.suitcase_point,
+      b.return_point,
+      b.address,
+      b.type_of_shipping,
+      b.carrier_company,
+      b.gross_weight,
+      b.bl_no_str,
+      b.ys_state,
+      b.yf_state,
+
+      c.bl_nos,
+      c.dock,
+      c.vessel_and_voyage,
+      c.customer_name,
+      c.customer_num,
+      c.order_type,
+      c.order_number,
+      c.order_time,
+      c.exception_record
+    </sql>
+
+    <!--    查询业务毛利-->
+    <select id="getProfitList" resultMap="prifitVoResultMap">
+        SELECT
+        <include refid="profitVoColumns"/>,
+        SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieve,
+        SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS pay,
+        SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieve,
+        SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPay
+        FROM
+        (
+        select
+        <include refid="profitVoTempColumns"/>,
+        SUM(total_price) AS searchPrice
+        FROM  order_making_chest b
+        LEFT JOIN order_cost a  on  b.id = a.mc_id
+        LEFT JOIN order_business_order c on c.id = b.business_order_id
+        WHERE b.company_id =#{belongCompaniesId}
+        GROUP BY a.cost_types,b.id
+        ) as a
+        where 1 = 1
+        <include refid="whereVehicleOwnership"/>
+        GROUP BY a.id
+        ORDER BY a.order_number DESC,a.id
+    </select>
+
+    <sql id="whereBtype">
+        <if test="btype !=null and btype!=''">
+            AND btype = #{btype}
+        </if>
+    </sql>
+
+    <!--  查询往来报表利润  -->
+    <select id="getBtypeProfitList" resultMap="prifitVoResultMap">
+        SELECT
+        c.id,
+        c.mc_id,
+        c.btype_id,
+        c.btype,
+        SUM(c.achieve) AS achieve,SUM(c.pay)as pay,SUM(c.extraAchieve)as extraAchieve,SUM(c.extraPay) AS extraPay
+        FROM (
+        SELECT
+        b.id,
+        b.mc_id,
+        b.btype_id,
+        b.btype,
+        b.cost_types,
+        b.searchPrice,
+        SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieve,
+        SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS pay,
+        SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieve,
+        SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPay
+        FROM
+        (
+        SELECT a.id,a.mc_id,a.btype_id,a.btype,a.cost_types,SUM(a.total_price) as searchPrice
+        from order_cost a
+        where a.belong_companies_id = #{belongCompaniesId}
+        GROUP BY a.btype_id,a.cost_types
+        ORDER BY a.btype_id
+        ) as b
+        GROUP BY b.btype_id,b.id
+        ) as c
+        where 1 = 1
+        <include refid="whereBtype"/>
+        GROUP BY c.btype_id
+    </select>
+
+    <!--查询实收，实付-->
+    <select id="getRealisticBtypeProfitList" resultMap="prifitVoResultMap">
+        SELECT
+        c.id,
+        c.mc_id,
+        c.btype_id,
+        c.btype,
+        SUM(c.achieve) AS realisticAchieve,
+        SUM(c.pay)as realisticPay,
+        SUM(c.extraAchieve)as realisticExtraAchieve,
+        SUM(c.extraPay) AS realisticExtraPay
+        FROM (
+        SELECT
+        b.id,
+        b.mc_id,
+        b.btype_id,
+        b.btype,
+        b.cost_types,
+        b.searchPrice,
+        SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieve,
+        SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS pay,
+        SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieve,
+        SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPay
+        FROM
+        (
+        SELECT a.id,a.mc_id,a.btype_id,a.btype,a.cost_types,SUM(a.total_price) as searchPrice
+        from order_cost a
+        where a.belong_companies_id = #{belongCompaniesId} and a.expense_status = 3
+        and a.btype_id in
+        <foreach collection="btypeIdArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY a.btype_id,a.cost_types
+        ORDER BY a.btype_id
+        ) as b
+        GROUP BY b.btype_id,b.id
+        ) as c
+        GROUP BY c.btype_id
+    </select>
+
+    <!-- 查看代垫发票   -->
+    <select id="findInvoiceUrl" resultMap="costResultMap">
+        SELECT
+        <include refid="costColumns"/>
+        FROM order_cost a
+        WHERE mc_id=#{mcId} AND cost_types=#{costTypes} AND vehicle_cost = #{vehicleCost}
+    </select>
+
+    <sql id="whereCarOwnership">
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND a.packing_time &gt;= #{beginTime} AND a.packing_time &lt;= #{endTime}
+        </if>
+
+        <if test="vehicle !=null and vehicle != ''">
+            AND a.vehicle = #{vehicle}
+        </if>
+<!--        <if test="isManage !='' and isManage !=''">-->
+<!--            and a.vehicle_cost in-->
+<!--            <foreach item="item" collection="carArrays" open="(" separator="," close=")">-->
+<!--                #{item}-->
+<!--            </foreach>-->
+<!--        </if>-->
+
+    </sql>
+
+    <sql id="whereCar">
+        <if test="vehicle !=null and vehicle !=''">
+            AND vehicle_cost = #{vehicle}
+        </if>
+
+    </sql>
+
+    <!--    查询车辆数据利润-->
+    <select id="getCarProfitList" resultMap="prifitVoResultMap">
+
+<!--        SELECT-->
+<!--        a.vehicle_cost as vehicle,a.belong_companies_id,-->
+<!--        SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieveSum,-->
+<!--        SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS paySum,-->
+<!--        SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieveSum,-->
+<!--        SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPaySum-->
+<!--        FROM-->
+<!--        (-->
+<!--        SELECT  a.vehicle_cost,a.belong_companies_id,a.cost_types,a.total_price,SUM(total_price) as searchPrice,b.packing_time,	LEFT (b.vehicle, 7) AS vehicle,-->
+<!--        from order_cost a-->
+<!--        LEFT JOIN order_making_chest b ON a.mc_id = b.id-->
+<!--        WHERE a.belong_companies_id=#{belongCompaniesId} and b.vehicle_ownership='1'-->
+<!--        <include refid="whereCarOwnership"/>-->
+<!--        GROUP BY cost_types,vehicle_cost-->
+<!--        ) as a-->
+<!--        WHERE  1=1 AND a.vehicle_cost IS NOT NULL AND a.vehicle_cost !=''-->
+<!--        <include refid="whereCar"/>-->
+<!--        GROUP BY a.vehicle_cost-->
+            SELECT v.belong_companies_id,v.vehicle,
+            SUM(v.achieve) AS achieveSum,
+            SUM(v.pay) AS paySum ,
+            SUM(v.extraAchieve) AS extraAchieveSum,
+            SUM(v.extraPay) AS extraPaySum
+            FROM (
+                SELECT
+                    a.belong_companies_id,a.searchPrice,a.vehicle,a.packing_time,
+                    SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieve,
+                    SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS pay,
+                    SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieve,
+                    SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPay
+                FROM
+                    (
+                    SELECT
+                        a.belong_companies_id,
+                        a.mc_id,
+                        a.total_price,
+                        a.cost_types,
+                        LEFT (b.vehicle, 7) AS vehicle,
+                        b.vehicle_ownership,
+                        b.packing_time,
+                        SUM(total_price) AS searchPrice
+                    FROM order_cost a
+                    LEFT JOIN order_making_chest b on a.mc_id = b.id
+                    WHERE a.belong_companies_id=#{belongCompaniesId} and b.vehicle_ownership='1'
+                    GROUP BY a.cost_types,a.mc_id
+                    ) as a
+                WHERE 1 = 1
+                    <include refid="whereCarOwnership"/>
+                GROUP BY a.mc_id
+                ORDER BY a.vehicle DESC
+                ) as v
+                GROUP BY v.vehicle
+                ORDER BY v.vehicle
+    </select>
+<!--    <include refid="whereCar"/>-->
+
+    <!--    根据id修改代垫发票的url-->
+    <update id="updateInvoiceUrl">
+        UPDATE order_cost
+        SET invoice_url = #{imageUrl}
+        WHERE id = #{costId}
+    </update>
+
+    <!-- 分组查询获取车辆列表 每月收益数据 -->
+    <select id="getMonthlyCarProfit" resultMap="prifitVoResultMap">
+        SELECT
+        c.vehicle_cost as vehicle,
+        (SUM(if(c.cost_types=1,c.Jan,0)) + SUM(if(c.cost_types=3,c.Jan,0))) - (SUM(if(c.cost_types=2,c.Jan,0)) +
+        SUM(if(c.cost_types=4,c.Jan,0))) AS jan,
+        (SUM(if(c.cost_types=1,c.Feb,0)) + SUM(if(c.cost_types=3,c.Feb,0))) - (SUM(if(c.cost_types=2,c.Feb,0)) +
+        SUM(if(c.cost_types=4,c.Feb,0))) AS feb,
+        (SUM(if(c.cost_types=1,c.Mar,0)) + SUM(if(c.cost_types=3,c.Mar,0))) - (SUM(if(c.cost_types=2,c.Mar,0)) +
+        SUM(if(c.cost_types=4,c.Mar,0))) AS mar,
+        (SUM(if(c.cost_types=1,c.Apr,0)) + SUM(if(c.cost_types=3,c.Apr,0))) - (SUM(if(c.cost_types=2,c.Apr,0)) +
+        SUM(if(c.cost_types=4,c.Apr,0))) AS apr,
+        (SUM(if(c.cost_types=1,c.May,0)) + SUM(if(c.cost_types=3,c.May,0))) - (SUM(if(c.cost_types=2,c.May,0)) +
+        SUM(if(c.cost_types=4,c.May,0))) AS may,
+        (SUM(if(c.cost_types=1,c.June,0)) + SUM(if(c.cost_types=3,c.June,0))) - (SUM(if(c.cost_types=2,c.June,0)) +
+        SUM(if(c.cost_types=4,c.June,0))) AS june,
+        (SUM(if(c.cost_types=1,c.July,0)) + SUM(if(c.cost_types=3,c.July,0))) - (SUM(if(c.cost_types=2,c.July,0)) +
+        SUM(if(c.cost_types=4,c.July,0))) AS july,
+        (SUM(if(c.cost_types=1,c.Aug,0)) + SUM(if(c.cost_types=3,c.Aug,0))) - (SUM(if(c.cost_types=2,c.Aug,0)) +
+        SUM(if(c.cost_types=4,c.Aug,0))) AS aug,
+        (SUM(if(c.cost_types=1,c.Sept,0)) + SUM(if(c.cost_types=3,c.Sept,0))) - (SUM(if(c.cost_types=2,c.Sept,0)) +
+        SUM(if(c.cost_types=4,c.Sept,0))) AS sept,
+        (SUM(if(c.cost_types=1,c.Oct,0)) + SUM(if(c.cost_types=3,c.Oct,0))) - (SUM(if(c.cost_types=2,c.Oct,0)) +
+        SUM(if(c.cost_types=4,c.Oct,0))) AS oct,
+        (SUM(if(c.cost_types=1,c.Nov,0)) + SUM(if(c.cost_types=3,c.Nov,0))) - (SUM(if(c.cost_types=2,c.Nov,0)) +
+        SUM(if(c.cost_types=4,c.Nov,0))) AS nov,
+        (SUM(if(c.cost_types=1,c.Dece,0)) + SUM(if(c.cost_types=3,c.Dece,0))) - (SUM(if(c.cost_types=2,c.Dece,0)) +
+        SUM(if(c.cost_types=4,c.Dece,0))) AS dece
+        FROM (
+        SELECT
+        a.belong_companies_id,
+        a.vehicle_cost,
+        a.cost_types,
+        SUM(CASE MM WHEN '1' THEN searchPrice ELSE 0 END) AS 'Jan',
+        SUM(CASE MM WHEN '2' THEN searchPrice ELSE 0 END) AS 'Feb',
+        SUM(CASE MM WHEN '3' THEN searchPrice ELSE 0 END) AS 'Mar',
+        SUM(CASE MM WHEN '4' THEN searchPrice ELSE 0 END) AS 'Apr',
+        SUM(CASE MM WHEN '5' THEN searchPrice ELSE 0 END) AS 'May',
+        SUM(CASE MM WHEN '6' THEN searchPrice ELSE 0 END) AS 'June',
+        SUM(CASE MM WHEN '7' THEN searchPrice ELSE 0 END) AS 'July',
+        SUM(CASE MM WHEN '8' THEN searchPrice ELSE 0 END) AS 'Aug',
+        SUM(CASE MM WHEN '9' THEN searchPrice ELSE 0 END) AS 'Sept',
+        SUM(CASE MM WHEN '10' THEN searchPrice ELSE 0 END) AS 'Oct',
+        SUM(CASE MM WHEN '11' THEN searchPrice ELSE 0 END) AS 'Nov',
+        SUM(CASE MM WHEN '12' THEN searchPrice ELSE 0 END) AS 'Dece'
+        FROM (
+        SELECT
+        a.belong_companies_id,
+        a.total_price,
+        a.cost_types,
+        a.vehicle_cost,
+        MONTH(b.packing_time) AS MM,
+        YEAR(b.packing_time) AS yy,
+        SUM(total_price) AS searchPrice
+        FROM order_cost a
+        LEFT JOIN order_making_chest b ON a.mc_id = b.id
+        WHERE a.belong_companies_id=#{belongCompaniesId}
+        AND b.vehicle_ownership='1'
+        GROUP BY
+        a.cost_types,
+        a.vehicle_cost,
+        MM,
+        yy
+        ) AS a
+        WHERE a.yy=#{year}
+        <include refid="whereCarOwnership"/>
+        GROUP BY
+        a.cost_types,
+        a.vehicle_cost,
+        a.yy
+        ) AS c
+        GROUP BY c.vehicle_cost
+    </select>
+
+    <!-- 查询平台费用明细列表分页 -->
+    <select id="platformCostListPage" resultMap="costVoResultMap">
+        SELECT
+        <include refid="costVoColumns"/>
+        FROM
+        order_cost a
+        LEFT JOIN order_making_chest b ON b.id = a.mc_id
+        LEFT JOIN order_business_order c ON c.id = b.business_order_id
+        WHERE c.belong_companies_id = #{belongCompaniesId}
+        AND a.cost_types IN (5, 1)
+        <include refid="whereColumnList"/>
+    </select>
+
+    <resultMap id="clientCostResultMap" type="com.laogeli.order.api.vo.ClientCostVo">
+        <id column="id" property="id"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="order_type" property="orderType"/>
+        <result column="cost_types" property="costTypes"/>
+        <result column="box_pile" property="boxPile"/>
+        <result column="packing_time" property="packingTime"/>
+        <result column="create_date" property="placeOrderTime"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="dock" property="dock"/>
+        <result column="suitcase_point" property="suitcasePoint"/>
+        <result column="return_point" property="returnPoint"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="ptys_state" property="ptysState"/>
+    </resultMap>
+
+    <!--    费用返回vo-->
+    <sql id="clientVoColumns">
+        c.id,
+        c.mc_id,
+        c.create_date,
+        b.case_number,
+        b.bl_no_str,
+		b.box_pile,
+        b.door,
+		b.address,
+		b.packing_time,
+		a.order_type,
+		a.order_time,
+
+		a.single_user,
+		a.customer_num,
+		a.customer_name,
+		a.vessel_and_voyage,
+		a.dock,
+		b.suitcase_point,
+		b.return_point,
+	    b.carrier_company
+    </sql>
+
+
+
+    <sql id="whereClientColums">
+        <if test="blNoStr !=null and blNoStr !=''">
+            AND b.bl_no_str = #{blNoStr}
+        </if>
+    </sql>
+
+    <!--查询客户端费用 应付-->
+    <select id="findClientPayCost" resultMap="clientCostResultMap">
+        SELECT
+        <include refid="clientVoColumns"/>,
+            sum( c.total_price ) as payTotal
+        FROM
+	        order_business_order a
+        LEFT JOIN order_making_chest b ON a.id = b.business_order_id
+        RIGHT JOIN order_cost c ON b.id = c.mc_id
+        WHERE
+            a.belong_companies_id = #{belongCompaniesId}
+            OR a.belong_companies_id = '792071937215041536'
+        AND c.cost_types = '1'
+        <include refid="whereClientColums"/>
+        GROUP BY c.mc_id
+    </select>
+
+
+
+    <!--  根据做箱id获取箱子毛利  -->
+    <select id="getMakingProfit" resultMap="prifitVoResultMap">
+         SELECT
+		   mc_id,
+           SUM(CASE cost_types WHEN '1' THEN searchPrice ELSE 0 END) AS achieve,
+           SUM(CASE cost_types WHEN '2' THEN searchPrice ELSE 0 END) AS pay,
+           SUM(CASE cost_types WHEN '3' THEN searchPrice ELSE 0 END) AS extraAchieve,
+           SUM(CASE cost_types WHEN '4' THEN searchPrice ELSE 0 END) AS extraPay
+         FROM
+         (
+           SELECT mc_id,total_price,cost_types,SUM(total_price) as searchPrice
+           FROM order_cost a
+           WHERE a.mc_id=#{mcId}
+           GROUP BY cost_types
+         )as b
+    </select>
+
+
+</mapper>

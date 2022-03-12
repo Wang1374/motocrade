@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway-service" />
+        <module name="distribute-service" />
+        <module name="order-service-api" />
+        <module name="user-service-api" />
+        <module name="chat-im-service" />
+        <module name="order-service" />
+        <module name="user-service" />
+        <module name="common-security" />
+        <module name="common-log" />
+        <module name="distribute-service-api" />
+        <module name="common-core" />
+        <module name="chat-im-service-api" />
+        <module name="config-service" />
+        <module name="auth-service-api" />
+        <module name="common-feign" />
+        <module name="auth-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-service" options="-parameters" />
+      <module name="auth-service-api" options="-parameters" />
+      <module name="auth-service-parent" options="-parameters" />
+      <module name="chat-im-service" options="-parameters" />
+      <module name="chat-im-service-api" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="common-core" options="-parameters" />
+      <module name="common-feign" options="-parameters" />
+      <module name="common-log" options="-parameters" />
+      <module name="common-security" options="-parameters" />
+      <module name="config-service" options="-parameters" />
+      <module name="distribute-service" options="-parameters" />
+      <module name="distribute-service-api" options="-parameters" />
+      <module name="distribute-service-parent" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="modules" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="order-service-api" options="-parameters" />
+      <module name="order-service-parent" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+      <module name="user-service-api" options="-parameters" />
+      <module name="user-service-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

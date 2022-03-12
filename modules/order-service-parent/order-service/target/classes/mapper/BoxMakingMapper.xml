@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.BoxMakingMapper">
+    <resultMap id="boxMakingResultMap" type="com.laogeli.order.api.module.BoxMaking">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="customer_name" property="customerName"/>
+        <result column="customer_num" property="customerNum"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="order_type" property="orderType"/>
+        <result column="dispatch_type" property="dispatchType"/>
+        <result column="bl_nos" property="blNos"/>
+        <result column="vessel_and_voyage" property="vesselAndVoyage"/>
+        <result column="planned_docking" property="plannedDocking"/>
+        <result column="actual_berthing" property="actualBerthing"/>
+        <result column="shipping_day" property="shippingDay"/>
+        <result column="shipping_company" property="shippingCompany"/>
+        <result column="opening_date" property="openingDate"/>
+        <result column="cut_off_date" property="cutOffDate"/>
+        <result column="due_date" property="dueDate"/>
+        <result column="dock" property="dock"/>
+        <result column="port_of_loading" property="portOfLoading"/>
+        <result column="port_of_discharge" property="portOfDischarge"/>
+        <result column="place_of_delivery" property="placeOfDelivery"/>
+        <result column="put_the_box_company" property="putTheBoxCompany"/>
+        <result column="put_the_box_time" property="putTheBoxTime"/>
+        <result column="exception_record" property="exceptionRecord"/>
+        <result column="exception_record_car" property="exceptionRecordCar"/>
+        <result column="operator" property="operator"/>
+        <result column="salesman" property="salesman"/>
+        <result column="order_time" property="orderTime"/>
+        <result column="business_state" property="businessState"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+        <result column="place_order_number" property="placeOrderNumber"/>
+        <result column="company_name" property="companyName"/>
+        <result column="single_user" property="singleUser"/>
+        <result column="single_phone" property="singlePhone"/>
+
+        <result column="making_status" property="makingStatus"/>
+        <result column="making_reason" property="makingReason"/>
+        <result column="send_receip_status" property="sendReceipStatus"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="box_pile" property="boxPile"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="seal_number" property="sealNumber"/>
+        <result column="suitcase_point" property="suitcasePoint"/>
+        <result column="return_point" property="returnPoint"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="type_of_shipping" property="typeOfShipping"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="driver" property="driver"/>
+        <result column="phone" property="phone"/>
+        <result column="schedule_time" property="scheduleTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="packing_time" property="packingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="plan_packing_time" property="planPackingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="ys_state" property="ysState"/>
+        <result column="yf_state" property="yfState"/>
+        <result column="ptys_state" property="ptysState"/>
+        <result column="door_url" property="doorUrl"/>
+        <result column="seal_url" property="sealUrl"/>
+        <result column="eir_url" property="eirUrl"/>
+        <result column="sign_for_url" property="signForUrl"/>
+        <result column="tare_weight" property="tareWeight"/>
+    </resultMap>
+
+    <sql id="boxMakingColumns">
+      a.id,
+      a.belong_companies_id,
+      a.customer_name,
+      a.customer_num,
+      a.contacts,
+      a.contact_number,
+      a.order_number,
+      a.order_type,
+      a.dispatch_type,
+      a.bl_nos,
+      a.vessel_and_voyage,
+      a.planned_docking,
+      a.actual_berthing,
+      a.shipping_day,
+      a.shipping_company,
+      a.opening_date,
+      a.cut_off_date,
+      a.due_date,
+      a.dock,
+      a.port_of_loading,
+      a.port_of_discharge,
+      a.place_of_delivery,
+      a.put_the_box_company,
+      a.put_the_box_time,
+      a.exception_record,
+      a.exception_record_car,
+      a.operator,
+      a.salesman,
+      a.order_time,
+      a.business_state,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.del_flag,
+      a.application_code,
+      a.place_order_number,
+      a.company_name,
+      a.single_user,
+      a.single_phone,
+
+      b.making_status,
+      b.making_reason,
+      b.send_receip_status,
+      b.bl_no_str,
+      b.box_pile,
+      b.case_number,
+      b.seal_number,
+      b.suitcase_point,
+      b.return_point,
+      b.door,
+      b.address,
+      b.type_of_shipping,
+      b.carrier_company,
+      b.vehicle,
+      b.driver,
+      b.phone,
+      b.schedule_time,
+      b.packing_time,
+      b.plan_packing_time,
+      b.ys_state,
+      b.yf_state,
+      b.ptys_state,
+      b.id as mcId,
+      b.door_url,
+      b.seal_url,
+      b.eir_url,
+      b.sign_for_url,
+      b.tare_weight
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="businessState != null and businessState != -1">
+            AND a.business_state = #{businessState}
+        </if>
+        <if test="customerName != null and customerName != ''">
+            AND a.customer_name = #{customerName}
+        </if>
+        <if test="orderNumber != null and orderNumber != ''">
+            AND a.order_number = #{orderNumber}
+        </if>
+        <if test="orderType != null and orderType != 0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="dispatchType != null and dispatchType != -1">
+            AND a.dispatch_type = #{dispatchType}
+        </if>
+<!--        <if test="blNos != null and blNos != ''">-->
+
+<!--            AND b.bl_no_str LIKE CONCAT('%', #{blNos},'%')-->
+<!--        </if>-->
+        <if test="blNoStr !=null and blNoStr !=''">
+            AND b.bl_no_str LIKE CONCAT('%', #{blNoStr},'%')
+        </if>
+        <if test="door!=null and door!=''">
+            AND b.door like  CONCAT('%', #{door},'%')
+        </if>
+        <if test="sendReceipStatus !=null and sendReceipStatus!=0">
+            AND b.send_receip_status = #{sendReceipStatus}
+        </if>
+        <if test="partner !=null and partner !=0">
+            AND a.partner = #{partner}
+        </if>
+        <if test="caseNumber != null and caseNumber != ''">
+            AND b.case_number  LIKE CONCAT('%', #{caseNumber},'%')
+        </if>
+<!--        <if test="sealNumber != null and sealNumber != ''">-->
+<!--            AND b.seal_number = #{sealNumber}-->
+<!--        </if>-->
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND packing_time &gt;= #{beginTime} AND packing_time &lt;= #{endTime}
+        </if>
+        <if test="vehicles !=null and vehicles !=''">
+            <foreach collection="vehicleArray"  item="item" >
+                and   FIND_IN_SET(#{item},b.vehicle)
+            </foreach>
+        </if>
+        <if test="driver != null and driver != ''">
+            AND FIND_IN_SET(#{driver},b.driver)
+        </if>
+        <if test="phone != null and phone != ''">
+            AND b.phone = #{phone}
+        </if>
+        <if test="typeOfShipping != null and typeOfShipping != 0">
+            AND b.type_of_shipping = #{typeOfShipping}
+        </if>
+        <if test="carrierCompany != null and carrierCompany != ''">
+            AND b.carrier_company = #{carrierCompany}
+        </if>
+        <if test="ysState != -1">
+            AND b.ys_state = #{ysState}
+        </if>
+        <if test="yfState != -1">
+            AND b.yf_state = #{yfState}
+        </if>
+        <if test="ptysState != -1">
+            AND b.ptys_state = #{ptysState}
+        </if>
+
+    </sql>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="boxMakingResultMap">
+        SELECT
+        <include refid="boxMakingColumns"/>
+        FROM order_business_order a
+        LEFT JOIN order_making_chest b ON a.id = b.business_order_id
+        WHERE a.del_flag = 0
+        <choose>
+            <when test="belongCompaniesId != null and belongCompaniesId != ''">
+                AND a.belong_companies_id = #{belongCompaniesId}
+            </when>
+            <otherwise>
+                AND b.company_id = #{companyId}
+            </otherwise>
+        </choose>
+        <include refid="whereColumnList"/>
+        ${dataScope}
+    </select>
+
+<!--     AND FIND_IN_SET(#{blNos},a.bl_nos)-->
+    <sql id="whereClientColumnList">
+<!--        <if test="blNos !=null and blNos !=''">-->
+
+<!--            AND b.bl_nos LIKE CONCAT('%', #{blNos},'%')-->
+<!--        </if>-->
+
+        <if test="blNoStr !=null and blNoStr !=''">
+            AND b.bl_no_str LIKE CONCAT('%', #{blNoStr},'%')
+        </if>
+        <if test="orderType != null and orderType != 0">
+            AND a.order_type = #{orderType}
+        </if>
+        <if test="caseNumber != null and caseNumber != ''">
+            AND b.case_number = LIKE CONCAT('%', #{caseNumber},'%')
+        </if>
+        <if test="sealNumber != null and sealNumber != ''">
+            AND b.seal_number = #{sealNumber}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND packing_time &gt;= #{beginTime} AND packing_time &lt;= #{endTime}
+        </if>
+    </sql>
+
+    <!-- 分页查询客户端做箱列表 -->
+<!--    <select id="findClientBoxList" resultMap="boxMakingResultMap">-->
+<!--        SELECT-->
+<!--        <include refid="boxMakingColumns"/>-->
+<!--        FROM order_business_order a-->
+<!--        LEFT JOIN order_business_center c ON a.place_order_number = c.place_order_number-->
+<!--        LEFT JOIN order_making_chest b ON a.id = b.business_order_id-->
+<!--        WHERE c.belong_companies_id = #{belongCompaniesId}-->
+<!--        <include refid="whereClientColumnList"/>-->
+<!--    </select>-->
+
+    <select id="findClientBoxList" resultMap="boxMakingResultMap">
+       select
+       <include refid="boxMakingColumns"/>
+       from order_business_order a
+       left join order_making_chest b on a.id = b.business_order_id
+       where a.belong_companies_id = #{belongCompaniesId} or a.belong_companies_id = '792071937215041536'
+       <include refid="whereClientColumnList"/>
+    </select>
+</mapper>

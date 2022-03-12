@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CostsSetMapper">
+    <resultMap id="costsSetResultMap" type="com.laogeli.order.api.module.CostsSet">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="fee_name" property="feeName"/>
+        <result column="fee_code" property="feeCode"/>
+        <result column="currency" property="currency"/>
+    </resultMap>
+
+    <sql id="costsSetColumns">
+        a.id,
+        a.belong_companies_id,
+        a.fee_name,
+        a.fee_code,
+        a.currency
+    </sql>
+
+    <select id="findList" resultMap="costsSetResultMap">
+        SELECT
+        <include refid="costsSetColumns"/>
+        FROM order_costs_set a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+    </select>
+
+    <!-- 通过费用名查询是否存在   -->
+    <select id="get" resultMap="costsSetResultMap">
+        SELECT
+        <include refid="costsSetColumns"/>
+        FROM order_costs_set a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        AND a.fee_name = #{feeName}
+    </select>
+
+    <!-- 新增客户 -->
+    <insert id="insert">
+        insert into order_costs_set (
+        id,
+        belong_companies_id,
+        fee_name,
+        fee_code,
+        currency
+        ) values (
+        #{id},
+        #{belongCompaniesId},
+        #{feeName},
+        #{feeCode},
+        #{currency}
+        );
+    </insert>
+
+    <!-- 更新客户 -->
+    <update id="update">
+        update order_costs_set
+        <trim prefix="set" suffixOverrides=",">
+            <if test="belongCompaniesId != null">
+                belong_companies_id = #{belongCompaniesId},
+            </if>
+            <if test="feeName != null">
+                fee_name = #{feeName},
+            </if>
+            <if test="feeCode != null">
+                fee_code = #{feeCode},
+            </if>
+            <if test="currency != null">
+                currency = #{currency},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_costs_set WHERE id = #{id}
+    </delete>
+
+    <!-- 根据企业标识id查询费用设置 -->
+    <select id="getListQyId" resultMap="costsSetResultMap">
+        SELECT
+        a.id,
+        a.fee_name,
+        a.fee_code
+        FROM order_costs_set a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        ORDER BY a.id DESC
+    </select>
+
+    <!-- 批量添加费用参数 -->
+    <insert id="batchCostsSet" useGeneratedKeys="false">
+        INSERT INTO order_costs_set (
+        id,
+        belong_companies_id,
+        fee_name,
+        fee_code,
+        currency
+        ) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.belongCompaniesId},
+            #{item.feeName},
+            #{item.feeCode},
+            #{item.currency}
+            )
+        </foreach>
+    </insert>
+</mapper>

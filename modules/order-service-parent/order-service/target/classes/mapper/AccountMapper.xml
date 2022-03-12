@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.AccountMapper">
+    <resultMap id="accountResultMap" type="com.laogeli.order.api.module.Account">
+        <id column="id" property="id"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="invoice_title" property="invoiceTitle"/>
+        <result column="invoice_type" property="invoiceType"/>
+        <result column="uscc" property="uscc"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="account_address" property="accountAddress"/>
+        <result column="account_phone" property="accountPhone"/>
+        <result column="rmb_bank" property="rmbBank"/>
+        <result column="rmb_account" property="rmbAccount"/>
+        <result column="usd_bank" property="usdBank"/>
+        <result column="usd_account" property="usdAccount"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="accountColumns">
+        a.id,
+        a.customer_id,
+        a.invoice_title,
+        a.invoice_type,
+        a.uscc,
+        a.province,
+        a.city,
+        a.area,
+        a.account_address,
+        a.account_phone,
+        a.rmb_bank,
+        a.rmb_account,
+        a.usd_bank,
+        a.usd_account,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- 查询列表 -->
+    <select id="findList" resultMap="accountResultMap">
+        SELECT
+        <include refid="accountColumns"/>
+        FROM order_account a
+        WHERE a.customer_id = #{customerId}
+    </select>
+
+    <!-- 新增客户 -->
+    <insert id="insert">
+        insert into order_account (
+        id,
+        customer_id,
+        invoice_title,
+        invoice_type,
+        uscc,
+        province,
+        city,
+        area,
+        account_address,
+        account_phone,
+        rmb_bank,
+        rmb_account,
+        usd_bank,
+        usd_account,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        ) values (
+        #{id},
+        #{customerId},
+        #{invoiceTitle},
+        #{invoiceType},
+        #{uscc},
+        #{province},
+        #{city},
+        #{area},
+        #{accountAddress},
+        #{accountPhone},
+        #{rmbBank},
+        #{rmbAccount},
+        #{usdBank},
+        #{usdAccount},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{applicationCode}
+        );
+    </insert>
+
+    <!-- 更新客户 -->
+    <update id="update">
+        update order_account set
+        <if test="customerId != null">
+            customer_id = #{customerId},
+        </if>
+        <if test="invoiceTitle != null">
+            invoice_title = #{invoiceTitle},
+        </if>
+        <if test="invoiceType != null">
+            invoice_type = #{invoiceType},
+        </if>
+        <if test="uscc != null">
+            uscc = #{uscc},
+        </if>
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="accountAddress !=null">
+            account_address = #{accountAddress},
+        </if>
+        <if test="accountPhone !=null">
+            account_phone = #{accountPhone},
+        </if>
+        <if test="rmbBank != null">
+            rmb_bank = #{rmbBank},
+        </if>
+        <if test="rmbAccount != null">
+            rmb_account = #{rmbAccount},
+        </if>
+        <if test="usdBank != null">
+            usd_bank = #{usdBank},
+        </if>
+        <if test="usdAccount != null">
+            usd_account = #{usdAccount},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_account WHERE id = #{id}
+    </delete>
+
+    <!-- 根据发票抬头判断是否存在 -->
+    <select id="getByAccount" resultMap="accountResultMap">
+        select
+        <include refid="accountColumns"/>
+        from order_account a
+        where a.customer_id = #{customerId} and a.invoice_title=#{invoiceTitle}
+    </select>
+
+
+    <update id="updateByClienteleId">
+        update order_account set
+        <if test="customerId != null">
+            customer_id = #{customerId},
+        </if>
+        <if test="invoiceTitle != null">
+            invoice_title = #{invoiceTitle},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where customer_id = #{customerId}
+    </update>
+</mapper>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.chatim.mapper.ChatMsgMapper">
+    <resultMap id="chatMsgResultMap" type="com.laogeli.chatim.api.model.ChatMsg">
+        <id column="id" property="id"/>
+        <result column="sender_id" property="senderId"/>
+        <result column="receiver_id" property="receiverId"/>
+        <result column="msg_type" property="msgType"/>
+        <result column="has_read" property="hasRead"/>
+        <result column="content" property="content"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="picture_path" property="picturePath"/>
+    </resultMap>
+
+    <resultMap id="chatMsgVoResultMap" type="com.laogeli.chatim.api.vo.ChatMsgVO">
+        <id column="id" property="msgId"/>
+        <result column="chat_type" property="chatType"/>
+        <result column="msg_type" property="msgType"/>
+        <result column="content" property="content"/>
+        <result column="sender_id" property="senderId"/>
+        <result column="receiver_id" property="receiverId"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="picture_path" property="picturePath"/>
+    </resultMap>
+
+    <sql id="columns">
+        id,
+        sender_id,
+        receiver_id,
+        msg_type,
+        has_read,
+        content,
+        create_date,
+        picture_path
+    </sql>
+
+    <insert id="saveMsg" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO chat_msg
+        (
+        sender_id,
+        receiver_id,
+        msg_type,
+        has_read,
+        content,
+        create_date,
+        picture_path
+        )
+        VALUES
+        (
+        #{senderId},
+        #{receiverId},
+        #{msgType},
+        #{hasRead},
+        #{content},
+        #{createDate},
+        #{picturePath}
+        )
+    </insert>
+
+    <select id="findOffLineMsgById" resultMap="chatMsgResultMap">
+        SELECT
+        <include refid="columns"/>
+        FROM chat_msg
+        WHERE receiver_id = #{receiverId}
+    </select>
+
+    <update id="updateHasReadById">
+        update chat_msg set has_read = 1 where id = #{msgId} and receiver_id = #{receiverId}
+    </update>
+
+    <update id="updateHasReadByReceiverId">
+        update chat_msg set has_read = 1 where receiver_id = #{receiverId}
+    </update>
+
+    <select id="findOffLineMsgByMsgId" resultMap="chatMsgVoResultMap">
+        SELECT
+        id,
+        sender_id,
+        receiver_id,
+        msg_type,
+        has_read,
+        content,
+        create_date,
+        picture_path,
+        1 AS chat_type
+        FROM chat_msg
+        WHERE sender_id = #{friendId} AND receiver_id = #{userId} AND id > #{msgId}
+    </select>
+
+</mapper>

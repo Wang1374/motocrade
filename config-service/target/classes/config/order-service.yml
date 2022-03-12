@@ -1,0 +1,177 @@
+server:
+  port: 9527
+spring:
+  datasource:
+    # motorcade
+    url: jdbc:mysql://${MYSQL_HOST:119.3.77.153}:${MYSQL_PORT:3306}/test-motorcade-order?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=CTT&characterEncoding=UTF-8
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:Password01#}
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20 #最大连接池数
+      connection-timeout: 60000 #连接超时时间:毫秒，小于250毫秒，否则被重置为默认值30秒。这里设置一分钟
+      minimum-idle: 10 #最小空闲连接，默认值10，小于0或大于maximum-pool-size，都会重置为maximum-pool-size
+      idle-timeout: 180000 # 只有空闲连接数大于最大连接数且空闲时间超过该值，才会被释放。默认是600000毫秒,即10分钟。这里设置三分钟
+      connection-test-query: SELECT 1
+      validation-timeout: 3000 # 用来指定验证连接有效性的超时时间(默认是5秒，最小不能小于250毫秒)。这里设置3秒
+      read-only: false
+      login-timeout: 5
+      max-lifetime: 120000 # 如果不等于0且不小于30秒，否则会回到默认的1800000ms，即30分钟。这里设置2分钟
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASS:Rrdispwd597d9f972f991a8c1!}
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBITMQ_DEFAULT_USER:guest}
+    password: ${RABBITMQ_DEFAULT_PASS:guest}
+  boot:
+    admin:
+      client:
+        url: http://${ADMIN_HOST:localhost}:${ADMIN_PORT:8085}/admin
+        username: ${ADMIN_USERNAME:admin}
+        password: ${ADMIN_PASSWORD:123456}
+        instance:
+          service-base-url: http://${USER_SERVICE_HOST:localhost}:${server.port}
+  # sleuth 配置
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 采样比例为: 0.1(即10%),设置的值介于0.0到1.0之间，1.0则表示全部采集。
+  # zipkin 配置
+  zipkin:
+    base-url: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}  # 指定了Zipkin服务器的地址
+      # 关闭服务发现，否则Spring Cloud会把zipkin的url当做服务名称
+      # discoveryClientEnabled: false
+      # sender:
+    # type: web  # 设置使用http的方式传输数据
+
+# redisson lock 单机模式
+redisson:
+  address: ${REDISSON_HOST:redis://localhost}:${REDISSON_RORT:6379}
+  password: ${REDISSON_PASS:Rrdispwd597d9f972f991a8c1!}
+
+#oauth2
+security:
+  oauth2:
+    client:
+      client-id: web_app
+      client-secret: $2a$10$S84wOzmAw4wqYBzAqNtmPOx1ZRWdDl9omm/W8T1hhW8S9EK2u57xG
+      access-token-uri: http://${AUTH_SERVICE_HOST:localhost}:${AUTH_SERVICE_PORT:8000}/api/auth/oauth/token
+      user-authorization-uri: http://${AUTH_SERVICE_HOST:localhost}:${AUTH_SERVICE_PORT:8000}/api/auth/oauth/authorize
+      grant-type: password
+      scope: read
+    resource:
+      user-info-uri: http://${AUTH_SERVICE_HOST:localhost}:${AUTH_SERVICE_PORT:8000}/api/user/v1/user/info
+      prefer-token-info: false
+      jwt:
+        key-uri: http://${AUTH_SERVICE_HOST:localhost}:${AUTH_SERVICE_PORT:8000}/api/auth/oauth/token_key
+        key-value: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjxSawA+NUNmhB2ctiVnt
+          YH41WCNoD5STW2iPm5AIsKvm6X67lr6A88qOMRwx9oySdZnUnJ+8L3QJ51fkwuDe
+          ix5w9yA3f/7LUPWZU8M/7Oi+2nda05JMgU999TUlhTGsp9SPiBqq/iwuqMxU8xKu
+          F8bpTJTOpzrxH4e5BM6J/UJcOwDZLY6/3zP5w+tbhTvxjc995G4NtUyS4owE1MHe
+          lj8IJepknjePrE6nXD6ecdL401hstMY838UOOFiCnM8NpiBuNI0nY0qCbb9mhQZ+
+          7gP3jjM+Ft7R+MFTuEHWQ5UN8qHAPIT9UlLcu9IXdk6YwTsqNavwaTLUcP/ih9HB
+          6wIDAQAB
+          -----END PUBLIC KEY-----
+
+# hystrix配置
+hystrix:
+  # 线程间传递上下文
+  shareSecurityContext: true
+  threadpool:
+    default:
+      coreSize: 200 #并发执行的最大线程数，默认10
+      maxQueueSize: 1000 #BlockingQueue的最大队列数，默认值-1
+      queueSizeRejectionThreshold: 1000 #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝，默认值5
+  # hystrix的超时时间
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000 #缺省为1000
+
+#ribbon的超时时间, 防止feign调用超时
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
+  MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  OkToRetryOnAllOperations: false  #是否所有操作都重试
+  # 微服务间调用其实走的是http请求，debug了一下默认的ReadTimeout时间为5s，ConnectTimeout时间为2s
+
+# Actuator 的健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+# mybatis配置
+mybatis:
+  type-aliases-package: com.laogeli.order.api.module
+  configuration:
+    # 驼峰转换
+    map-underscore-to-camel-case: true
+    # 延迟加载
+    lazy-loading-enabled: true
+  mapper-locations: classpath:mapper/*.xml
+
+# 分页
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+ignore:
+  urls:
+    - /
+    - /error
+    - /favicon.ico
+    - /**/*swagger*/**
+    - /v2/api-docs
+    - /csrf
+    - /actuator/**
+    - /hystrix.sender
+    - /v1/log/**
+    - /authentication/**
+    - /v1/authentication/**
+    - /v1/orderNumber/addOrderNumber/**
+    - /v1/costsSet/batchCostsSet/**
+    - /v1/clientele/addPlatformCustomers
+    - /v1/driver/**
+    - /v1/driver
+    - /**/*.css
+    - /**/*.js
+    - /social
+    - /signin
+    - /signup
+    - /info
+    - /health
+    - /metrics/**
+    - /loggers/**
+    - /bus/refresh
+    - /websocket/**
+
+
+# 集群ID生成配置
+cluster:
+  workId: ${CLUSTER_WORKID:1}
+  dataCenterId: ${CLUSTER_DATA_CENTER_ID:1}
+
+logging:
+  level:
+    root: info
+    com.laogeli: debug

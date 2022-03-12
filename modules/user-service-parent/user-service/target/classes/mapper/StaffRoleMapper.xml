@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.StaffRoleMapper">
+    <resultMap id="roleResultMap" type="com.laogeli.user.api.module.StaffRole">
+        <id column="id" property="id"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_code" property="roleCode"/>
+        <result column="data_scope" property="dataScope"/>
+        <result column="corporate_identify" property="corporateIdentify"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="columns">
+        a.id,
+        a.role_name,
+        a.role_code,
+        a.data_scope,
+        a.corporate_identify,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.del_flag,
+        a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="roleName != null and roleName != ''">
+            and a.role_name like CONCAT('%', #{roleName},'%')
+        </if>
+        <if test="roleCode != null and roleCode != ''">
+            and a.role_code = #{roleCode}
+        </if>
+        <if test="corporateIdentify != null and corporateIdentify != ''">
+            and a.corporate_identify = #{corporateIdentify}
+        </if>
+    </sql>
+
+    <!-- 获取角色 -->
+    <select id="findListById" resultMap="roleResultMap">
+        SELECT
+        <include refid="columns"/>
+        FROM sys_staff_role a
+        WHERE a.id IN
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="findList" resultMap="roleResultMap">
+        SELECT
+        <include refid="columns"/>
+        FROM sys_staff_role a
+        WHERE a.del_flag = 0
+        AND a.corporate_identify = #{corporateIdentify}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO sys_staff_role (
+        id,
+        role_name,
+        role_code,
+        data_scope,
+        corporate_identify,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        del_flag,
+        application_code
+        ) VALUES (
+        #{id},
+        #{roleName},
+        #{roleCode},
+        #{dataScope},
+        #{corporateIdentify},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{delFlag},
+        #{applicationCode}
+        )
+    </insert>
+
+    <!-- 批量添加员工角色 -->
+    <insert id="insertForeach" parameterType="java.util.List" useGeneratedKeys="false">
+        INSERT INTO sys_staff_role (
+        id,
+        role_name,
+        role_code,
+        data_scope,
+        corporate_identify,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        del_flag,
+        application_code
+        ) values
+        <foreach collection="list" item="item" index="index" separator=",">
+        (
+            #{item.id},
+            #{item.roleName},
+            #{item.roleCode},
+            #{item.dataScope},
+            #{item.corporateIdentify},
+            #{item.creator},
+            #{item.createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.modifier},
+            #{item.modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.delFlag},
+            #{item.applicationCode}
+          )
+        </foreach>
+    </insert>
+
+    <update id="update">
+        UPDATE sys_staff_role SET
+        <if test="roleName != null">
+            role_name = #{roleName},
+        </if>
+        <if test="roleCode != null">
+            role_code = #{roleCode},
+        </if>
+        <if test="dataScope != null">
+            data_scope = #{dataScope},
+        </if>
+        <if test="corporateIdentify != null">
+            corporate_identify = #{corporateIdentify},
+        </if>
+        <if test="delFlag != null">
+            del_flag = #{delFlag},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE
+        <if test="id != null">
+            id = #{id}
+        </if>
+    </update>
+
+</mapper>

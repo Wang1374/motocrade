@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.ClienteleMapper">
+    <resultMap id="clienteleResultMap" type="com.laogeli.order.api.module.Clientele">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="company_name" property="companyName"/>
+        <result column="company_code" property="companyCode"/>
+        <result column="uscc" property="uscc"/>
+        <result column="payer" property="payer"/>
+        <result column="partner" property="partner"/>
+        <result column="nature" property="nature"/>
+        <result column="type" property="type"/>
+        <result column="salesman" property="salesman"/>
+        <result column="how_to_account" property="howToAccount"/>
+        <result column="clearing_form" property="clearingForm"/>
+        <result column="settlement_interval" property="settlementInterval"/>
+        <result column="payment_days" property="paymentDays"/>
+        <result column="eir" property="eir"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="chinese_address" property="chineseAddress"/>
+        <result column="english_name" property="englishName"/>
+        <result column="english_address" property="englishAddress"/>
+        <result column="remark" property="remark"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="clienteleVoResultMap" type="com.laogeli.order.api.vo.ClienteleVo">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="company_name" property="value"/>
+        <result column="company_name" property="label"/>
+        <result column="salesman" property="salesman"/>
+        <result column="partner" property="partner"/>
+        <result column="nature" property="type"/>
+    </resultMap>
+
+    <sql id="clienteleColumns">
+        a.id,
+        a.belong_companies_id,
+        a.company_name,
+        a.company_code,
+        a.uscc,
+        a.payer,
+        a.partner,
+        a.nature,
+        a.type,
+        a.salesman,
+        a.how_to_account,
+        a.clearing_form,
+        a.settlement_interval,
+        a.payment_days,
+        a.eir,
+        a.province,
+        a.city,
+        a.area,
+        a.chinese_address,
+        a.english_name,
+        a.english_address,
+        a.remark,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="nature != null and nature != ''">
+            AND a.nature LIKE #{nature}
+        </if>
+        <if test="searchParam != null and searchParam != ''">
+            AND CONCAT(IFNULL(a.company_name, ''), IFNULL(a.company_code, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="queryType != 0 and queryType == 1">
+            OR a.belong_companies_id = 0
+        </if>
+    </sql>
+
+    <select id="findList" resultMap="clienteleResultMap">
+        SELECT
+        <include refid="clienteleColumns"/>
+        FROM order_clientele a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        <include refid="whereColumnList"/>
+    </select>
+
+    <!-- 通过公司抬头查询是否存在   -->
+    <select id="get" resultMap="clienteleResultMap">
+        SELECT
+        <include refid="clienteleColumns"/>
+        FROM order_clientele a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        AND a.company_name = #{companyName}
+    </select>
+
+    <!-- 新增客户 -->
+    <insert id="insert">
+        insert into order_clientele (
+        id,
+        belong_companies_id,
+        company_name,
+        company_code,
+        uscc,
+        payer,
+        partner,
+        nature,
+        type,
+        salesman,
+        how_to_account,
+        clearing_form,
+        settlement_interval,
+        payment_days,
+        eir,
+        province,
+        city,
+        area,
+        chinese_address,
+        english_name,
+        english_address,
+        remark,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        ) values (
+        #{id},
+        #{belongCompaniesId},
+        #{companyName},
+        #{companyCode},
+        #{uscc},
+        #{payer},
+        #{partner},
+        #{nature},
+        #{type},
+        #{salesman},
+        #{howToAccount},
+        #{clearingForm},
+        #{settlementInterval},
+        #{paymentDays},
+        #{eir},
+        #{province},
+        #{city},
+        #{area},
+        #{chineseAddress},
+        #{englishName},
+        #{englishAddress},
+        #{remark},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{applicationCode}
+        );
+    </insert>
+
+    <!-- 更新客户 -->
+    <update id="update">
+        update order_clientele set
+        <if test="belongCompaniesId != null">
+            belong_companies_id = #{belongCompaniesId},
+        </if>
+        <if test="companyName != null">
+            company_name = #{companyName},
+        </if>
+        <if test="companyCode != null">
+            company_code = #{companyCode},
+        </if>
+        <if test="uscc != null">
+            uscc = #{uscc},
+        </if>
+        <if test="payer != null">
+            payer = #{payer},
+        </if>
+        <if test="partner != null">
+            partner = #{partner},
+        </if>
+        <if test="nature != 0">
+            nature = #{nature},
+        </if>
+        <if test="type != 0">
+            type = #{type},
+        </if>
+        <if test="salesman != null">
+            salesman = #{salesman},
+        </if>
+        <if test="howToAccount != 0">
+            how_to_account = #{howToAccount},
+        </if>
+        <if test="clearingForm != 0">
+            clearing_form = #{clearingForm},
+        </if>
+        <if test="settlementInterval != 0">
+            settlement_interval = #{settlementInterval},
+        </if>
+        <if test="paymentDays != 0">
+            payment_days = #{paymentDays},
+        </if>
+        <if test="eir != null">
+            eir = #{eir},
+        </if>
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="chineseAddress != null">
+            chinese_address = #{chineseAddress},
+        </if>
+        <if test="englishName != null">
+            english_name = #{englishName},
+        </if>
+        <if test="englishAddress != null">
+            english_address = #{englishAddress},
+        </if>
+        <if test="remark != null">
+            remark = #{remark},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+
+    <!--根据companyName 修改往来单位-->
+    <update id="updateClientByName">
+        update order_clientele set
+        <if test="companyName != null">
+            company_name = #{updateData}
+        </if>
+        where
+        company_name = #{companyName}
+    </update>
+
+
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_clientele WHERE id = #{id}
+    </delete>
+
+    <!-- 获取客户 -->
+    <select id="getListById" resultMap="clienteleVoResultMap">
+        SELECT
+        a.id,
+        a.belong_companies_id,
+        a.company_name,
+        a.salesman,
+        a.partner,
+        a.nature,
+        a.payer
+        FROM order_clientele a
+        WHERE a.belong_companies_id = #{belongCompaniesId} OR a.belong_companies_id = '0'
+        ORDER BY a.id DESC
+    </select>
+
+    <insert id="setTest" useGeneratedKeys="false">
+        INSERT INTO order_box_pile (
+        box_pile,
+        `order`,
+        `type`)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.value}, #{item.order}, #{item.type})
+        </foreach>
+    </insert>
+
+
+    <!--查询客户id-->
+    <select id="findIdByCompanyIdAndName" resultType="String">
+        SELECT id
+        FROM  order_clientele
+        WHERE belong_companies_id =#{belongCompaniesId} AND company_name = #{companyName}
+    </select>
+
+</mapper>

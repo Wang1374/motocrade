@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.StaffRoleMenuMapper">
+    <resultMap id="roleMenuResultMap" type="com.laogeli.user.api.module.StaffRoleMenu">
+        <id column="id" property="id"/>
+        <result column="role_id" property="roleId"/>
+        <result column="menu_id" property="menuId"/>
+    </resultMap>
+
+    <sql id="roleMenuColumns">
+        a.id,
+        a.role_id,
+        a.menu_id
+    </sql>
+
+    <delete id="deleteByRoleId">
+        delete from sys_staff_role_menu
+        where role_id = #{roleId}
+    </delete>
+
+    <insert id="insertBatch" useGeneratedKeys="false">
+        INSERT INTO sys_staff_role_menu (
+        id,
+        role_id,
+        menu_id)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id}, #{item.roleId}, #{item.menuId})
+        </foreach>
+    </insert>
+</mapper>

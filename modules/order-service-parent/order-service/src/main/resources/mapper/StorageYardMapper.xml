@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.StorageYardMapper">
+    <resultMap id="storageYardResultMap" type="com.laogeli.order.api.module.StorageYard">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="address" property="address"/>
+        <result column="remark" property="remark"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="doorsColumns">
+        a.id,
+        a.`name`,
+        a.contact_number,
+        a.province,
+        a.city,
+        a.area,
+        a.address,
+        a.remark,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <sql id="whereColumnList">
+        <if test="searchParam !=null and searchParam!='' ">
+            and CONCAT(IFNULL(a.name, ''), IFNULL(a.name, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+    </sql>
+
+    <!-- 查询列表 -->
+    <select id="findList" resultMap="storageYardResultMap">
+        SELECT
+        <include refid="doorsColumns"/>
+        FROM order_storage_yard a
+        WHERE 1=1
+        <include refid="whereColumnList"/>
+    </select>
+
+    <!-- 通过堆场名称查询是否存在   -->
+    <select id="get" resultMap="storageYardResultMap">
+        SELECT
+        <include refid="doorsColumns"/>
+        FROM order_storage_yard a
+        WHERE a.name = #{name}
+    </select>
+
+    <!-- 新增客户 -->
+    <insert id="insert">
+        insert into order_storage_yard (
+        id,
+        `name`,
+        contact_number,
+        province,
+        city,
+        area,
+        address,
+        remark,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        ) values (
+        #{id},
+        #{name},
+        #{contactNumber},
+        #{province},
+        #{city},
+        #{area},
+        #{address},
+        #{remark},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{applicationCode}
+        );
+    </insert>
+
+    <!-- 更新客户 -->
+    <update id="update">
+        update order_storage_yard set
+        <if test="name != null">
+            `name` = #{name},
+        </if>
+        <if test="contactNumber != null">
+            contact_number = #{contactNumber},
+        </if>
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="address != null">
+            address = #{address},
+        </if>
+        <if test="remark != null">
+            remark = #{remark},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_storage_yard WHERE id = #{id}
+    </delete>
+</mapper>

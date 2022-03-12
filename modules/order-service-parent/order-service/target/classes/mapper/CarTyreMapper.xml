@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarTyreMapper">
+
+    <resultMap id="carTyreResultMapper" type="com.laogeli.order.api.module.CarTyre">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="employee_id" property="employeeId"/>
+        <result column="employee_name" property="employeeName"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="tyre_date" property="tyreDate"/>
+        <result column="tyre_project" property="tyreProject"/>
+        <result column="tyre_price" property="tyrePrice"/>
+        <result column="invoice_num" property="invoiceNum"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="mileage" property="mileage"/>
+        <result column="tyre_num" property="tyreNum"/>
+        <result column="ticket_url" property="ticketUrl"/>
+        <result column="ticket_name" property="ticketName"/>
+        <result column="affirm_state" property="affirmState"/>
+        <result column="invoice_state" property="invoiceState"/>
+        <result column="payment_received_state" property="paymentReceivedState"/>
+        <result column="expense_status" property="expenseStatus"/>
+        <result column="remark" property="remark"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!--Sql 语句-->
+    <sql id="carTyreColumn">
+        a.id,
+        a.belong_companies_id,
+        a.employee_id,
+        a.employee_name,
+        a.vehicle,
+        a.tyre_date,
+        a.tyre_project,
+        a.tyre_price,
+        a.invoice_num,
+        a.mileage,
+        a.pay_status,
+        a.tyre_num,
+        a.ticket_url,
+        a.ticket_name,
+        a.affirm_state,
+        a.invoice_state,
+        a.payment_received_state,
+        a.expense_status,
+        a.remark,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- 新增轮胎费用记录 -->
+    <insert id="insert" useGeneratedKeys="false">
+        INSERT INTO order_car_tyre(
+            id,
+            belong_companies_id,
+            employee_id,
+            employee_name,
+            vehicle,
+            tyre_date,
+            tyre_project,
+            tyre_price,
+            invoice_num,
+            mileage,
+            pay_status,
+            tyre_num,
+            ticket_url,
+            ticket_name,
+            affirm_state,
+            invoice_state,
+            payment_received_state,
+            expense_status,
+            remark,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES(
+            #{id},
+            #{belongCompaniesId},
+            #{employeeId},
+            #{employeeName},
+            #{vehicle},
+            #{tyreDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{tyreProject},
+            #{tyrePrice},
+            #{invoiceNum},
+            #{mileage},
+            #{payStatus},
+            #{tyreNum},
+            #{ticketUrl},
+            #{ticketName},
+            #{affirmState},
+            #{invoiceState},
+            #{paymentReceivedState},
+            #{expenseStatus},
+            #{remark},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+            )
+    </insert>
+
+    <sql id="whereColoumList">
+        <if test="employeeId !=null and employeeId !=''">
+            AND a.employee_id = #{employeeId}
+        </if>
+
+        <if test="vehicle !=null and vehicle !=''">
+            AND a.vehicle = #{vehicle}
+        </if>
+
+        <if test="invoiceNum !=null and invoiceNum !=''">
+            AND a.invoice_num = #{invoiceNum}
+        </if>
+
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND tyre_date &gt;= #{beginTime} AND tyre_date &lt;= #{endTime}
+        </if>
+
+    </sql>
+
+    <!-- 分页查询轮胎费用记录 -->
+    <select id="findList" resultMap="carTyreResultMapper">
+        SELECT
+        <include refid="carTyreColumn"/>
+        FROM order_car_tyre a
+        WHERE a.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+    </select>
+
+    <select id="findTyreCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(c.tyre_price) AS totalPrice
+        FROM
+        order_car_tyre c
+        WHERE 1=1
+        AND c.belong_companies_id=#{belongCompaniesId}
+        AND c.tyre_date &gt;= #{beginTime} AND c.tyre_date &lt;= #{endTime}
+        AND c.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY c.vehicle
+    </select>
+
+    <update id="update">
+        UPDATE
+        order_car_tyre
+        SET
+        <if test=" affirmState!=null">
+            affirm_state = #{affirmState},
+        </if>
+        <if test=" invoiceState!=null">
+            invoice_state = #{invoiceState},
+        </if>
+        <if test="paymentReceivedState !=null">
+            payment_received_state = #{paymentReceivedState},
+        </if>
+        <if test="expenseStatus !=null">
+            expense_status = #{expenseStatus},
+        </if>
+
+        <if test="remark !=null ">
+            remark =#{remark},
+        </if>
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+
+        <if test="employeeName !=null ">
+            employee_name = #{employeeName},
+        </if>
+
+        <if test="invoiceNum!=null">
+            invoice_num = #{invoiceNum},
+        </if>
+        <if test="tyreProject !=null">
+            tyre_project = #{tyreProject},
+        </if>
+        <if test="mileage!=null ">
+            mileage = #{mileage},
+        </if>
+        <if test="tyrePrice !=null">
+            tyre_price = #{tyrePrice},
+        </if>
+        tyre_date = #{tyreDate},
+        <if test="payStatus !=null">
+            pay_status = #{payStatus},
+        </if>
+        <if test="tyreNum !=null">
+            tyre_num = #{tyreNum},
+        </if>
+        <if test="ticketUrl!=null">
+            ticket_url = #{ticketUrl},
+        </if>
+        <if test="ticketName!=null" >
+            ticket_name = #{ticketName},
+        </if>
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+        <if test="employeeId !=null ">
+           AND  employee_id = #{employeeId}
+        </if>
+    </update>
+
+    <!-- 删除车辆轮胎费用记录   -->
+    <delete id="delete">
+        delete from order_car_tyre
+        where id=#{id}
+    </delete>
+
+
+</mapper>

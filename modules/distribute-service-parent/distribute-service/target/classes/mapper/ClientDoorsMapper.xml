@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.distribute.mapper.ClientDoorsMapper">
+
+    <resultMap id="doorsResultMap" type="com.laogeli.distribute.api.module.ClientDoors">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="door_as" property="doorAs"/>
+        <result column="door_full_name" property="doorFullName"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="address" property="address"/>
+        <result column="remark" property="remark"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+
+    <resultMap id="doorsVoResultMap" type="com.laogeli.distribute.api.vo.DoorsVo">
+        <id column="id" property="id"/>
+        <result column="door_as" property="value"/>
+        <result column="door_as" property="label"/>
+        <result column="address" property="address"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="remark" property="remark"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+    </resultMap>
+
+
+    <!-- 新增门点 -->
+    <insert id="insert">
+        insert into order_client_doors (
+        id,
+        belong_companies_id,
+        door_as,
+        door_full_name,
+        contacts,
+        contact_number,
+        province,
+        city,
+        area,
+        address,
+        remark,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        ) values (
+        #{id},
+        #{belongCompaniesId},
+        #{doorAs},
+        #{doorFullName},
+        #{contacts},
+        #{contactNumber},
+        #{province},
+        #{city},
+        #{area},
+        #{address},
+        #{remark},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{applicationCode}
+        );
+    </insert>
+
+    <sql id="doorsColumns">
+        a.id,
+        a.belong_companies_id,
+        a.door_as,
+        a.door_full_name,
+        a.contacts,
+        a.contact_number,
+        a.province,
+        a.city,
+        a.area,
+        a.address,
+        a.remark,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- 查询门点简称查询是否存在   -->
+    <select id="get" resultMap="doorsResultMap">
+        SELECT
+        <include refid="doorsColumns"/>
+        FROM order_client_doors a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        AND a.door_as = #{doorAs}
+    </select>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+
+        <if test="searchParam != null and searchParam != ''">
+            AND CONCAT(IFNULL(a.door_as, ''),IFNULL(a.door_full_name, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="contacts !=null and contacts !=''">
+            AND contacts = #{contacts}
+        </if>
+        <if test="contactNumber !=null and contactNumber !=''">
+            AND contact_number = #{contactNumber}
+        </if>
+        <if test="province !=null and province !=''">
+            AND province = #{province}
+        </if>
+        <if test="city !=null and city !=''">
+            AND city = #{city}
+        </if>
+        <if test="address !=null and address !=''">
+            AND  CONCAT(IFNULL(a.address, '')) LIKE CONCAT('%',#{address},'%')
+        </if>
+    </sql>
+
+    <!-- 分页查询门点数据   -->
+    <select id="findList" resultMap="doorsResultMap">
+        SELECT
+        <include refid="doorsColumns"/>
+        FROM order_client_doors a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+        <include refid="whereColumnList"/>
+    </select>
+
+    <!-- 更新门点 -->
+    <update id="update">
+        update order_client_doors set
+        <if test="belongCompaniesId != null">
+            belong_companies_id = #{belongCompaniesId},
+        </if>
+        <if test="doorAs != null">
+            door_as = #{doorAs},
+        </if>
+        <if test="doorFullName != null">
+            door_full_name = #{doorFullName},
+        </if>
+        <if test="contacts != null">
+            contacts = #{contacts},
+        </if>
+        <if test="contactNumber != null">
+            contact_number = #{contactNumber},
+        </if>
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="address != null">
+            address = #{address},
+        </if>
+        <if test="remark != null">
+            remark = #{remark},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_client_doors WHERE id = #{id}
+    </delete>
+
+    <!-- 查询所有门点   -->
+    <select id="findAllDoors" resultMap="doorsVoResultMap">
+        SELECT
+        id,
+        belong_companies_id,
+        concat(IFNULL(province,''), IFNULL(city,''), IFNULL(area,''), IFNULL(address,'')) AS address,
+        door_as,
+        contacts,
+        contact_number,
+        remark
+        FROM
+        order_client_doors
+        WHERE belong_companies_id = #{belongCompaniesId}
+    </select>
+
+</mapper>

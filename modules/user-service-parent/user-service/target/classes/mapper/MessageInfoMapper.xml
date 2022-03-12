@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.MessageInfoMapper">
+    <resultMap id="messageResultMap" type="com.laogeli.user.api.module.MessageInfo">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="message_context" property="messageContext"/>
+        <result column="message_title" property="messageTitle"/>
+        <result column="send_user" property="sendUser"/>
+        <result column="router_address" property="routerAddress"/>
+        <result column="read_status" property="readStatus"/>
+        <result column="number_params" property="numberParams"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!--  保存消息  -->
+    <insert id="insert" parameterType="MessageInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_message(
+            id,
+            belong_companies_id,
+            message_context,
+            message_title,
+            send_user,
+            router_address,
+            read_status,
+            number_params,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES (
+            #{id},
+            #{belongCompaniesId},
+            #{messageContext},
+            #{messageTitle},
+            #{sendUser},
+            #{routerAddress},
+            #{readStatus},
+            #{numberParams},
+            #{creator},
+            #{createDate},
+            #{modifier},
+            #{modifyDate},
+            #{applicationCode}
+        )
+    </insert>
+
+
+    <sql id="messageColumns">
+        id,
+        belong_companies_id,
+        message_context,
+        message_title,
+        send_user,
+        router_address,
+        read_status,
+        number_params,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+    </sql>
+
+    <!-- 根据公司id查询消息列表-->
+    <select id="findList" resultMap="messageResultMap">
+        SELECT
+        <include refid="messageColumns"/>
+        FROM sys_message
+        WHERE belong_companies_id = #{belongCompaniesId}
+    </select>
+
+    <!--    标记为已读-->
+    <update id="updateReadStatus">
+        UPDATE sys_message
+        SET read_status = 1
+        WHERE  id IN
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <!--    全部已读-->
+    <update id="updateAllRead" >
+        UPDATE sys_message
+        SET read_status = 1
+        WHERE belong_companies_id = #{belongCompaniesId}
+    </update>
+
+    <!--    根据id删除消息-->
+    <update id="deleteMessageByIds">
+        DELETE FROM sys_message
+        WHERE  id IN
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <!-- 查询未读消息数量   -->
+    <select id="getMessageNotRead" resultType="Integer">
+        SELECT count(*) FROM sys_message WHERE belong_companies_id = #{belongCompaniesId} AND read_status = 0
+    </select>
+</mapper>

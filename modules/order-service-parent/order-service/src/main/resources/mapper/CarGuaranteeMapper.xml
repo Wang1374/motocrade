@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarGuaranteeMapper">
+    <resultMap id="carGuaranteeMapper" type="com.laogeli.order.api.module.CarGuarantee">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="policy_num" property="policyNum"/>
+        <result column="guarantee_type" property="guaranteeType"/>
+        <result column="start_policy_date" property="startPolicyDate"/>
+        <result column="end_policy_date" property="endPolicyDate"/>
+        <result column="policy_url" property="policyUrl"/>
+        <result column="policy_name" property="policyName"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!-- sql语句   -->
+    <sql id="carGuaranteeColumn">
+        v.id,
+        v.belong_companies_id,
+        v.vehicle,
+        v.policy_num,
+        v.guarantee_type,
+        v.guarantee_price,
+        v.start_policy_date,
+        v.end_policy_date,
+        v.policy_url,
+        v.policy_name,
+        v.creator,
+        v.create_date,
+        v.modifier,
+        v.modify_date,
+        v.application_code
+    </sql>
+
+    <!-- where条件 -->
+    <sql id="whereColoumList">
+        <if test="searchParam !=null and searchParam !=''">
+            AND CONCAT(IFNULL(v.vehicle, ''), IFNULL(v.vehicle, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="vehicle !=null and vehicle!=''">
+            AND vehicle = #{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND end_policy_date &gt;= #{beginTime} AND start_policy_date &lt;= #{endTime}
+        </if>
+    </sql>
+
+    <!-- 分页查询数据 -->
+    <select id="findList" resultMap="carGuaranteeMapper">
+        SELECT
+        <include refid="carGuaranteeColumn"/>
+        FROM order_car_guarantee v
+        WHERE v.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY v.id DESC
+    </select>
+
+    <!--新增保险费用记录    -->
+    <insert id="insert" useGeneratedKeys="false">
+        INSERT INTO order_car_guarantee(
+            id,
+            belong_companies_id,
+            vehicle,
+            policy_num,
+            guarantee_type,
+            guarantee_price,
+            start_policy_date,
+            end_policy_date,
+            policy_url,
+            policy_name,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES (
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{policyNum},
+            #{guaranteeType},
+            #{guaranteePrice},
+            #{startPolicyDate},
+            #{endPolicyDate},
+            #{policyUrl},
+            #{policyName},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE
+        order_car_guarantee
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        <if test="policyNum !=null">
+            policy_num = #{policyNum},
+        </if>
+        <if test="guaranteeType != null">
+            guarantee_type = #{guaranteeType},
+        </if>
+        <if test="guaranteePrice !=null">
+            guarantee_price = #{guaranteePrice},
+        </if>
+
+        start_policy_date = #{startPolicyDate},
+        end_policy_date = #{endPolicyDate},
+        <if test=" policyUrl !=null">
+            policy_url = #{policyUrl},
+        </if>
+        <if test="policyName !=null">
+            policy_name = #{policyName},
+        </if>
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM
+        order_car_guarantee
+        WHERE
+            id = #{id}
+    </delete>
+</mapper>

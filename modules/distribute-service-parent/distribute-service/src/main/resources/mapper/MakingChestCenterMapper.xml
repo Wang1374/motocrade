@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.distribute.mapper.MakingChestCenterMapper">
+    <resultMap id="makingChestCenterResultMap" type="com.laogeli.distribute.api.module.MakingChestCenter">
+        <id column="id" property="id"/>
+        <result column="place_order_id" property="placeOrderId"/>
+        <result column="plan_packing_time" property="planPackingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="box_pile" property="boxPile"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="total" property="total"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="cbm" property="cbm"/>
+        <result column="product_names" property="productNames"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="bm_remarks" property="bmRemarks"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="lclCenterResultMap" type="com.laogeli.distribute.api.module.LclCenter">
+        <id column="id" property="id"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="remark" property="remark"/>
+        <result column="hair_body" property="hairBody"/>
+    </resultMap>
+
+    <sql id="makingChestCenterColumns">
+      a.id,
+      a.place_order_id,
+      a.plan_packing_time,
+      a.box_pile,
+      a.case_number,
+      a.bl_no_str,
+      a.total,
+      a.gross_weight,
+      a.cbm,
+      a.product_names,
+      a.door,
+      a.address,
+      a.bm_remarks,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="placeOrderId != null and placeOrderId != ''">
+            and a.place_order_id like #{placeOrderId}
+        </if>
+    </sql>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="makingChestCenterResultMap">
+        SELECT
+        <include refid="makingChestCenterColumns"/>
+        FROM order_making_chest_center a
+        WHERE a.place_order_id = #{placeOrderId}
+    </select>
+
+    <!--  新增做箱  -->
+    <insert id="addMakingChestCenter">
+        INSERT INTO order_making_chest_center(
+            id,
+            place_order_id,
+            box_pile,
+            case_number,
+            door,
+            address,
+            bl_no_str,
+            bm_remarks,
+            total,
+            gross_weight,
+            cbm,
+            product_names,
+            plan_packing_time,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.placeOrderId},
+            #{item.boxPile},
+            #{item.caseNumber},
+            #{item.door},
+            #{item.address},
+            #{item.blNoStr},
+            #{item.bmRemarks},
+            #{item.total},
+            #{item.grossWeight},
+            #{item.cbm},
+            #{item.productNames},
+            #{item.planPackingTime},
+            #{item.creator},
+            #{item.createDate},
+            #{item.modifier},
+            #{item.modifyDate},
+            #{item.applicationCode}
+            )
+        </foreach>
+    </insert>
+
+    <!--    新增件毛体-->
+    <insert id="addLclCenter">
+        INSERT INTO order_lcl_center(
+            id,
+            mc_id,
+            door,
+            contacts,
+            contact_number,
+            address,
+            remark,
+            hair_body
+        )VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.mcId},
+            #{item.door},
+            #{item.contacts},
+            #{item.contactNumber},
+            #{item.address},
+            #{item.remark},
+            #{item.hairBody}
+            )
+        </foreach>
+
+    </insert>
+
+    <!-- 获取门点 与 件毛体列表 -->
+    <select id="getLclCenterList" resultMap="lclCenterResultMap">
+        SELECT
+        id,
+        mc_id,
+        door,
+        address,
+        contacts,
+        contact_number,
+        remark,
+        hair_body
+        FROM order_lcl_center
+        WHERE mc_id in
+        <foreach item="item" index="index" collection="array" open="(" close=")" separator="," >
+            #{item}
+        </foreach>
+    </select>
+
+    <!-- 通过做箱id批量删除门点与件毛体 -->
+    <delete id="delAllLcl">
+        DELETE FROM order_lcl_center
+        WHERE mc_id in
+        <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!--    根据下单id删除做箱信息-->
+    <delete id="delMcByPlaceorderId">
+        DELETE FROM order_making_chest_center
+        WHERE place_order_id =#{id}
+    </delete>
+
+
+</mapper>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.OrderAttendanceMapper">
+
+
+    <!--新增考勤记录-->
+    <insert id="insert">
+         INSERT INTO order_attendance(
+            id,
+            belong_companies_id,
+            driver_id,
+            mc_id,
+            years,
+            months,
+            days,
+            content,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )VALUES
+        (
+            #{id},
+            #{belongCompaniesId},
+            #{driverId},
+            #{mcId},
+            #{years},
+            #{months},
+            #{days},
+            #{content},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+    </insert>
+
+    <resultMap id="attendanceResultMap" type="com.laogeli.order.api.module.OrderAttendance">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="driver_id" property="driverId"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="years" property="years"/>
+        <result column="months" property="months"/>
+        <result column="days" property="days"/>
+        <result column="content" property="content"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="attendanceColumns">
+        a.id,
+        a.belong_companies_id,
+        a.driver_id,
+        a.mc_id,
+        a.years,
+        a.months,
+        a.days,
+        a.content,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+    <!--根据司机id获取考勤记录-->
+    <select id="findList" resultMap="attendanceResultMap">
+        select
+        <include refid="attendanceColumns"/>
+        from order_attendance a
+        where a.belong_companies_id = #{belongCompaniesId} and a.driver_id = #{driverId}
+    </select>
+
+    <!--根据日期删除-->
+    <delete id="delete">
+        delete from  order_attendance where driver_id = #{driverId} and  years = #{years} and months = #{months} and days=#{days}
+    </delete>
+
+    <!--删除-->
+    <delete id="deleteByMcId">
+        delete from order_attendance where mc_id = #{mcId}
+    </delete>
+
+    <!--查询是否存在-->
+    <select id="findIsExist" resultMap="attendanceResultMap">
+        select
+        <include refid="attendanceColumns"/>
+        from order_attendance a
+        where  a.mc_id = #{mcId}
+    </select>
+    <select id="getEntityByDriverId" resultMap="attendanceResultMap">
+        select
+        <include refid="attendanceColumns"/>
+        from order_attendance a
+        where  a.driver_id = #{driverId}  and  a.years = #{years} and a.months = #{months} and a.days=#{days}
+    </select>
+
+
+    <!--    where driver_id = #{driverId} and mc_id = #{mcId} and  years = #{years} and months = #{months} and days=#{days}-->
+</mapper>

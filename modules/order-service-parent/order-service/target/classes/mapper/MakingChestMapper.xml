@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.MakingChestMapper">
+    <resultMap id="makingChestResultMap" type="com.laogeli.order.api.module.MakingChest">
+        <id column="id" property="id"/>
+        <result column="business_order_id" property="businessOrderId"/>
+        <result column="company_id" property="companyId"/>
+        <result column="receipt_url" property="receiptUrl"/>
+        <result column="send_receip_status" property="sendReceipStatus"/>
+        <result column="send_receip_address" property="sendReceipAddress"/>
+        <result column="making_status" property="makingStatus"/>
+        <result column="making_reason" property="makingReason"/>
+        <result column="box_pile" property="boxPile"/>
+        <result column="case_number" property="caseNumber"/>
+        <result column="seal_number" property="sealNumber"/>
+        <result column="tare_weight" property="tareWeight"/>
+        <result column="total" property="total"/>
+        <result column="gross_weight" property="grossWeight"/>
+        <result column="cbm" property="cbm"/>
+        <result column="suitcase_point" property="suitcasePoint"/>
+        <result column="return_point" property="returnPoint"/>
+        <result column="schedule_time" property="scheduleTime"/>
+        <result column="packing_time" property="packingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="plan_packing_time" property="planPackingTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="door" property="door"/>
+        <result column="address" property="address"/>
+        <result column="type_of_shipping" property="typeOfShipping"/>
+        <result column="carrier_company" property="carrierCompany"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="driver" property="driver"/>
+        <result column="driver_id" property="driverId"/>
+        <result column="vehicle_ownership" property="vehicleOwnership"/>
+        <result column="phone" property="phone"/>
+        <result column="door_url" property="doorUrl"/>
+        <result column="seal_url" property="sealUrl"/>
+        <result column="eir_url" property="eirUrl"/>
+        <result column="sign_for_url" property="signForUrl"/>
+        <result column="bl_no_str" property="blNoStr"/>
+        <result column="ys_state" property="ysState"/>
+        <result column="yf_state" property="yfState"/>
+        <result column="ptys_state" property="ptysState"/>
+        <result column="bm_remarks" property="bmRemarks"/>
+        <result column="is_dispatch" property="isDispatch"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="lclResultMap" type="com.laogeli.order.api.module.Lcl">
+        <id column="id" property="id"/>
+        <result column="mc_id" property="mcId"/>
+        <result column="door" property="door"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_number" property="contactNumber"/>
+        <result column="address" property="address"/>
+        <result column="remark" property="remark"/>
+        <result column="hair_body" property="hairBody"/>
+    </resultMap>
+
+    <sql id="makingChestColumns">
+      a.id,
+      a.business_order_id,
+      a.receipt_url,
+      a.send_receip_status,
+      a.send_receip_address,
+      a.company_id,
+      a.making_status,
+      a.making_reason,
+      a.box_pile,
+      a.case_number,
+      a.seal_number,
+      a.tare_weight,
+      a.total,
+      a.gross_weight,
+      a.cbm,
+      a.suitcase_point,
+      a.return_point,
+      a.schedule_time,
+      a.packing_time,
+      a.plan_packing_time,
+      a.door,
+      a.address,
+      a.type_of_shipping,
+      a.carrier_company,
+      a.vehicle,
+      a.driver,
+      a.driver_id,
+      a.vehicle_ownership,
+      a.phone,
+      a.door_url,
+      a.seal_url,
+      a.eir_url,
+      a.sign_for_url,
+      a.bl_no_str,
+      a.ys_state,
+      a.yf_state,
+      a.ptys_state,
+      a.bm_remarks,
+      a.is_dispatch,
+      a.creator,
+      a.create_date,
+      a.modifier,
+      a.modify_date,
+      a.del_flag,
+      a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="businessOrderId != null and businessOrderId != ''">
+            and a.business_order_id like #{businessOrderId}
+        </if>
+        <if test="companyId != null and companyId != ''">
+            and a.company_id like #{companyId}
+        </if>
+    </sql>
+
+    <!-- 获取列表 -->
+    <select id="findList" resultMap="makingChestResultMap">
+        SELECT
+        <include refid="makingChestColumns"/>
+        FROM order_making_chest a
+        WHERE 1 = 1
+        <include refid="whereColumnList"/>
+        order by a.create_date DESC
+    </select>
+
+    <!--根据做箱id获取做箱信息-->
+    <select id="get" resultMap="makingChestResultMap">
+        SELECT
+            <include refid="makingChestColumns"/>
+        FROM order_making_chest a
+        WHERE a.id = #{id}
+    </select>
+
+    <!-- 批量添加做箱信息 -->
+    <insert id="addMc" useGeneratedKeys="false">
+        INSERT INTO order_making_chest (
+        id,
+        business_order_id,
+        receipt_url,
+        send_receip_status,
+        send_receip_address,
+        company_id,
+        box_pile,
+        case_number,
+        seal_number,
+        tare_weight,
+        total,
+        gross_weight,
+        cbm,
+        suitcase_point,
+        return_point,
+        schedule_time,
+        packing_time,
+        plan_packing_time,
+        door,
+        address,
+        type_of_shipping,
+        carrier_company,
+        vehicle,
+        driver,
+        driver_id,
+        vehicle_ownership,
+        phone,
+        door_url,
+        seal_url,
+        eir_url,
+        sign_for_url,
+        bl_no_str,
+        ys_state,
+        yf_state,
+        ptys_state,
+        bm_remarks,
+        is_dispatch,
+        creator,
+        create_date,
+        del_flag,
+        application_code
+        ) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.businessOrderId},
+            #{item.receiptUrl},
+            #{item.sendReceipStatus},
+            #{item.sendReceipAddress},
+            #{item.companyId},
+            #{item.boxPile},
+            #{item.caseNumber},
+            #{item.sealNumber},
+            #{item.tareWeight},
+            #{item.total},
+            #{item.grossWeight},
+            #{item.cbm},
+            #{item.suitcasePoint},
+            #{item.returnPoint},
+            #{item.scheduleTime},
+            #{item.packingTime},
+            #{item.planPackingTime},
+            #{item.door},
+            #{item.address},
+            #{item.typeOfShipping},
+            #{item.carrierCompany},
+            #{item.vehicle},
+            #{item.driver},
+            #{item.driverId},
+            #{item.vehicleOwnership},
+            #{item.phone},
+            #{item.doorUrl},
+            #{item.sealUrl},
+            #{item.eirUrl},
+            #{item.signForUrl},
+            #{item.blNoStr},
+            #{item.ysState},
+            #{item.yfState},
+            #{item.ptysState},
+            #{item.bmRemarks},
+            #{item.isDispatch},
+            #{item.creator},
+            #{item.createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{item.delFlag},
+            #{item.applicationCode}
+            )
+        </foreach>
+    </insert>
+
+    <!-- 通过做箱id批量删除做箱信息 -->
+    <delete id="delAllMc">
+        DELETE FROM order_making_chest
+        WHERE id in
+        <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!-- 获取门点 与 件毛体列表 -->
+    <select id="getLclList" resultMap="lclResultMap">
+        SELECT
+        id,
+        mc_id,
+        door,
+        contacts,
+        contact_number,
+        address,
+        remark,
+        hair_body
+        FROM order_lcl
+        WHERE mc_id in
+        <foreach item="item" index="index" collection="array" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+
+    <!-- 批量添加门点与件毛体 -->
+    <insert id="addLcl" useGeneratedKeys="false">
+        INSERT INTO order_lcl (
+        id,
+        mc_id,
+        door,
+        contacts,
+        contact_number,
+        address,
+        remark,
+        hair_body
+        ) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.mcId},
+            #{item.door},
+            #{item.contacts},
+            #{item.contactNumber},
+            #{item.address},
+            #{item.remark},
+            #{item.hairBody}
+            )
+        </foreach>
+    </insert>
+
+    <!-- 通过做箱id批量删除门点与件毛体 -->
+    <delete id="delAllLcl">
+        DELETE FROM order_lcl
+        WHERE mc_id in
+        <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!-- 批量修改 -->
+    <update id="batchUpdateMc" parameterType="java.util.List">
+        update order_making_chest
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="company_id = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.companyId != null">
+                        when id = #{item.id} then #{item.companyId}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="receipt_url = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.receiptUrl != null">
+                        when id = #{item.id} then #{item.receiptUrl}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="send_receip_status = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.sendReceipStatus != null">
+                        when id = #{item.id} then #{item.sendReceipStatus}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="send_receip_address = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.sendReceipAddress != null">
+                        when id = #{item.id} then #{item.sendReceipAddress}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="box_pile = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.boxPile != null">
+                        when id = #{item.id} then #{item.boxPile}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="case_number = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.caseNumber != null">
+                        when id = #{item.id} then #{item.caseNumber}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="seal_number = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.sealNumber}
+                </foreach>
+            </trim>
+            <trim prefix="tare_weight = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.tareWeight}
+                </foreach>
+            </trim>
+            <trim prefix="total = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.total}
+                </foreach>
+            </trim>
+            <trim prefix="gross_weight = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.grossWeight}
+                </foreach>
+            </trim>
+            <trim prefix="cbm = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.cbm}
+                </foreach>
+            </trim>
+            <trim prefix="suitcase_point = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.suitcasePoint != null">
+                        when id = #{item.id} then #{item.suitcasePoint}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="return_point = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.returnPoint != null">
+                        when id = #{item.id} then #{item.returnPoint}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="schedule_time = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.scheduleTime}
+                </foreach>
+            </trim>
+            <trim prefix="packing_time = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.packingTime}
+                </foreach>
+            </trim>
+            <trim prefix="plan_packing_time = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.planPackingTime}
+                </foreach>
+            </trim>
+            <trim prefix="door = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.door}
+                </foreach>
+            </trim>
+            <trim prefix="address = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.address}
+                </foreach>
+            </trim>
+            <trim prefix="type_of_shipping = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.typeOfShipping != null">
+                        when id = #{item.id} then #{item.typeOfShipping}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="carrier_company = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.carrierCompany != null">
+                        when id = #{item.id} then #{item.carrierCompany}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="vehicle = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.vehicle != null">
+                        when id = #{item.id} then #{item.vehicle}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="driver = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.driver != null">
+                        when id = #{item.id} then #{item.driver}
+                    </if>
+                </foreach>
+            </trim>
+
+            <trim prefix="driver_id = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.driverId != null">
+                        when id = #{item.id} then #{item.driverId}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="vehicle_ownership = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.vehicleOwnership != null">
+                        when id = #{item.id} then #{item.vehicleOwnership}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="phone = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    when id = #{item.id} then #{item.phone}
+                </foreach>
+            </trim>
+            <trim prefix="door_url = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.doorUrl != null">
+                        when id = #{item.id} then #{item.doorUrl}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="seal_url = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.sealUrl != null">
+                        when id = #{item.id} then #{item.sealUrl}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="eir_url = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.eirUrl != null">
+                        when id = #{item.id} then #{item.eirUrl}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="sign_for_url = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.signForUrl != null">
+                        when id = #{item.id} then #{item.signForUrl}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="bl_no_str = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.blNoStr != null">
+                        when id = #{item.id} then #{item.blNoStr}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ys_state = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.ysState != null">
+                        when id = #{item.id} then #{item.ysState}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="yf_state = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.yfState != null">
+                        when id = #{item.id} then #{item.yfState}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="ptys_state = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.ptysState != null">
+                        when id = #{item.id} then #{item.ptysState}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="bm_remarks = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.bmRemarks != null">
+                        when id = #{item.id} then #{item.bmRemarks}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="is_dispatch = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.isDispatch != null">
+                        when id = #{item.id} then #{item.isDispatch}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="modifier = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.modifier != null">
+                        when id = #{item.id} then #{item.modifier}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="modify_date = case" suffix="end,">
+                <foreach collection="list" item="item" index="index">
+                    <if test="item.modifyDate != null">
+                        when id = #{item.id} then #{item.modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <!-- 更新订单费用状态 -->
+    <update id="update">
+        update order_making_chest set
+        <if test="ysState != null and ysState != -1">
+            ys_state = #{ysState},
+        </if>
+        <if test="yfState != null and yfState != -1">
+            yf_state = #{yfState},
+        </if>
+        <if test="ptysState != null and ptysState != -1">
+            ptys_state = #{ptysState},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 根据订单id查询做箱信息 -->
+    <select id="getMakingChestByIds" resultMap="makingChestResultMap">
+        SELECT
+        <include refid="makingChestColumns"/>
+        FROM order_making_chest a
+        WHERE a.business_order_id in
+        <foreach collection="array" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--根据做箱id查询做箱状态-->
+    <select id="getMakingStatus" resultType="Integer">
+        SELECT making_status FROM order_making_chest WHERE  id = #{id}
+    </select>
+
+    <!-- 根据做箱id修改做箱状态   -->
+    <update id="updateById">
+        UPDATE
+        order_making_chest
+        SET
+        <if test="makingStatus != null">
+            making_status = #{makingStatus},
+        </if>
+        <if test="makingReason != null">
+            making_reason = #{makingReason},
+        </if>
+        cancel_time = NOW()
+        WHERE
+        id=#{id}
+    </update>
+
+    <!--  查询正常做箱的数量  -->
+    <select id="getIsMakingStatus" resultType="Integer">
+        SELECT
+        count(1)
+        FROM order_making_chest
+        WHERE business_order_id=#{orderId} and making_status=1
+    </select>
+
+
+    <sql id="makingWxChestColumns">
+      a.id,
+      a.business_order_id,
+      a.receipt_url,
+      a.making_status,
+      a.making_reason,
+      a.box_pile,
+      a.case_number,
+      a.seal_number,
+      a.tare_weight,
+      a.total,
+      a.gross_weight,
+      a.cbm,
+      a.suitcase_point,
+      a.return_point,
+      a.schedule_time,
+      a.packing_time,
+      a.plan_packing_time,
+      a.door,
+      a.address,
+      a.type_of_shipping,
+      a.carrier_company,
+      a.vehicle,
+      a.driver,
+      a.vehicle_ownership,
+      a.phone,
+      a.door_url,
+      a.seal_url,
+      a.eir_url,
+      a.sign_for_url,
+      a.bl_no_str,
+      a.bm_remarks,
+      a.create_date,
+
+      b.order_number,
+      b.vessel_and_voyage
+
+    </sql>
+
+
+    <sql id="wxColumnsWhere">
+        <if test="searchValue != null and searchValue != ''">
+            AND CONCAT(IFNULL(a.case_number, ''),IFNULL(a.bl_no_str, '')) LIKE CONCAT('%',#{searchValue},'%')
+        </if>
+    </sql>
+    <!--根据微信用户的手机号获取箱货信息-->
+    <select id="getByPhoneNumber" resultType="com.laogeli.order.api.vo.WxMakingChestVo">
+        SELECT
+        <include refid="makingWxChestColumns"/>
+        FROM order_making_chest a
+        LEFT JOIN order_business_order b on a.business_order_id = b.id
+        WHERE phone = #{phone}
+        <include refid="wxColumnsWhere"/>
+    </select>
+
+    <!-- 根据下单编号修改下单表订单状态-->
+    <update id="updateOrderCenter">
+        UPDATE order_business_center
+        SET order_status = 0,reason='取消做箱'
+        WHERE place_order_number = #{placeOrderNumber}
+    </update>
+
+    <!-- 根据下单id取消做箱   -->
+    <update id="cancelMaking">
+        UPDATE order_making_chest
+        SET  making_status = 0,making_reason='客服取消原因:取消做箱'
+        WHERE business_order_id = #{orderId}
+    </update>
+
+    <update id="updatePictureById">
+        UPDATE order_making_chest
+        SET
+        <if test="doorUrl !=null">
+            door_url = #{doorUrl},
+        </if>
+        <if test="eirUrl !=null">
+            eir_url = #{eirUrl},
+        </if>
+        <if test="signForUrl !=null">
+            sign_for_url = #{signForUrl},
+        </if>
+        <if test="sealUrl !=null">
+            seal_url = #{sealUrl},
+        </if>
+        <if test="receiptUrl !=null">
+            receipt_url = #{receiptUrl},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateUrlById">
+         UPDATE order_making_chest
+         SET receipt_url = #{receiptUrl}
+         WHERE id = #{id}
+    </update>
+</mapper>

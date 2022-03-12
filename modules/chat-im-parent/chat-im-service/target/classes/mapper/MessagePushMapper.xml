@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.chatim.mapper.MessagePushMapper">
+    <resultMap id="messagePushResultMap" type="com.laogeli.chatim.api.model.MessagePush">
+        <id column="msg_id" property="msgId"/>
+        <result column="receiver_id" property="receiverId"/>
+        <result column="content" property="content"/>
+        <result column="title" property="title"/>
+        <result column="business_type" property="businessType"/>
+        <result column="outline" property="outline"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="columns">
+        msg_id,
+        receiver_id,
+        content,
+        title,
+        business_type,
+        outline,
+        create_date,
+        modify_date
+    </sql>
+
+    <insert id="saveMsgPush">
+        INSERT INTO msg_push
+        (
+        msg_id,
+        receiver_id,
+        content,
+        title,
+        business_type,
+        outline,
+        create_date
+        )
+        VALUES
+        (
+        #{msgId},
+        #{receiverId},
+        #{content},
+        #{title},
+        #{businessType},
+        #{outline},
+        #{createDate}
+        )
+    </insert>
+
+    <select id="findByMsgId" resultMap="messagePushResultMap">
+        SELECT
+        <include refid="columns"/>
+        FROM msg_push
+        WHERE msg_id = #{msgId}
+    </select>
+
+    <update id="ackByMsgId">
+        UPDATE msg_push set
+        <if test="outline!=null and outline!=0">
+            outline = #{outline},
+        </if>
+        <if test="modifyDate!=null">
+            modify_date = #{modifyDate}
+        </if>
+        WHERE msg_id = #{msgId}
+    </update>
+
+</mapper>

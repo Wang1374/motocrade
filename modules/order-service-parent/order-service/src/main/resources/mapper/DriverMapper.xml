@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.DriverMapper">
+    <resultMap id="driverResultMap" type="com.laogeli.order.api.module.Driver">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicles" property="vehicles"/>
+        <result column="driver_name" property="driverName"/>
+        <result column="driver_belong_state" property="driverBelongState"/>
+        <result column="driver_phone" property="driverPhone"/>
+        <result column="emergent_person" property="emergentPerson"/>
+        <result column="emergent_phone" property="emergentPhone"/>
+        <result column="native_place" property="nativePlace"/>
+        <result column="entry_date" property="entryDate"/>
+        <result column="front_url" property="frontUrl"/>
+        <result column="reverse_url" property="reverseUrl"/>
+        <result column="qc_url" property="qcUrl"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="driverVoResultMap" type="com.laogeli.order.api.vo.DriverVo">
+        <id column="id" property="id"/>
+        <result column="in_state" property="inState"/>
+        <result column="driver_name" property="value"/>
+        <result column="driver_name" property="label"/>
+        <result column="driver_phone" property="phone"/>
+        <result column="vehicles" property="vehicles"/>
+        <result column="driver_belong_state" property="driverBelongState"/>
+    </resultMap>
+
+    <!--sql语句-->
+    <sql id="driverColumns">
+        d.id,
+        d.belong_companies_id,
+        d.vehicles,
+        d.driver_name,
+        d.driver_belong_state,
+        d.driver_phone,
+        d.emergent_person,
+        d.emergent_phone,
+        d.age,
+        d.native_place,
+        d.id_number,
+        d.province,
+        d.city,
+        d.area,
+        d.address,
+        d.entry_date,
+        d.in_state,
+        d.front_url,
+        d.reverse_url,
+        d.driving_licence_url,
+        d.qc_url,
+        d.creator,
+        d.create_date,
+        d.modifier,
+        d.modify_date,
+        d.application_code
+    </sql>
+
+
+
+
+    <!--where条件-->
+    <sql id="whereColumnList">
+        <if test="searchParam !=null and searchParam!='' ">
+            and CONCAT(IFNULL(d.driver_name, ''), IFNULL(d.driver_phone, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="driverBelongState !=null and driverBelongState!=0 ">
+            and driver_belong_state = #{driverBelongState}
+        </if>
+        <if test="inState!=null and inState !=0">
+            and in_state = #{inState}
+        </if>
+    </sql>
+
+    <!--查询司机列表-->
+    <select id="findList" resultMap="driverResultMap">
+        select
+        <include refid="driverColumns"/>
+        from order_driver d
+        where d.belong_companies_id = #{belongCompaniesId}
+        <include refid="whereColumnList"/>
+        ORDER BY d.id DESC
+    </select>
+
+    <!--根据司机姓名和手机号查询司机是否存在   -->
+    <select id="getByNameAndPhone" resultMap="driverResultMap">
+        select
+        <include refid="driverColumns"/>
+        from order_driver d
+        where d.belong_companies_id = #{belongCompaniesId}
+        and d.driver_name = #{driverName}
+        and d.driver_phone = #{driverPhone}
+    </select>
+
+    <!--新增司机-->
+    <insert id="insert">
+        insert into order_driver(
+            id,
+            belong_companies_id,
+            driver_name,
+            driver_belong_state,
+            driver_phone,
+            emergent_person,
+            emergent_phone,
+            age,
+            native_place,
+            id_number,
+            province,
+            city,
+            area,
+            address,
+            entry_date,
+            in_state,
+            front_url,
+            reverse_url,
+            driving_licence_url,
+            qc_url,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        )values(
+            #{id},
+            #{belongCompaniesId},
+            #{driverName},
+            #{driverBelongState},
+            #{driverPhone},
+            #{emergentPerson},
+            #{emergentPhone},
+            #{age},
+            #{nativePlace},
+            #{idNumber},
+            #{province},
+            #{city},
+            #{area},
+            #{address},
+            #{entryDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{inState},
+            #{frontUrl},
+            #{reverseUrl},
+            #{drivingLicenceUrl},
+            #{qcUrl},
+            #{creator},
+            #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+
+    </insert>
+
+    <!--根据id删除司机信息-->
+    <delete id="delete">
+        delete from order_driver
+        where id=#{id}
+    </delete>
+
+    <!--根据多个id批量删除司机信息-->
+    <delete id="deleteAll">
+        delete from order_driver
+        where id in
+        <foreach item="item" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <!--修改司机信息-->
+    <update id="update">
+        update order_driver set
+        <if test="belongCompaniesId != null">
+            belong_companies_id=#{belongCompaniesId},
+        </if>
+        <if test="driverName != null">
+            driver_name = #{driverName},
+        </if>
+        <if test="driverBelongState !=null">
+            driver_belong_state = #{driverBelongState},
+        </if>
+        <if test="driverPhone != null">
+            driver_phone = #{driverPhone},
+        </if>
+        <if test="emergentPerson !=null">
+            emergent_person = #{emergentPerson},
+        </if>
+        <if test="emergentPhone !=null">
+            emergent_phone = #{emergentPhone},
+        </if>
+        <if test="age != null">
+            age = #{age},
+        </if>
+        <if test="nativePlace != null ">
+            native_place = #{nativePlace},
+        </if>
+        <if test="idNumber != null">
+            id_number = #{idNumber},
+        </if>
+        <if test="vehicles !=null">
+            vehicles = #{vehicles},
+        </if>
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="address != null">
+            address = #{address},
+        </if>
+
+        entry_date = #{entryDate},
+
+        <if test="inState != null">
+            in_state = #{inState},
+        </if>
+        <if test="frontUrl != null">
+            front_url = #{frontUrl},
+        </if>
+        <if test="reverseUrl">
+            reverse_url = #{reverseUrl},
+        </if>
+        <if test="drivingLicenceUrl != null">
+            driving_licence_url = #{drivingLicenceUrl},
+        </if>
+        <if test="qcUrl">
+            qc_url = #{qcUrl},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过企业标识id 获取司机与联系方式 -->
+    <select id="getListById" resultMap="driverVoResultMap">
+        SELECT
+        a.id,
+        a.in_state,
+        a.driver_name,
+        a.driver_phone,
+        a.driver_belong_state,
+        a.vehicles
+        FROM order_driver a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarRepairMapper">
+    <resultMap id="carRepairResultMapper" type="com.laogeli.order.api.module.CarRepair">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="repair_date" property="repairDate"/>
+        <result column="repair_project" property="repairProject"/>
+        <result column="repair_price" property="repairPrice"/>
+        <result column="invoice_num" property="invoiceNum"/>
+        <result column="remark" property="remark"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="pay_statement" property="payStatement"/>
+        <result column="ticket_url" property="ticketUrl"/>
+        <result column="ticket_name" property="ticketName"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!--Sql 语句-->
+    <sql id="carRepairColumn">
+        c.id,
+        c.belong_companies_id,
+        c.vehicle,
+        c.repair_date,
+        c.repair_project,
+        c.repair_price,
+        c.invoice_num,
+        c.remark,
+        c.pay_status,
+        c.pay_statement,
+        c.ticket_url,
+        c.ticket_name,
+        c.creator,
+        c.create_date,
+        c.modifier,
+        c.modify_date,
+        c.application_code
+    </sql>
+
+    <!-- where条件 -->
+    <sql id="whereColoumList">
+        <if test="searchParam !=null and searchParam !=''">
+            AND CONCAT(IFNULL(c.repair_project, ''), IFNULL(c.invoice_num, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="vehicle !=null and vehicle!=''">
+            AND vehicle = #{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND repair_date &gt;= #{beginTime} AND repair_date &lt;= #{endTime}
+        </if>
+        <if test="repairProject !=null and repairProject!=''">
+            AND repair_project LIKE  CONCAT('%',#{repairProject},'%')
+        </if>
+    </sql>
+
+    <!-- 分页查询维修记录 -->
+    <select id="findList" resultMap="carRepairResultMapper">
+        SELECT
+        <include refid="carRepairColumn"/>
+        FROM order_car_repair c
+        WHERE c.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY c.id DESC
+    </select>
+
+    <!-- 新增维修记录 -->
+    <insert id="insert" useGeneratedKeys="false">
+        INSERT INTO order_car_repair(
+        id,
+        belong_companies_id,
+        vehicle,
+        repair_date,
+        repair_project,
+        repair_price,
+        invoice_num,
+        remark,
+        pay_status,
+        pay_statement,
+        ticket_url,
+        ticket_name,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        )VALUES(
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{repairDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{repairProject},
+            #{repairPrice},
+            #{invoiceNum},
+            #{remark},
+            #{payStatus},
+            #{payStatement},
+            #{ticketUrl},
+            #{ticketName},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+            )
+    </insert>
+
+    <update id="update">
+        UPDATE
+        order_car_repair
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        <if test="invoiceNum!=null">
+            invoice_num = #{invoiceNum},
+        </if>
+        <if test="repairProject !=null">
+            repair_project = #{repairProject},
+        </if>
+        <if test="remark!=null ">
+            remark = #{remark},
+        </if>
+        <if test="repairPrice !=null">
+            repair_price = #{repairPrice},
+        </if>
+        repair_date = #{repairDate},
+        <if test="payStatus !=null">
+            pay_status = #{payStatus},
+        </if>
+        <if test="payStatement !=null">
+            pay_statement = #{payStatement},
+        </if>
+        <if test="ticketUrl!=null">
+            ticket_url = #{ticketUrl},
+        </if>
+        <if test="ticketName!=null" >
+            ticket_name = #{ticketName},
+        </if>
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <!-- 查车辆维修费用 -->
+    <select id="findRepairCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(c.repair_price) AS totalPrice
+        FROM
+        order_car_repair c
+        WHERE 1=1
+        AND c.belong_companies_id=#{belongCompaniesId}
+        AND c.repair_date &gt;= #{beginTime} AND c.repair_date &lt;= #{endTime}
+        AND c.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY c.vehicle
+    </select>
+
+    <!-- 删除车辆维修记录   -->
+    <delete id="delete">
+        delete from order_car_repair
+        where id=#{id}
+    </delete>
+
+
+    <!-- 查询每月车辆维修记录 -->
+    <select id="monthlyRepairCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,
+        sum(CASE MONTH(repair_date) WHEN '1' THEN repair_price ELSE 0 END) AS Jan,
+        sum(CASE MONTH(repair_date) WHEN '2' THEN repair_price ELSE 0 END) AS Feb,
+        sum(CASE MONTH(repair_date) WHEN '3' THEN repair_price ELSE 0 END) AS Mar,
+        sum(CASE MONTH(repair_date) WHEN '4' THEN repair_price ELSE 0 END) AS Apr,
+        sum(CASE MONTH(repair_date) WHEN '5' THEN repair_price ELSE 0 END) AS May,
+        sum(CASE MONTH(repair_date) WHEN '6' THEN repair_price ELSE 0 END) AS June,
+        sum(CASE MONTH(repair_date) WHEN '7' THEN repair_price ELSE 0 END) AS July,
+        sum(CASE MONTH(repair_date) WHEN '8' THEN repair_price ELSE 0 END) AS Aug,
+        sum(CASE MONTH(repair_date) WHEN '9' THEN repair_price ELSE 0 END) AS Sept,
+        sum(CASE MONTH(repair_date) WHEN '10' THEN repair_price ELSE 0 END) AS Oct,
+        sum(CASE MONTH(repair_date) WHEN '11' THEN repair_price ELSE 0 END) AS Nov,
+        sum(CASE MONTH(repair_date) WHEN '12' THEN repair_price ELSE 0 END) AS Dece
+        FROM order_car_repair
+        WHERE YEAR(repair_date)=#{year}
+        AND belong_companies_id=#{belongCompaniesId}
+        AND vehicle IN
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY vehicle
+    </select>
+
+</mapper>

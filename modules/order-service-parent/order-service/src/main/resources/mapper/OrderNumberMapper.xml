@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.OrderNumberMapper">
+    <resultMap id="orderNumberResultMap" type="com.laogeli.order.api.module.OrderNumber">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="prefix" property="prefix"/>
+        <result column="series_number" property="seriesNumber"/>
+        <result column="business_rule" property="businessRule"/>
+        <result column="date_rule" property="dateRule"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="orderNumberColumns">
+        a.id,
+        a.belong_companies_id,
+        a.prefix,
+        a.series_number,
+        a.business_rule,
+        a.date_rule,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- 根据企业标识id获取订单编号设置信息 -->
+    <select id="get" resultMap="orderNumberResultMap">
+        SELECT
+        <include refid="orderNumberColumns"/>
+        FROM order_number a
+        WHERE a.belong_companies_id = #{belongCompaniesId}
+    </select>
+
+    <!-- 新增默认订单编号 -->
+    <insert id="insert">
+      insert into order_number (
+      id,
+      belong_companies_id,
+      prefix,
+      series_number,
+      business_rule,
+      date_rule,
+      creator,
+      create_date,
+      modifier,
+      modify_date,
+      application_code
+      ) values (
+        #{id},
+        #{belongCompaniesId},
+        #{prefix},
+        #{seriesNumber},
+        #{businessRule},
+        #{dateRule},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{applicationCode}
+      );
+    </insert>
+
+    <!-- 更新订单编号设置 -->
+    <update id="update">
+        update order_number set
+        <if test="belongCompaniesId != null">
+            belong_companies_id = #{belongCompaniesId},
+        </if>
+        <if test="prefix != null">
+            prefix = #{prefix},
+        </if>
+        <if test="seriesNumber != null">
+            series_number = #{seriesNumber},
+        </if>
+        <if test="businessRule != null">
+            business_rule = #{businessRule},
+        </if>
+        <if test="dateRule != null">
+            date_rule = #{dateRule},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+</mapper>

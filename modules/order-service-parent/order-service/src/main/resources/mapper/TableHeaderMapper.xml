@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.TableHeaderMapper">
+
+    <select id="findTableHeader" resultType="com.laogeli.order.api.module.TableHeader">
+        SELECT
+            id,
+            table_id as tableId,
+            row_field as rowField,
+            row_name as rowName,
+            width as width,
+            show1,
+            user_id as userId
+        FROM order_table_header
+        WHERE  table_id=#{tableId} AND user_id =#{userId}
+    </select>
+
+    <select id="findHeaderDefault" resultType="com.laogeli.order.api.module.TableHeader">
+        SELECT
+            id,
+            table_id as tableId,
+            row_field as rowField,
+            row_name as rowName,
+            width as width,
+            show1,
+            user_id as userId
+        FROM order_table_header_default
+        WHERE  table_id=#{tableId}
+    </select>
+
+    <delete id="deleteByTableId">
+        DELETE
+        FROM  order_table_header
+        WHERE table_id = #{tableId} and user_id=#{userId}
+    </delete>
+
+    <insert id="insertListTableHeader" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO order_table_header(
+        table_id,
+        row_field,
+        row_name,
+        width,
+        show1,
+        user_id
+        )VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.tableId},
+            #{item.rowField},
+            #{item.rowName},
+            #{item.width},
+            #{item.show1},
+            #{item.userId}
+            )
+        </foreach>
+    </insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+

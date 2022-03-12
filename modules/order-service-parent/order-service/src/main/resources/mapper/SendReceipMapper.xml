@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.SendReceipMapper">
+    <resultMap id="accountResultMap" type="com.laogeli.order.api.module.SendReceipAddress">
+        <id column="id" property="id"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="contacts" property="contacts"/>
+        <result column="contact_way" property="contactWay"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="address" property="address"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="accountColumns">
+        a.id,
+        a.customer_id,
+        a.contacts,
+        a.contact_way,
+        a.province,
+        a.city,
+        a.area,
+        a.address,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date
+    </sql>
+
+    <!-- 查询列表 -->
+    <select id="findList" resultMap="accountResultMap">
+        SELECT
+        <include refid="accountColumns"/>
+        FROM order_receip_address a
+        WHERE a.customer_id = #{customerId}
+    </select>
+
+    <!-- 新增客户 -->
+    <insert id="insert">
+        insert into order_receip_address (
+        id,
+        customer_id,
+        contacts,
+        contact_way,
+        province,
+        city,
+        area,
+        address,
+        creator,
+        create_date,
+        modifier,
+        modify_date
+        ) values (
+        #{id},
+        #{customerId},
+        #{contacts},
+        #{contactWay},
+        #{province},
+        #{city},
+        #{area},
+        #{address},
+        #{creator},
+        #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+        #{modifier},
+        #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        );
+    </insert>
+
+    <!-- 更新客户 -->
+    <update id="update">
+        update order_receip_address set
+        <if test="customerId != null">
+            customer_id = #{customerId},
+        </if>
+        <if test="contacts !=null">
+            contacts = #{contacts},
+        </if>
+        <if test="contactWay !=null ">
+            contact_way = #{contactWay},
+        </if>
+
+        <if test="province != null">
+            province = #{province},
+        </if>
+        <if test="city != null">
+            city = #{city},
+        </if>
+        <if test="area != null">
+            area = #{area},
+        </if>
+        <if test="address != null">
+            address = #{address},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <!-- 通过id删除 -->
+    <delete id="delete">
+        DELETE FROM order_receip_address WHERE id = #{id}
+    </delete>
+
+    <!-- 根据发票抬头判断是否存在 -->
+    <select id="getByAccount" resultMap="accountResultMap">
+        select
+        <include refid="accountColumns"/>
+        from order_receip_address a
+        where a.customer_id = #{customerId} and a.invoice_title=#{invoiceTitle}
+    </select>
+
+    <resultMap id="receipVoResultMap" type="com.laogeli.order.api.vo.SendReceipVo">
+        <id column="id" property="id"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="address" property="address"/>
+    </resultMap>
+
+    <!-- 通过客户id 查询联系人 -->
+    <select id="getListByIds" resultMap="receipVoResultMap">
+        SELECT
+        id,
+        customer_id,
+        concat(IFNULL(province,''), IFNULL(city,''), IFNULL(area,''), IFNULL(address,'')) AS address
+        FROM order_receip_address
+        WHERE customer_id in
+        <foreach item="item" index="index" collection="array" open="("
+                 separator="," close=")">#{item}
+        </foreach>
+        ORDER BY id DESC
+    </select>
+</mapper>

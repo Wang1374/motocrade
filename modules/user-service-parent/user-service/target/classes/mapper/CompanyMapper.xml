@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.CompanyMapper">
+    <resultMap id="companyResultMap" type="com.laogeli.user.api.module.Company">
+        <id column="id" property="id"/>
+        <result column="company_name" property="companyName"/>
+        <result column="legal_person" property="legalPerson"/>
+        <result column="zy_company_id" property="zyCompanyId"/>
+        <result column="bank_card" property="bankCard"/>
+        <result column="account_type" property="accountType"/>
+        <result column="uscc" property="uscc"/>
+        <result column="register_date" property="registerDate"/>
+        <result column="term_of_operation" property="termOfOperation"/>
+        <result column="url" property="url"/>
+        <result column="location" property="location"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <sql id="companyColumns">
+        a.id,
+        a.company_name,
+        a.legal_person,
+        a.zy_company_id,
+        a.bank_card,
+        a.account_type,
+        a.uscc,
+        a.register_date,
+        a.term_of_operation,
+        a.url,
+        a.location,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.application_code
+    </sql>
+
+    <!-- where 条件 -->
+    <sql id="whereColumnList">
+        <if test="id != null and id != ''">
+            and a.id like #{id}
+        </if>
+        <if test="companyName != null and companyName != ''">
+            and a.company_name like #{companyName}
+        </if>
+    </sql>
+
+    <!--查询所有企业-->
+    <select id="findAllCompany" resultType="com.laogeli.common.core.vo.CompanyVo">
+        SELECT
+        a.id as value ,
+        a.company_name as label
+        FROM sys_company a
+    </select>
+
+    <insert id="insert">
+        INSERT INTO sys_company (
+            id,
+            company_name,
+            legal_person,
+            zy_company_id,
+            bank_card,
+            account_type,
+            uscc,
+            register_date,
+            term_of_operation,
+            url,
+            location,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            application_code
+        ) VALUES (
+            #{id},
+            #{companyName},
+            #{legalPerson},
+            #{zyCompanyId},
+            #{bankCard},
+            #{accountType},
+            #{uscc},
+            #{registerDate},
+            #{termOfOperation},
+            #{url},
+            #{location},
+            #{creator},
+            #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+    </insert>
+
+    <!-- 根据id或者公司名获取企业信息 -->
+    <select id="get" resultMap="companyResultMap">
+        SELECT
+        <include refid="companyColumns"/>
+        FROM sys_company a
+        WHERE 1=1
+        <include refid="whereColumnList"/>
+    </select>
+
+    <!-- 更新企业信息 -->
+    <update id="update">
+        update sys_company set
+        <if test="companyName != null">
+            company_name = #{companyName},
+        </if>
+        <if test="legalPerson != null">
+            legal_person = #{legalPerson},
+        </if>
+        <if test="zyCompanyId !=null">
+            zy_company_id = #{zyCompanyId},
+        </if>
+        <if test="bankCard !=null ">
+            bank_card = #{bankCard},
+        </if>
+        <if test="accountType !=null">
+            account_type = #{accountType},
+        </if>
+        <if test="uscc != null">
+            uscc = #{uscc},
+        </if>
+        <if test="registerDate != null">
+            register_date = #{registerDate},
+        </if>
+        <if test="termOfOperation != null">
+            term_of_operation = #{termOfOperation},
+        </if>
+        <if test="url != null">
+            url = #{url},
+        </if>
+        <if test="location != null">
+            location = #{location},
+        </if>
+        <if test="creator != null">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        <if test="applicationCode != null">
+            application_code = #{applicationCode},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        where id = #{id}
+    </update>
+
+    <resultMap id="MotorcaseVoResultMap" type="com.laogeli.user.api.vo.MotorcadeVo">
+        <id column="id" property="id"/>
+        <result column="company_name" property="label"/>
+        <result column="id" property="value"/>
+    </resultMap>
+
+    <!--    查询车队-->
+    <select id="getMotorcade" resultMap="MotorcaseVoResultMap">
+        SELECT
+            id,
+            company_name
+        FROM
+            sys_company
+        WHERE
+            account_type = '1'
+    </select>
+</mapper>

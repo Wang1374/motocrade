@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.CarRoadCostMapper">
+    <resultMap id="carRoadResultMapper" type="com.laogeli.order.api.module.CarRoad">
+        <id column="id" property="id"/>
+        <result column="belong_companies_id" property="belongCompaniesId"/>
+        <result column="vehicle" property="vehicle"/>
+        <result column="etc_invoice" property="etcInvoice"/>
+        <result column="road_price" property="roadPrice"/>
+        <result column="road_exit" property="roadExit"/>
+        <result column="road_entrance" property="roadEntrance"/>
+        <result column="road_start_date" property="roadStartDate"/>
+        <result column="road_end_date" property="roadEndDate"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <!-- 新增车辆过路费用记录 -->
+    <insert id="insert" useGeneratedKeys="false">
+        INSERT INTO order_car_road(
+        id,
+        belong_companies_id,
+        vehicle,
+        etc_invoice,
+        road_price,
+        road_exit,
+        road_entrance,
+        road_start_date,
+        road_end_date,
+        creator,
+        create_date,
+        modifier,
+        modify_date,
+        application_code
+        )VALUES (
+            #{id},
+            #{belongCompaniesId},
+            #{vehicle},
+            #{etcInvoice},
+            #{roadPrice},
+            #{roadExit},
+            #{roadEntrance},
+            #{roadStartDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{roadEndDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{creator},
+            #{createDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate,jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{applicationCode}
+        )
+    </insert>
+
+    <!-- sql语句 -->
+    <sql id="carRoadColumn">
+         r.id,
+         r.belong_companies_id,
+         r.vehicle,
+         r.etc_invoice,
+         r.road_price,
+         r.road_exit,
+         r.road_entrance,
+         r.road_start_date,
+         r.road_end_date,
+         r.creator,
+         r.create_date,
+         r.modifier,
+         r.modify_date,
+         r.application_code
+    </sql>
+
+    <!-- where条件 -->
+    <sql id="whereColoumList">
+        <if test="searchParam !=null and searchParam !=''">
+            AND CONCAT(IFNULL(r.etc_invoice, ''), IFNULL(r.etc_invoice, '')) LIKE CONCAT('%',#{searchParam},'%')
+        </if>
+        <if test="vehicle !=null and vehicle!=''">
+            AND vehicle = #{vehicle}
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            AND #{endTime} >= road_start_date AND #{beginTime} &lt;= road_end_date
+        </if>
+    </sql>
+
+    <!-- 查询车辆过路费用记录 -->
+    <select id="findList" resultMap="carRoadResultMapper">
+        SELECT
+        <include refid="carRoadColumn"/>
+        FROM order_car_road r
+        WHERE r.belong_companies_id=#{belongCompaniesId}
+        <include refid="whereColoumList"/>
+        ORDER BY r.id DESC
+    </select>
+
+    <!-- 修改车辆费用记录 -->
+    <update id="update">
+        UPDATE
+        order_car_road
+        SET
+        <if test="vehicle !=null">
+            vehicle = #{vehicle},
+        </if>
+        <if test="etcInvoice!=null">
+            etc_invoice = #{etcInvoice},
+        </if>
+        <if test="roadPrice !=null">
+            road_price = #{roadPrice},
+        </if>
+        <if test="roadExit!=null ">
+            road_exit = #{roadExit},
+        </if>
+        <if test="roadEntrance !=null">
+            road_entrance = #{roadEntrance},
+        </if>
+        road_start_date = #{roadStartDate},
+        road_end_date = #{roadEndDate},
+        <if test="creator != null ">
+            creator = #{creator},
+        </if>
+        <if test="createDate != null">
+            create_date = #{createDate},
+        </if>
+        modifier = #{modifier},
+        modify_date = #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date}
+        WHERE id=#{id}
+    </update>
+
+    <!-- 根据id删除车辆过路费用记录 -->
+    <delete id="delete">
+        DELETE
+        FROM order_car_road
+        WHERE  id=#{id}
+    </delete>
+
+    <!-- 查询车辆过路费用 -->
+    <select id="findRoadCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,SUM(r.road_price) AS totalPrice
+        FROM
+        order_car_road r
+        WHERE 1=1
+        AND r.belong_companies_id=#{belongCompaniesId}
+        AND r.road_end_date &gt;= #{beginTime} AND r.road_start_date &lt;= #{endTime}
+        AND r.vehicle in
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY r.vehicle
+    </select>
+
+    <!-- 查询每月车辆过路费用 -->
+    <select id="monthlyRoadCost" resultType="com.laogeli.order.api.vo.VehicleCostVo">
+        SELECT
+        vehicle,
+        sum(CASE MONTH(road_end_date) WHEN '1' THEN road_price ELSE 0 END) AS Jan,
+        sum(CASE MONTH(road_end_date) WHEN '2' THEN road_price ELSE 0 END) AS Feb,
+        sum(CASE MONTH(road_end_date) WHEN '3' THEN road_price ELSE 0 END) AS Mar,
+        sum(CASE MONTH(road_end_date) WHEN '4' THEN road_price ELSE 0 END) AS Apr,
+        sum(CASE MONTH(road_end_date) WHEN '5' THEN road_price ELSE 0 END) AS May,
+        sum(CASE MONTH(road_end_date) WHEN '6' THEN road_price ELSE 0 END) AS June,
+        sum(CASE MONTH(road_end_date) WHEN '7' THEN road_price ELSE 0 END) AS July,
+        sum(CASE MONTH(road_end_date) WHEN '8' THEN road_price ELSE 0 END) AS Aug,
+        sum(CASE MONTH(road_end_date) WHEN '9' THEN road_price ELSE 0 END) AS Sept,
+        sum(CASE MONTH(road_end_date) WHEN '10' THEN road_price ELSE 0 END) AS Oct,
+        sum(CASE MONTH(road_end_date) WHEN '11' THEN road_price ELSE 0 END) AS Nov,
+        sum(CASE MONTH(road_end_date) WHEN '12' THEN road_price ELSE 0 END) AS Dece
+        FROM order_car_road
+        WHERE YEAR(road_end_date)=#{year}
+        AND belong_companies_id=#{belongCompaniesId}
+        AND vehicle IN
+        <foreach collection="vehicleArray" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        GROUP BY vehicle
+    </select>
+
+</mapper>

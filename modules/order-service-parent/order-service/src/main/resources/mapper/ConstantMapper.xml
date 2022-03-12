@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.order.mapper.ConstantMapper">
+
+    <resultMap id="shipsNameResultMap" type="java.lang.String">
+        <result column="ships_name" property="ShipsName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+<!--    新增船名-->
+    <insert id="addShipName">
+        INSERT INTO  order_ships_name(
+             ships_name
+        )VALUES (
+            #{shipsName}
+        )
+    </insert>
+<!--    根据船名查询是否存在-->
+    <select id="getShipName" resultType="com.laogeli.order.api.module.ShipsName">
+        SELECT
+            id,
+            ships_name
+        FROM
+            order_ships_name
+        WHERE ships_name = #{shipsName}
+    </select>
+
+    <resultMap id="shipCompanyVoResultMap" type="com.laogeli.order.api.vo.ShipCompanyVo">
+        <result column="id" property="id"/>
+        <result column="ship_company" property="label"/>
+        <result column="code" property="value"/>
+        <result column="order" property="order"/>
+        <result column="type" property="type"/>
+    </resultMap>
+
+    <resultMap id="dockVoResultMap" type="com.laogeli.order.api.vo.DockVo">
+        <result column="id" property="id"/>
+        <result column="name" property="label"/>
+        <result column="name" property="value"/>
+        <result column="type" property="type"/>
+    </resultMap>
+
+    <resultMap id="boxPileVoResultMap" type="com.laogeli.order.api.vo.BoxPileVo">
+        <result column="id" property="id"/>
+        <result column="box_pile" property="label"/>
+        <result column="box_pile" property="value"/>
+        <result column="order" property="order"/>
+        <result column="type" property="type"/>
+    </resultMap>
+
+    <!-- 获取船名 -->
+    <select id="getAllShipsName" resultMap="shipsNameResultMap">
+      SELECT ships_name FROM order_ships_name
+    </select>
+
+    <!-- 获取船公司列表 -->
+    <select id="getAllShipCompany" resultMap="shipCompanyVoResultMap">
+      SELECT id,code,ship_company,`order`,`type` FROM order_ship_company ORDER BY `order` ASC
+    </select>
+
+    <!-- 获取码头列表 -->
+    <select id="getAllDock" resultMap="dockVoResultMap">
+      SELECT
+	    od.id,
+	    od.`name`,
+	    od.`type`
+      FROM
+	    order_dock AS od
+      UNION ALL
+	    SELECT
+		  osy.id,
+		  osy.`name`,
+		  osy.`type`
+	    FROM
+		  order_storage_yard AS osy
+    </select>
+
+    <!-- 获取箱型列表 -->
+    <select id="getAllBoxPile" resultMap="boxPileVoResultMap">
+      SELECT id,box_pile,`order`,`type` FROM order_box_pile
+    </select>
+</mapper>

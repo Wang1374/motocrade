@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laogeli.user.mapper.LogMapper">
+    <resultMap id="logResultMap" type="com.laogeli.common.core.model.Log">
+        <id column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="title" property="title"/>
+        <result column="order_number_log" property="orderNumberLog"/>
+        <result column="ip" property="ip"/>
+        <result column="user_agent" property="userAgent"/>
+        <result column="request_uri" property="requestUri"/>
+        <result column="method" property="method"/>
+        <result column="params" property="params"/>
+        <result column="exception" property="exception"/>
+        <result column="service_id" property="serviceId"/>
+        <result column="time" property="time"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="modifier" property="modifier"/>
+        <result column="modify_date" property="modifyDate" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="application_code" property="applicationCode"/>
+    </resultMap>
+
+    <resultMap id="logVoResultMap" type="com.laogeli.common.core.vo.LogVo">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="order_number_log" property="orderNumberLog"/>
+        <result column="creator" property="creator"/>
+        <result column="create_date" property="createDate"/>
+    </resultMap>
+
+    <sql id="logColumns">
+        a.id,
+        a.type,
+        a.title,
+        a.order_number_log,
+        a.ip,
+        a.user_agent,
+        a.request_uri,
+        a.method,
+        a.params,
+        a.exception,
+        a.service_id,
+        a.time,
+        a.creator,
+        a.create_date,
+        a.modifier,
+        a.modify_date,
+        a.del_flag,
+        a.application_code
+    </sql>
+
+    <select id="get" resultMap="logResultMap">
+        SELECT
+        <include refid="logColumns"/>
+        FROM sys_log a
+        WHERE a.id = #{id} and a.del_flag = 0
+    </select>
+
+    <select id="findList" resultMap="logResultMap">
+        SELECT
+        <include refid="logColumns"/>
+        FROM sys_log a
+        WHERE a.del_flag = 0 order by a.create_date desc
+    </select>
+
+    <insert id="insert">
+        insert  into sys_log (
+            id,
+            type,
+            title,
+            order_number_log,
+            ip,
+            user_agent,
+            request_uri,
+            method,
+            params,
+            exception,
+            service_id,
+            time,
+            creator,
+            create_date,
+            modifier,
+            modify_date,
+            del_flag,
+            application_code
+        ) values (
+            #{id},
+            #{type},
+            #{title},
+            #{orderNumberLog},
+            #{ip},
+            #{userAgent},
+            #{requestUri},
+            #{method},
+            #{params},
+            #{exception},
+            #{serviceId},
+            #{time},
+            #{creator},
+            #{createDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{modifier},
+            #{modifyDate, jdbcType=TIMESTAMP, javaType=java.util.Date},
+            #{delFlag},
+            #{applicationCode}
+        );
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM sys_log WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM sys_log WHERE id in
+        <foreach item="item" index="index" collection="array" open="("
+                 separator="," close=")">#{item}
+        </foreach>
+    </delete>
+
+    <!-- 根据订单编号获取日志信息 -->
+    <select id="getOrderLog" resultMap="logVoResultMap">
+        SELECT
+        a.id,
+        a.title,
+        a.order_number_log,
+        a.creator,
+        a.create_date
+        FROM sys_log a
+        WHERE a.order_number_log = #{orderNumber}
+        AND a.del_flag = 0
+        AND a.type = 1
+    </select>
+</mapper>
