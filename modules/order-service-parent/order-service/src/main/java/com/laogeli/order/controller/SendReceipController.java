@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 客户寄单地址信息管理
- * @author beifang
+ * @author wang
  * @Date 2021-07-01 14:04
  **/
 @Slf4j

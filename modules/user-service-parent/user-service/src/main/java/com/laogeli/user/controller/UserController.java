@@ -52,7 +52,7 @@ import java.util.stream.Stream;
 /**
  * 用户信息管理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j
@@ -416,7 +416,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019/01/10 22:35
      */
     @ApiOperation(value = "注册", notes = "注册")
@@ -437,7 +437,7 @@ public class UserController extends BaseController {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019/01/10 22:35
      */
     @ApiOperation(value = "注册", notes = "注册")

@@ -1,7 +1,7 @@
 package com.laogeli.common.core.utils;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class Assert {
@@ -11,7 +11,7 @@ public class Assert {
      *
      * @param object  object
      * @param message message
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static void notNull(Object object, String message) {

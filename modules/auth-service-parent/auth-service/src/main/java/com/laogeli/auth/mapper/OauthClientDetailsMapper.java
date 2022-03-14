@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * Oauth2客户端mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Mapper

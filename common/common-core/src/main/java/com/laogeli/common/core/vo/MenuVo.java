@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 菜单vo
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

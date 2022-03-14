@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 /**
  * 员工信息权限设置
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-03
  */
 @Slf4j

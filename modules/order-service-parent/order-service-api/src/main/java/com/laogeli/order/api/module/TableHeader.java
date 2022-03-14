@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 表头信息
  *
- * @author beifang
+ * @author wang
  * @date 2020-08-31
  */
 @Data

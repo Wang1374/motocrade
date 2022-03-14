@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 /**
  * 保险详细信息
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-07-20
  **/
 @Data

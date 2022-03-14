@@ -4,7 +4,7 @@ import com.laogeli.common.core.constant.ApiMsg;
 import com.laogeli.common.core.model.ResponseBean;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 20201-01-08
  */
 public class ResponseUtil {

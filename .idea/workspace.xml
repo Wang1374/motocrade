@@ -6,28 +6,24 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a66f8a7-1806-4b3c-bd93-129d5c8e3e67" name="Default Changelist" comment="chat-im-service  bug测试">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/auth-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/distribute-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/distribute-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/gateway-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/order-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/order-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/config/user-service.yml" afterDir="false" />
+    <list default="true" id="5a66f8a7-1806-4b3c-bd93-129d5c8e3e67" name="Default Changelist" comment="first">
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/auth-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/auth-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/config-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/config-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/distribute-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/distribute-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/gateway-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/gateway-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/order-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/order-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/springcloud-community/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/springcloud-community/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/user-service/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/user-service/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/order-service-parent/order-service/src/main/java/com/laogeli/order/controller/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/order-service-parent/order-service/src/main/java/com/laogeli/order/controller/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/order-service-parent/order-service/target/classes/com/laogeli/order/controller/VehicleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/modules/order-service-parent/order-service/target/classes/com/laogeli/order/controller/VehicleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +97,12 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.laogeli.order.api.vo" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service" />
+      <recent name="D:\itapp\idea\project\motorcade\modules\order-service-parent\order-service\src\main\resources\mapper" />
+      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service-api\src\main\java\com\laogeli\chatim\api" />
+      <recent name="D:\itapp\idea\project\motorcade\modules\order-service-parent\order-service\src\main\java\com\laogeli\order" />
+      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service\src\main\java\com\laogeli\chatim\handler" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.laogeli.chatim.api.model" />
@@ -111,12 +111,8 @@
       <recent name="com.laogeli.chatim.service.impl" />
       <recent name="com.laogeli.chatim.api.vo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service" />
-      <recent name="D:\itapp\idea\project\motorcade\modules\order-service-parent\order-service\src\main\resources\mapper" />
-      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service-api\src\main\java\com\laogeli\chatim\api" />
-      <recent name="D:\itapp\idea\project\motorcade\modules\order-service-parent\order-service\src\main\java\com\laogeli\order" />
-      <recent name="D:\itapp\idea\project\motorcade\modules\chat-im-parent\chat-im-service\src\main\java\com\laogeli\chatim\handler" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.laogeli.order.api.vo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -857,14 +853,9 @@
       <workItem from="1645410924817" duration="6602000" />
       <workItem from="1645620364866" duration="597000" />
       <workItem from="1646917244210" duration="2878000" />
-      <workItem from="1647061741007" duration="13619000" />
-    </task>
-    <task id="LOCAL-00061" summary="我的订单">
-      <created>1608693935892</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1608693935892</updated>
+      <workItem from="1647061741007" duration="15059000" />
+      <workItem from="1647081872930" duration="625000" />
+      <workItem from="1647129780634" duration="6694000" />
     </task>
     <task id="LOCAL-00062" summary="我的订单">
       <created>1608694704788</created>
@@ -1202,7 +1193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635901979941</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="first">
+      <created>1647080177572</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1647080177572</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1231,7 +1229,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="取消" />
     <MESSAGE value="箱单查询" />
     <MESSAGE value="我的订单" />
     <MESSAGE value="下单" />
@@ -1256,49 +1253,50 @@
     <MESSAGE value="bug修改" />
     <MESSAGE value="CompletableFuture测试" />
     <MESSAGE value="chat-im-service  bug测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="first" />
+    <option name="LAST_COMMIT_MESSAGE" value="first" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1643007274599">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1647136462789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1643007274599" />
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1647136462789" />
     <state x="216" y="335" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1643003436618">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="216" y="335" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1643003436618" />
-    <state width="642" height="320" key="GridCell.Tab.0.bottom" timestamp="1647079155787">
+    <state width="1239" height="88" key="GridCell.Tab.0.bottom" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1647079155787" />
-    <state width="642" height="320" key="GridCell.Tab.0.center" timestamp="1647079155786">
+    <state width="1239" height="88" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.0.center" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1647079155786" />
-    <state width="642" height="320" key="GridCell.Tab.0.left" timestamp="1647079155785">
+    <state width="1239" height="88" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.0.left" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1647079155785" />
-    <state width="642" height="320" key="GridCell.Tab.0.right" timestamp="1647079155787">
+    <state width="1239" height="88" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.0.right" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1647079155787" />
-    <state width="642" height="320" key="GridCell.Tab.1.bottom" timestamp="1647079155788">
+    <state width="1239" height="88" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.1.bottom" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1647079155788" />
-    <state width="642" height="320" key="GridCell.Tab.1.center" timestamp="1647079155788">
+    <state width="1239" height="88" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.1.center" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1647079155788" />
-    <state width="642" height="320" key="GridCell.Tab.1.left" timestamp="1647079155787">
+    <state width="1239" height="88" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.1.left" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1647079155787" />
-    <state width="642" height="320" key="GridCell.Tab.1.right" timestamp="1647079155788">
+    <state width="1239" height="88" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
+    <state width="1239" height="88" key="GridCell.Tab.1.right" timestamp="1647146743767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="642" height="320" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1647079155788" />
+    <state width="1239" height="88" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1647146743767" />
     <state x="504" y="132" key="RollbackChangesDialog" timestamp="1647063791134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -1307,18 +1305,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1645425664569" />
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1647079139958">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2" timestamp="1647080196291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1647079139958" />
-    <state x="71" y="-6" width="1334" height="824" key="find.popup" timestamp="1647064709232">
+    <state x="361" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1647080196291" />
+    <state x="71" y="-6" width="1334" height="824" key="find.popup" timestamp="1647134054730">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="71" y="-6" width="1334" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1647064709232" />
-    <state x="568" y="311" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1647067248438">
+    <state x="71" y="-6" width="1334" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1647134054730" />
+    <state x="568" y="311" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1647079974706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="568" y="311" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1647067248438" />
+    <state x="568" y="311" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1647079974706" />
     <state x="410" y="139" width="700" height="530" key="recent.locations.popup" timestamp="1641288375883">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

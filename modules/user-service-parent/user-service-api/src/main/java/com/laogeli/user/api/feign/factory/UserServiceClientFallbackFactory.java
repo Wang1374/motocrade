@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 用户断路器工厂
  *
- * @author yangyu
+ * @author wang
  * @date 2019/12/23 23:38
  */
 @Component

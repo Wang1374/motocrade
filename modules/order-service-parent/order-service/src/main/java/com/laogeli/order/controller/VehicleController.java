@@ -93,6 +93,7 @@ public class VehicleController {
      * @param vehicle
      * @return
      */
+    // http://localhost/api/order/v1/vehicle/updateCar
     @PostMapping("/updateCar")
     @PreAuthorize("hasAuthority('vehicle:car:edit')")
     @ApiOperation(value = "更新车辆信息", notes = "更新车辆")

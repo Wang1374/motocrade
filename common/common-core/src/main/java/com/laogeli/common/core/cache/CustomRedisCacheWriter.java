@@ -20,7 +20,7 @@ import java.util.function.Function;
 /**
  * 源码：org.springframework.data.redis.cache.DefaultRedisCacheWriter
  * 自定义Redis缓存写入器
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class CustomRedisCacheWriter implements RedisCacheWriter {

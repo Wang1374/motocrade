@@ -9,7 +9,7 @@ import java.net.URLEncoder;
 /**
  * Servlet工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class Servlets {

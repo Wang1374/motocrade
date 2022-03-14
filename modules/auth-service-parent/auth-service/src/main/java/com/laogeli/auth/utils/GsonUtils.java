@@ -13,7 +13,7 @@ import java.net.URLEncoder;
 
 /**
  * @Desecription: Gson工具类
- * @Author: yangyu
+ * @Author: wang
  * @Date: 2021/8/24 14:49
  */
 public class GsonUtils {

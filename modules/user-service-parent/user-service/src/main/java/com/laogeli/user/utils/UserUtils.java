@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 /**
  * 用户工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class UserUtils {
@@ -32,7 +32,7 @@ public class UserUtils {
      * 获取User属性的map
      *
      * @return LinkedHashMap
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static LinkedHashMap<String, String> getUserMap() {
@@ -57,7 +57,7 @@ public class UserUtils {
      *
      * @param roles roles
      * @return List
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static List<RoleVo> rolesToVo(List<Role> roles) {
@@ -76,7 +76,7 @@ public class UserUtils {
      *
      * @param roles roles
      * @return List
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static List<RoleVo> staffRolesToVo(List<StaffRole> roles) {
@@ -96,7 +96,7 @@ public class UserUtils {
      * @param user        user
      * @param userAuths   userAuths
      * @return UserInfoDto
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static void toUserInfoDto(UserInfoDto userInfoDto, User user, UserAuths userAuths) {
@@ -122,7 +122,7 @@ public class UserUtils {
      *
      * @param identifier identifier
      * @return boolean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static boolean isAdmin(String identifier) {
@@ -134,7 +134,7 @@ public class UserUtils {
      * 是否为管理员
      *
      * @return boolean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static boolean isAdmin() {

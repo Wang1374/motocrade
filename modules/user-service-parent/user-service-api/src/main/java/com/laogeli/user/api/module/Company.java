@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 公司信息
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-08
  */
 @Data

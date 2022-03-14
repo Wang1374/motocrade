@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * 扩展JwtAccessTokenConverter
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class CustomTokenConverter extends JwtAccessTokenConverter {

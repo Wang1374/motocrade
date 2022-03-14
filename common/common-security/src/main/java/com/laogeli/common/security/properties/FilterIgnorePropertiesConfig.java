@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 不做权限拦截的URL
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

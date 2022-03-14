@@ -12,7 +12,7 @@ import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

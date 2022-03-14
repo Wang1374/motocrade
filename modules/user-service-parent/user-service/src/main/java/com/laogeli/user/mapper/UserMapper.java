@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 用户mapper接口
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Mapper

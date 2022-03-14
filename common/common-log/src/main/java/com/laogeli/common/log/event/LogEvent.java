@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * 日志事件
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class LogEvent extends ApplicationEvent {

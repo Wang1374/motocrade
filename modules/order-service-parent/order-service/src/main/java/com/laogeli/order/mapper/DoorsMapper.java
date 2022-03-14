@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 门店信息mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-15
  */
 @Mapper

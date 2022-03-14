@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 服务间调用携带Authorization、Tenant-Code请求头
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

@@ -3,7 +3,7 @@ package com.laogeli.order.api.vo;
 import lombok.Data;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-07-02 9:09
  **/
 @Data

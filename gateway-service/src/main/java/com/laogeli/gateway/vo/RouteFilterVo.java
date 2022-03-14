@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 过滤器信息
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

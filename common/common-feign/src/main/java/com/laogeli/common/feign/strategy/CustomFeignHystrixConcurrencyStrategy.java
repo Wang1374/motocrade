@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * 自定义隔离策略
  * 解决RequestContextHolder.getRequestAttributes()问题
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

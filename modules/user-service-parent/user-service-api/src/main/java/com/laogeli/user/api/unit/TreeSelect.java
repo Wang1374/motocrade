@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * Treeselect树结构实体类
  *
- * @author yangyu
+ * @author wang
  */
 @Data
 public class TreeSelect implements Serializable {

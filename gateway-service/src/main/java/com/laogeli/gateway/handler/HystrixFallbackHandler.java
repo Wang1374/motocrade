@@ -17,7 +17,7 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.G
 /**
  * Hystrix 降级
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

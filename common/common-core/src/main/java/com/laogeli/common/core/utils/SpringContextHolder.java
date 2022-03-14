@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 /**
  * 以静态变量保存Spring ApplicationContext
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Service

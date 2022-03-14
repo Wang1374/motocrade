@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 封装返回状态
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

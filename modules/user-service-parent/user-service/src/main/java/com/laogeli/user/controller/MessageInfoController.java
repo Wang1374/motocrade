@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 消息信息管理
  *
- * @author beifang
+ * @author wang
  * @Date 2021-02-02 9:37
  **/
 @RestController

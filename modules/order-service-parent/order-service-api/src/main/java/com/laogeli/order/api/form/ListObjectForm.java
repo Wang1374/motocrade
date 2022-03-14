@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 接收前台传递的对象(数组)
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-07-21
  **/
 @Data

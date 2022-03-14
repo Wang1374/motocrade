@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-09-17 9:39
  **/
 @Slf4j

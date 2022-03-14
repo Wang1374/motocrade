@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * 费用信息
  *
- * @author yangyu
+ * @author wang
  * @date 2020-08-27
  **/
 @Data

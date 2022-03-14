@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 日志断路器实现
  *
- * @author yangyu
+ * @author wang
  * @date 2019/12/23 23:39
  */
 @Slf4j

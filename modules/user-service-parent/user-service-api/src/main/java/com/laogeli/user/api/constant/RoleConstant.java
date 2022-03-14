@@ -3,7 +3,7 @@ package com.laogeli.user.api.constant;
 /**
  * 角色常量
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class RoleConstant {

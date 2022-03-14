@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-07-19 15:25
  **/
 @Data

@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 门点返回对象
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-14
  */
 @Data

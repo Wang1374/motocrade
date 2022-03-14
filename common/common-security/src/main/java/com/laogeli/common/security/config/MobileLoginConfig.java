@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 /**
  * 手机号登录配置
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

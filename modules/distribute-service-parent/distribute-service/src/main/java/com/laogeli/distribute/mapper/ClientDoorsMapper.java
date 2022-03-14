@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * 客户端门点mapper
  *
- * @author beifang
+ * @author wang
  * @date 220-12-11
  */
 @Mapper

@@ -10,7 +10,7 @@ import java.io.OutputStream;
 /**
  * 文件工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class FileUtil {
@@ -20,7 +20,7 @@ public class FileUtil {
      *
      * @param fileName fileName
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static String getFileNameEx(String fileName) {

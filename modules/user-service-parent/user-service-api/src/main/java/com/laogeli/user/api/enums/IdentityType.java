@@ -3,7 +3,7 @@ package com.laogeli.user.api.enums;
 /**
  * 用户授权类型
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public enum IdentityType {

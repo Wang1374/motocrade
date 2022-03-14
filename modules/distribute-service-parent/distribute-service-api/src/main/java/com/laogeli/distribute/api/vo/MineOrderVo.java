@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * 我的订单vo
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-21
  */
 @Data

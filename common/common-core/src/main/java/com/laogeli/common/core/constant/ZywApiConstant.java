@@ -3,7 +3,7 @@ package com.laogeli.common.core.constant;
 /**
  * 找油网公用常量
  *
- * @author yangyu
+ * @author wang
  * @date 2020-10-26
  */
 public class ZywApiConstant {

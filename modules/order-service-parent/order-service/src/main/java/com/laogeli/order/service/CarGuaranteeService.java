@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * 保险费用记录service
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-10-15
  **/
 @Service

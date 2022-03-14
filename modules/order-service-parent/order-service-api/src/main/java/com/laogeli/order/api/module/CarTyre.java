@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 车辆轮胎费用
- * @author beifang
+ * @author wang
  * @Date 2021-09-09 13:37
  **/
 @Data

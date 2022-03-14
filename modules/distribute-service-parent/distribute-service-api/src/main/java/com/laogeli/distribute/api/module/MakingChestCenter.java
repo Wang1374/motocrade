@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 下单接单做箱信息
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-14
  */
 @Data

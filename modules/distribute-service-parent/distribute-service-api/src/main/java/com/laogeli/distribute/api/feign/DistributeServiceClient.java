@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 订单服务
  *
- * @author yangyu
+ * @author wang
  * @date 2020-11-17
  */
 @FeignClient(value = ServiceConstant.DISTRIBUTE_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = DistributeServiceClientFallbackFactory.class)

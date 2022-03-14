@@ -19,7 +19,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2021-01-08
  */
 public class CustomTokenServices implements AuthorizationServerTokenServices, ResourceServerTokenServices,

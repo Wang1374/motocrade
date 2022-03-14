@@ -6,7 +6,7 @@ import com.laogeli.user.mapper.MessageInfoMapper;
 import org.springframework.stereotype.Service;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-02-02 10:00
  **/
 @Service

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Authentication管理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @RestController

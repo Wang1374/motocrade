@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * okHttp配置
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

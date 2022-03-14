@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 /**
  * 分页查询工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class PageUtil {
@@ -27,7 +27,7 @@ public class PageUtil {
      * 加强多个字段排序
      * @param sort  排序字段
      * @param order 顺序
-     * @author yangyu
+     * @author wang
      * @date 2019/9/25
      * @return java.lang.String
      */
@@ -75,7 +75,7 @@ public class PageUtil {
      * @param pageNum  pageNum
      * @param pageSize pageSize
      * @return PageInfo
-     * @author yangyu
+     * @author wang
      * @date 2020-01-09
      */
     public static <T> PageInfo<T> page(String pageNum, String pageSize) {

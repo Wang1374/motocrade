@@ -22,7 +22,7 @@ import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class ExcelToolUtil {

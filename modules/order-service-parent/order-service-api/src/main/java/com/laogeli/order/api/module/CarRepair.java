@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 车辆维修费用实体
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-10-26
  */
 @Data

@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.Async;
 /**
  * 异步监听日志事件
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class LogListener {

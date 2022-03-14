@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * AES工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2021-01-08
  */
 public class AesUtil {
@@ -25,7 +25,7 @@ public class AesUtil {
      * @param data data
      * @param pass pass
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2021-01-08
      */
     public static String decryptAES(String data, String pass) throws Exception {

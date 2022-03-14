@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * 消息服务
- * @author beifang
+ * @author wang
  * @Date 2021-09-17 9:36
  **/
 @FeignClient(value = ServiceConstant.MESSAGE_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = ChatImClientFallbackFactory.class)

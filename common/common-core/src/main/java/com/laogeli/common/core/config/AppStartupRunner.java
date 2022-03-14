@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 系统启动时的一些处理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

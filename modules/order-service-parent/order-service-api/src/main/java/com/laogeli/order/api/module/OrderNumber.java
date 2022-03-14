@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 订单编号设置
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-18
  */
 @Data

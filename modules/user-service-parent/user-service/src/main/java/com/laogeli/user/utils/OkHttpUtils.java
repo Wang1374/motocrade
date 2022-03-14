@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
 *
 * @Desecription: OK HTTP 工具类
-* @Author: yangyu
+* @Author: wang
 * @Date: 2021/8/24 14:50
 */
 public class OkHttpUtils {

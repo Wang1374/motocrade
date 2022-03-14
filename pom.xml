@@ -19,7 +19,7 @@
 
     <developers>
         <developer>
-            <name>yangyu</name>
+            <name>wang</name>
             <email>867452708@qq.com</email>
         </developer>
     </developers>
@@ -94,6 +94,8 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
+
+
 
         <!-- hystrix 断路器 -->
         <dependency>

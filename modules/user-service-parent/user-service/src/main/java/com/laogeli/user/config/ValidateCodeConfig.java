@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * 验证码配置
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

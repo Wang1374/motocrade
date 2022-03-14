@@ -27,7 +27,7 @@ import java.net.URI;
  * 解密过滤器
  * 对外密码字段的名称是credential，在这里解密，转换成password
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * 手机号登录成功，返回oauth token
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

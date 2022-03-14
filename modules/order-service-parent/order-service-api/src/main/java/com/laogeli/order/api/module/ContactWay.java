@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 客户联系方式
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-11
  */
 @Data

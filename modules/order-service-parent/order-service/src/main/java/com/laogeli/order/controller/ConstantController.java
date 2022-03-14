@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 常量信息管理
  *
- * @author yangyu
+ * @author wang
  * @date 2020-07-02
  */
 @Slf4j

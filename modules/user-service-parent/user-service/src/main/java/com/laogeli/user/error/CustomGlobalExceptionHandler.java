@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 /**
  * user-service 全局异常处理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @ControllerAdvice

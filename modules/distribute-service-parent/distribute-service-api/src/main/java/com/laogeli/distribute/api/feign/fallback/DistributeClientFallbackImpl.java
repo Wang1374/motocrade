@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * 日志断路器实现
  *
- * @author yangyu
+ * @author wang
  * @date 2020-11-17
  */
 @Slf4j

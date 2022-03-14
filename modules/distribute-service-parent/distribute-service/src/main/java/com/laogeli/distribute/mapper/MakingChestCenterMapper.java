@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 客户端做箱信息mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-12-16
  */
 @Mapper

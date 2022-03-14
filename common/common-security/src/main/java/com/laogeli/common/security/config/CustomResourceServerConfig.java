@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 /**
  * 资源服务器配置
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

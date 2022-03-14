@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * RestTemplateConfigo
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

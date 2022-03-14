@@ -8,7 +8,7 @@ import java.security.cert.X509Certificate;
 /**
  * SSLSocketFactory
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class SSLSocketClient {
@@ -17,7 +17,7 @@ public class SSLSocketClient {
      * 获取这个SSLSocketFactory
      *
      * @return SSLSocketFactory
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static SSLSocketFactory getSSLSocketFactory() {
@@ -34,7 +34,7 @@ public class SSLSocketClient {
      * 获取TrustManager
      *
      * @return TrustManager
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     private static TrustManager[] getTrustManager() {
@@ -60,7 +60,7 @@ public class SSLSocketClient {
      * 获取HostnameVerifier
      *
      * @return HostnameVerifier
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static HostnameVerifier getHostnameVerifier() {

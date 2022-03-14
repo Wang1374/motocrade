@@ -24,7 +24,7 @@ import java.net.URI;
 /**
  * 验证码过滤器
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 车辆利润分析mapper
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-10-10
  **/
 @Mapper

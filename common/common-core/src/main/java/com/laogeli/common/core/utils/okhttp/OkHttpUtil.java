@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * okHttp工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class OkHttpUtil {
@@ -66,7 +66,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String get(String url, Map<String, Object> header) throws Exception {
@@ -79,7 +79,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public ResponseBody getResponseBody(String url, Map<String, Object> header) throws Exception {
@@ -92,7 +92,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public Response getResponse(String url, Map<String, Object> header) throws Exception {
@@ -108,7 +108,7 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String postJson(String url, Map<String, Object> header, Map<String, Object> data) {
@@ -133,7 +133,7 @@ public class OkHttpUtil {
      * @param header header
      * @param object object
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String postJson(String url, Map<String, Object> header, Object object) {
@@ -158,7 +158,7 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String postForm(String url, Map<String, Object> header, Map<String, Object> data) throws Exception {
@@ -177,7 +177,7 @@ public class OkHttpUtil {
      *
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String postFile(String url, Map<String, Object> header, String filePath) throws Exception {
@@ -196,7 +196,7 @@ public class OkHttpUtil {
      * @param header header
      * @param file   file
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String put(String url, Map<String, Object> header, String file) throws Exception {
@@ -216,7 +216,7 @@ public class OkHttpUtil {
      * @param header header
      * @param bytes  bytes
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String putBytes(String url, Map<String, Object> header, byte[] bytes) throws Exception {
@@ -236,7 +236,7 @@ public class OkHttpUtil {
      * @param header      header
      * @param inputStream inputStream
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String putStream(String url, Map<String, Object> header, InputStream inputStream) throws Exception {
@@ -256,7 +256,7 @@ public class OkHttpUtil {
      * @param header header
      * @param data   data
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String patch(String url, Map<String, Object> header, Map<String, Object> data) throws Exception {
@@ -275,7 +275,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public String delete(String url, Map<String, Object> header) throws Exception {
@@ -288,7 +288,7 @@ public class OkHttpUtil {
      * @param url    url
      * @param header header
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public Response deleteResponse(String url, Map<String, Object> header) throws Exception {
@@ -301,7 +301,7 @@ public class OkHttpUtil {
     /**
      * @param data data
      * @return JSONObject
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     private JSONObject mapToJSONObject(Map<String, Object> data) {

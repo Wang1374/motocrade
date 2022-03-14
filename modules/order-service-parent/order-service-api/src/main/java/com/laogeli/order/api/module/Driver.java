@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 司机信息
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-06-30
  **/
 @Data

@@ -3,7 +3,7 @@ package com.laogeli.common.core.constant;
 /**
  * 公用常量
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class CommonConstant {

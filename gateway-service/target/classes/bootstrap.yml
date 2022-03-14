@@ -17,3 +17,16 @@ spring:
         enabled: true
         # 指向配置中心在consul注册的服务名称（即：spring.application.name）
         service-id: config-service
+#    gateway:
+#      routes:
+#        -id: order-service
+#        uri: lb://order-service
+#        predicates:
+#          -Path=/api/order/**
+#        -id: user-service
+#        uri: lb://user-service
+#          predicates:
+#            -Path=/api/user/**
+  # http://localhost/api/order/v1/vehicle/
+  #http://localhost/api/user/v1/getUser/
+

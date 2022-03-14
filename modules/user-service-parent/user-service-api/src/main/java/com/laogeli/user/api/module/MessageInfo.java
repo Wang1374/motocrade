@@ -4,7 +4,7 @@ import com.laogeli.common.core.persistence.BaseEntity;
 import lombok.Data;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-02-02 9:49
  **/
 @Data

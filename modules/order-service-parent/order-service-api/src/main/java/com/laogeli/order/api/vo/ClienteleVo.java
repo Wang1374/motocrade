@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 客户返回对象
  *
- * @author yangyu
+ * @author wang
  * @date 2020-07-01
  */
 @Data

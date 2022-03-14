@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * 日志工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class LogUtil {

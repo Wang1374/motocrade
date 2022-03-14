@@ -7,7 +7,7 @@ import lombok.Getter;
 /**
  * 订单号前缀类型
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-18
  */
 @Getter

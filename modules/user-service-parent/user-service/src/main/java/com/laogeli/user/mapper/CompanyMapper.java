@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * 公司mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-08
  */
 @Mapper

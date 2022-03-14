@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-08-24 16:32
  **/
 @Data

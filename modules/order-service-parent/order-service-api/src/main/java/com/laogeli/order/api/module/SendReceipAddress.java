@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * 寄单地址
- * @author beifang
+ * @author wang
  * @Date 2021-07-01 14:03
  **/
 @Data

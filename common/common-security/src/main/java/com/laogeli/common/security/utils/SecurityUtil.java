@@ -11,7 +11,7 @@ import java.security.Principal;
 /**
  * 安全工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class SecurityUtil {
@@ -20,7 +20,7 @@ public class SecurityUtil {
      * 获取当前登录的用户名
      *
      * @return String
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static String getCurrentUsername() {
@@ -36,7 +36,7 @@ public class SecurityUtil {
      * 获取当前用户的授权信息
      *
      * @return Authentication
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static Authentication getCurrentAuthentication() {
@@ -47,7 +47,7 @@ public class SecurityUtil {
      * 获取当前登录用户的授权信息
      *
      * @return Object
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     public static Object getCurrentPrincipal() {

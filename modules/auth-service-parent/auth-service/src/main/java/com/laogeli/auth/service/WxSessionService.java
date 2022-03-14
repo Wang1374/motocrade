@@ -19,7 +19,7 @@ public class WxSessionService {
      * @Param: code
      * @Param: WxSession
      * @Return: WxSession
-     * @Author: yangyu
+     * @Author: wang
      * @Date: 2021/8/25 22:13
      */
     public WxSession getSession(String code) {
@@ -40,7 +40,7 @@ public class WxSessionService {
      * @Param: WxSession
      * @Return: WxSession
      * @Return:
-     * @Author: yangyu
+     * @Author: wang
      * @Date: 2021/8/25 22:14
      */
     public WxSession code2Session(String code) {

@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * 认证Provider，提供获取用户信息、认证、授权等功能
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

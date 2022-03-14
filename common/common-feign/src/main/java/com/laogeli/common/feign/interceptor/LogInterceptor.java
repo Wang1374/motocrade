@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * 日志拦截器
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class LogInterceptor implements Interceptor {

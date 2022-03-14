@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * 轮胎费用mapper
- * @author beifang
+ * @author wang
  * @Date 2021-09-09 13:43
  **/
 @Mapper

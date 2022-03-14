@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 门店信息service
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-15
  */
 @Slf4j

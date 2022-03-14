@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 车辆与默认司机方式返回对象
  *
- * @author yangyu
+ * @author wang
  * @date 2020-07-20
  */
 @Data

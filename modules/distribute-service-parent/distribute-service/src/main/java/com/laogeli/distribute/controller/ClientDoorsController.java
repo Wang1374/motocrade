@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 客户端门点管理
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-11
  */
 @Slf4j

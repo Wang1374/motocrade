@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 /**
  * Oauth2客户端Service
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Service

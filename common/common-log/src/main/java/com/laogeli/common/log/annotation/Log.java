@@ -5,7 +5,7 @@ import java.lang.annotation.*;
 /**
  * 日志注解
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Target(ElementType.METHOD) //作用于方法

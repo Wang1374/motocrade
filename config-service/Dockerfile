@@ -1,5 +1,5 @@
 FROM anapsix/alpine-java:8_server-jre_unlimited
-MAINTAINER yangyu(867452708@qq.com)
+MAINTAINER wang(867452708@qq.com)
 ARG JAR_FILE
 ENV PROFILE native
 ENV JAVA_OPTS='-Xmx512m -Xms256m'

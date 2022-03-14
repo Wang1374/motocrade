@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 车辆信息mapper
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-07-08
  **/
 @Mapper

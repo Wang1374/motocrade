@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 /**
  * 客户端门点service
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-11
  */
 @Service

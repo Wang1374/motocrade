@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * 微信登录token
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class WxAuthenticationToken extends AbstractAuthenticationToken {

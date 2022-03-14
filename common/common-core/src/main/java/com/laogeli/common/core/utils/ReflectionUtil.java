@@ -10,7 +10,7 @@ import java.lang.reflect.Type;
 /**
  * 反射工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class ReflectionUtil {

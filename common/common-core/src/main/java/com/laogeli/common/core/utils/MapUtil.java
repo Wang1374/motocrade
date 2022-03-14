@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class MapUtil {

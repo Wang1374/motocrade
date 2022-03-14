@@ -3,7 +3,7 @@ package com.laogeli.common.core.exceptions;
 /**
  * 验证码过期异常
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class ValidateCodeExpiredException extends CommonException {

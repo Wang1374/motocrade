@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 常量信息mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-07-02
  */
 @Mapper

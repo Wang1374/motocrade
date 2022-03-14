@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 /**
  * 数据过滤处理
  *
- * @author yangyu
+ * @author wang
  */
 @Aspect // 作用是把当前类标识为一个切面供容器读取
 @Component

@@ -3,7 +3,7 @@ package com.laogeli.common.core.exceptions;
 /**
  * 服务异常
  *
- * @author yangyu
+ * @author wang
  * @date 2021-01-08
  */
 public class ServiceException extends CommonException {

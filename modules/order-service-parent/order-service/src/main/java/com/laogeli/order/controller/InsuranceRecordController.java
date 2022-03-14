@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 /**
  * 保险记录信息管理
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-07-20
  **/
 @Slf4j

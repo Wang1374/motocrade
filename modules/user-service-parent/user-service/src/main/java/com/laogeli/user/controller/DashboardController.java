@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 后台首页数据展示
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class DashboardController extends BaseController {
      * 获取管控台首页数据
      *
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2020-1-1
      */
     @GetMapping

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 保险记录mapper
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-07-20
  **/
 @Mapper

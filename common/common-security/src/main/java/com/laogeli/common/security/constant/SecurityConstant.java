@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 系统常量
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class SecurityConstant {

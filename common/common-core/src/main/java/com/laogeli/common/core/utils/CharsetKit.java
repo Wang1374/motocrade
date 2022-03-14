@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * 字符集工具类
  *
- * @author yangyu
+ * @author wang
  * @date 2021-01-08
  */
 public class CharsetKit

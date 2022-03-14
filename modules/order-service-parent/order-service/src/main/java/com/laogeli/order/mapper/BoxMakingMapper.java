@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * 做箱列表信息 mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-08-18
  */
 @Mapper

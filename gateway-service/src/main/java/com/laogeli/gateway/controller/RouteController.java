@@ -19,7 +19,7 @@ import javax.validation.Valid;
  * 路由controller
  * TODO：增加security认证
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j
@@ -35,7 +35,7 @@ public class RouteController extends BaseController {
      *
      * @param id id
      * @return Route
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/{id}")
@@ -59,7 +59,7 @@ public class RouteController extends BaseController {
      * @param order    order
      * @param route    route
      * @return PageInfo
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("routeList")
@@ -76,7 +76,7 @@ public class RouteController extends BaseController {
      *
      * @param route route
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PutMapping
@@ -95,7 +95,7 @@ public class RouteController extends BaseController {
      *
      * @param route route
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping
@@ -114,7 +114,7 @@ public class RouteController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @DeleteMapping("/{id}")
@@ -132,7 +132,7 @@ public class RouteController extends BaseController {
      *
      * @param route route
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping("deleteAll")
@@ -153,7 +153,7 @@ public class RouteController extends BaseController {
      * 刷新路由
      *
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("refresh")

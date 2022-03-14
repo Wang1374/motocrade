@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 网关异常处理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

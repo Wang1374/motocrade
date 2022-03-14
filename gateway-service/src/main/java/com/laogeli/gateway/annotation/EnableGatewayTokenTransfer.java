@@ -8,7 +8,7 @@ import java.lang.annotation.*;
 /**
  * 因为token里带有权限信息，避免直接返回给前端，所以在网关做一层Token转换，返回给前端的只是token ID
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Target(ElementType.TYPE)

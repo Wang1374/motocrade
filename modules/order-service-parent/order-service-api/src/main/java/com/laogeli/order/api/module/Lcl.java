@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 门点 件毛体 信息
  *
- * @author yangyu
+ * @author wang
  * @date 2020-07-13
  **/
 @Data

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * 手机登录
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

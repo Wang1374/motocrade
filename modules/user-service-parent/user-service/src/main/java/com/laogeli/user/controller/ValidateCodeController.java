@@ -27,7 +27,7 @@ import java.awt.image.BufferedImage;
 /**
  * 验证码
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor

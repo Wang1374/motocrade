@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 门店信息
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-15
  */
 @Data

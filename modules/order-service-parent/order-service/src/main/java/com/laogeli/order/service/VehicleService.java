@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 车辆信息service
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-07-08
  **/
 @Slf4j

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 用户授权Service
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor

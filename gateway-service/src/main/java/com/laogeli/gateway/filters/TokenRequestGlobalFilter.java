@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 拦截登录/oauth/token请求，封装授权服务返回的access_token为AccessToken，建立jti-access_token的关联关系，返回token里的jti
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

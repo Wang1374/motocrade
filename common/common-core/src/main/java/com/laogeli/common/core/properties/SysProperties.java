@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.PostConstruct;
 
 /**
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

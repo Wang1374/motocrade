@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * reids key 前缀类型
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-19
  */
 @Getter

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * 车辆成本vo
  *
- * @author BeiFang
+ * @author wang
  * @date 2020-10-20
  */
 @Data

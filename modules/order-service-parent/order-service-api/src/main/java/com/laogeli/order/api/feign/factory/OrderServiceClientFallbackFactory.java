@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 订单feign断路器工厂
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-09
  */
 @Component

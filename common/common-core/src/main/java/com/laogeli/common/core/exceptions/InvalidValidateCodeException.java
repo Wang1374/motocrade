@@ -3,7 +3,7 @@ package com.laogeli.common.core.exceptions;
 /**
  * 验证码错误异常
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class InvalidValidateCodeException extends CommonException {

@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 用户服务
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @FeignClient(value = ServiceConstant.USER_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = UserServiceClientFallbackFactory.class)
@@ -31,7 +31,7 @@ public interface UserServiceClient {
      *
      * @param identifier identifier
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/user/findUserByIdentifier/{identifier}")
@@ -45,7 +45,7 @@ public interface UserServiceClient {
      * @param identifier   identifier
      * @param identityType identityType
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/user/findUserByIdentifier/{identifier}")
@@ -63,7 +63,7 @@ public interface UserServiceClient {
      * 获取当前用户的信息
      *
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/user/info")
@@ -74,7 +74,7 @@ public interface UserServiceClient {
      *
      * @param ids ids
      * @return UserVo
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @RequestMapping(value = "/v1/user/findById", method = RequestMethod.POST)
@@ -85,7 +85,7 @@ public interface UserServiceClient {
      *
      * @param userVo userVo
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @RequestMapping(value = "/v1/user/userCount", method = RequestMethod.POST)
@@ -96,7 +96,7 @@ public interface UserServiceClient {
      *
      * @param id id
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @DeleteMapping("/v1/attachment/{id}")
@@ -107,7 +107,7 @@ public interface UserServiceClient {
      *
      * @param ids ids
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @RequestMapping(value = "/v1/attachment/findById", method = RequestMethod.POST)
@@ -118,7 +118,7 @@ public interface UserServiceClient {
      *
      * @param log log
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping("/v1/log")
@@ -129,7 +129,7 @@ public interface UserServiceClient {
      *
      * @param orderNumber orderNumber
      * @return List<LogVo>
-     * @author yangyu
+     * @author wang
      * @date 2020-07-07
      */
     @GetMapping("/v1/log/getOrderLog/{orderNumber}")
@@ -140,7 +140,7 @@ public interface UserServiceClient {
      *
      * @param role       角色
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/menu/findMenuByRole/{role}")
@@ -151,7 +151,7 @@ public interface UserServiceClient {
      *
      * @param role       角色
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/menu/findMenuByStaffRole/{role}")
@@ -161,7 +161,7 @@ public interface UserServiceClient {
      * 查询所有菜单
      *
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("/v1/menu/findAllMenu")
@@ -172,7 +172,7 @@ public interface UserServiceClient {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping("/v1/user/register")
@@ -191,7 +191,7 @@ public interface UserServiceClient {
      *
      * @param userDto userDto
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PutMapping("/v1/user")
@@ -202,7 +202,7 @@ public interface UserServiceClient {
      *
      * @param id
      * @return User
-     * @author yangyu
+     * @author wang
      * @date 2020-02-24
      */
     @GetMapping("/v1/attachment/{id}/preview")

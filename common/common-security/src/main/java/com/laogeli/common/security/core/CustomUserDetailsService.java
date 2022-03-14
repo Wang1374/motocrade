@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 /**
  * 查询用户信息接口
  *
- * @author yangyu
+ * @author wang
  * @date 2020-7-31
  */
 public interface CustomUserDetailsService extends UserDetailsService {
@@ -19,7 +19,7 @@ public interface CustomUserDetailsService extends UserDetailsService {
      *
      * @param username   username
      * @return UserDetails
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     UserDetails loadUserByIdentifier(String username) throws UsernameNotFoundException;
@@ -30,7 +30,7 @@ public interface CustomUserDetailsService extends UserDetailsService {
      * @param social     social
      * @param mobileUser mobileUser
      * @return UserDetails
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     UserDetails loadUserBySocial(String social, MobileUser mobileUser) throws UsernameNotFoundException;
@@ -41,7 +41,7 @@ public interface CustomUserDetailsService extends UserDetailsService {
     * @Desecription: 根据微信openId查询
     * @Param: code
     * @Return: wxUser
-    * @Author: yangyu
+    * @Author: wang
     * @Date: 2021/8/25 21:30
     */
     UserDetails loadUserByWxCode(String code, WxUser wxUser) throws UsernameNotFoundException;

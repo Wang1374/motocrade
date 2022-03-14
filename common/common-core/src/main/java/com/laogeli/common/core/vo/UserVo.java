@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 用户Vo
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

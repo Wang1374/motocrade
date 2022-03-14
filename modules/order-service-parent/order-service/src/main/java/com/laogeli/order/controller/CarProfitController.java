@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 车辆利润分析管理
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-10-10
  **/
 @Slf4j

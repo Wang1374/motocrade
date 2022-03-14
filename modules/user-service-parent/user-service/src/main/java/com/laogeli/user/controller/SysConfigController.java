@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 系统配置controller
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor

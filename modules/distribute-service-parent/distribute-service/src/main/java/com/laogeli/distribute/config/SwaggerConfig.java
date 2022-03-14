@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Swagger配置
  *
- * @author yangyu
+ * @author wang
  * @date 2020-11-017
  */
 @Configuration
@@ -67,7 +67,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .title("Swagger API")
                 .description("")
                 .termsOfServiceUrl("")
-                .contact(new Contact("yangyu", "", "867452708@qq.com"))
+                .contact(new Contact("wang", "", "867452708@qq.com"))
                 .version("2.0")
                 .build();
     }

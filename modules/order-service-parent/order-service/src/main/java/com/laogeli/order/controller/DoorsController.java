@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 门店信息管理
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-15
  */
 @Slf4j

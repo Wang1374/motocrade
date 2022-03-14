@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 保险记录信息
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-10-15
  **/
 @Data

@@ -54,7 +54,7 @@ import java.util.stream.Collectors;
 /**
  * 从数据库获取用户信息
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @AllArgsConstructor
@@ -94,7 +94,7 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
      * @param username 用户名
      * @return UserDetails
      * @throws UsernameNotFoundException
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @Override
@@ -115,7 +115,7 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
      * @param social     social
      * @param mobileUser mobileUser
      * @return UserDetails
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @Override
@@ -188,7 +188,7 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
      *
      * @param userVo userVo
      * @return Set
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     private Set<GrantedAuthority> getAuthority(UserVo userVo) {

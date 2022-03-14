@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * 公司service
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-08
  */
 @Slf4j

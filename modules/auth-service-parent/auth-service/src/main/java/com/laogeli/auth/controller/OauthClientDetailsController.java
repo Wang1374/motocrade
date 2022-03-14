@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Oauth2客户端信息管理
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j
@@ -45,7 +45,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @ApiOperation(value = "获取客户端信息", notes = "根据客户端id获取客户端详细信息")
@@ -69,7 +69,7 @@ public class OauthClientDetailsController extends BaseController {
      * @param order              order
      * @param oauthClientDetails oauthClientDetails
      * @return PageInfo
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("clientList")
@@ -94,7 +94,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param oauthClientDetails oauthClientDetails
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @GetMapping("clients")
@@ -109,7 +109,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param oauthClientDetails oauthClientDetails
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping
@@ -129,7 +129,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param oauthClientDetails oauthClientDetails
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PutMapping
@@ -151,7 +151,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param id id
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @DeleteMapping("/{id}")
@@ -172,7 +172,7 @@ public class OauthClientDetailsController extends BaseController {
      *
      * @param oauthClientDetails oauthClientDetails
      * @return ResponseBean
-     * @author yangyu
+     * @author wang
      * @date 2019-12-31
      */
     @PostMapping("deleteAll")

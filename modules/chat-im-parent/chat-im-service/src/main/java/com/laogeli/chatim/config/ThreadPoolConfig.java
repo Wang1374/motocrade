@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * threadpool
- * @author beifang
+ * @author wang
  * @Date 2021-09-03 9:10
  **/
 @Configuration

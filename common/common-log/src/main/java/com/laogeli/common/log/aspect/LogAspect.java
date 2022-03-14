@@ -22,7 +22,7 @@ import java.util.*;
 /**
  * 日志切面，异步记录日志
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Aspect //标注增强处理类（切面类）

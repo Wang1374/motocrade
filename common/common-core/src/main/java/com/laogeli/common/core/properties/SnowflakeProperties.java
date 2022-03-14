@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * ID生成配置
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

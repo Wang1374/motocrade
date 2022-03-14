@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 堆场信息mapper
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-15
  */
 @Mapper

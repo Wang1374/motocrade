@@ -14,7 +14,7 @@ import java.net.URI;
  * 将HTTPS改为HTTP
  * 网关进来的协议是HTTPS，其它服务一般部署在内网，没必要走HTTPS
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Component

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * 序列化
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 public class AccessTokenJacksonSerializer extends StdSerializer<AccessToken> {

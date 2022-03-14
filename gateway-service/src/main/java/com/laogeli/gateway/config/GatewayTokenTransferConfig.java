@@ -13,7 +13,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  * 网关Token转换配置
  * 开启需要配置gateway.token-transfer.enabled=true
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Configuration

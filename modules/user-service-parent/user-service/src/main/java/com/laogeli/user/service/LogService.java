@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 日志service
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Service

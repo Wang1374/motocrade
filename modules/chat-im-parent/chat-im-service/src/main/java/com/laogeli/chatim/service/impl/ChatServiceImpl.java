@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-09-03 12:11
  **/
 @Service
@@ -63,7 +63,7 @@ public class ChatServiceImpl implements ChatService {
     * @Desecription: 消息推送
     * @Param:
     * @Return:
-    * @Author: yangyu
+    * @Author: wang
     * @Date: 2021/9/3 23:10
     */
     @Override

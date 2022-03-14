@@ -21,7 +21,7 @@ import java.net.URI;
  * 和TokenRequestGlobalFilter配合使用
  * 拦截登录请求，根据jti替换Authorization请求头为真正的access_token
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Slf4j

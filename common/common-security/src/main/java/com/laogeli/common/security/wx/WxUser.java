@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-08-25 9:36
  **/
 @Data

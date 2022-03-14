@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 /**
  * 订单工具类
  *
- * @author BeiFang
+ * @author wang
  * @Date 2020-07-31
  **/
 public class OrderUitls {
@@ -40,7 +40,7 @@ public class OrderUitls {
      * 获取Oil属性的map
      *
      * @return LinkedHashMap
-     * @author beifang
+     * @author wang
      * @date 2021-07-19
      */
     public static LinkedHashMap<String, String> getOilMap() {

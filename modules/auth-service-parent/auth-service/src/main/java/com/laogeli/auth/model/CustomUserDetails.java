@@ -10,7 +10,7 @@ import java.util.Collection;
 /**
  * 用户信息
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

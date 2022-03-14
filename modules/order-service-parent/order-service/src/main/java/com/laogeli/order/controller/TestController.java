@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
- * @author beifang
+ * @author wang
  * @Date 2021-10-15 14:30
  **/
 public class TestController {

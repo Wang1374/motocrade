@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * OAuth2客户端信息
  *
- * @author yangyu
+ * @author wang
  * @date 2019-12-31
  */
 @Data

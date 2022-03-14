@@ -16,7 +16,7 @@ import javax.validation.constraints.PastOrPresent;
 /**
  * 订单服务
  *
- * @author yangyu
+ * @author wang
  * @date 2020-06-09
  */
 @FeignClient(value = ServiceConstant.ORDER_SERVICE, configuration = CustomFeignConfig.class, fallbackFactory = OrderServiceClientFallbackFactory.class)
@@ -27,7 +27,7 @@ public interface OrderServiceClient {
      *
      * @param corporateIdentify
      * @return int
-     * @author yangyu
+     * @author wang
      * @date 2020-07-27
      */
     @PostMapping("/v1/costsSet/batchCostsSet/{corporateIdentify}")
@@ -38,7 +38,7 @@ public interface OrderServiceClient {
      *
      * @param corporateIdentify
      * @return int
-     * @author yangyu
+     * @author wang
      * @date 2020-07-27
      */
     @PostMapping("/v1/orderNumber/addOrderNumber/{corporateIdentify}")
@@ -49,7 +49,7 @@ public interface OrderServiceClient {
      *
      * @param companyName
      * @return int
-     * @author yangyu
+     * @author wang
      * @date 2020-12-22
      */
     @PostMapping("/v1/clientele/addPlatformCustomers")

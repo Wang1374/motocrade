@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 件毛体信息
  *
- * @author beifang
+ * @author wang
  * @date 2020-12-16
  **/
 @Data
